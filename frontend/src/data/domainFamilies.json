@@ -1,0 +1,26 @@
+{
+  "domainFamilies": {
+    "performing_arts":["acting","drama","theatre","dance","musical theatre","performing arts","performance","stage","choreography","devised theatre","physical theatre","voice","circus","opera"],
+    "music":["music","composition","songwriting","music production","audio","conducting","music performance","music technology","sound design","recording","jazz","classical music"],
+    "visual_arts":["fine art","painting","sculpture","printmaking","photography","illustration","visual arts","ceramics","textiles","art","contemporary art"],
+    "design":["graphic design","fashion design","interior design","product design","UX design","UI","industrial design","animation","motion graphics","design thinking","game design"],
+    "film_media":["film","filmmaking","film production","screenwriting","cinematography","directing","media production","broadcasting","television","documentary","media studies"],
+    "creative_writing":["creative writing","fiction","poetry","playwriting","screenwriting","publishing","literature","literary studies","journalism","editing","english literature"],
+    "computer_science":["computer science","programming","software engineering","algorithms","AI","machine learning","data science","cybersecurity","web development","computing"],
+    "engineering":["engineering","mechanical","electrical","civil","chemical","aerospace","robotics","manufacturing","automotive","biomedical engineering"],
+    "business":["business","management","marketing","finance","economics","accounting","entrepreneurship","strategy","leadership","MBA"],
+    "sciences":["biology","chemistry","physics","environmental science","neuroscience","biomedical","pharmacology","geology","ecology","mathematics","statistics"],
+    "medicine_health":["medicine","nursing","healthcare","clinical","patient care","dentistry","pharmacy","public health","physiotherapy","midwifery"],
+    "law":["law","criminal law","constitutional law","human rights","legal studies","international law","criminology"],
+    "social_sciences":["psychology","sociology","anthropology","politics","international relations","social work","counselling","political science"],
+    "humanities":["history","classics","languages","linguistics","theology","archaeology","cultural studies","philosophy","religious studies"],
+    "architecture":["architecture","urban planning","landscape","built environment","spatial design"],
+    "education":["education","teaching","pedagogy","PGCE","child development","TESOL","early years"],
+    "sports":["sport science","sports management","kinesiology","exercise science","coaching"],
+    "hospitality_tourism":["hospitality","tourism","hotel management","event management","culinary arts"],
+    "agriculture_environment":["agriculture","forestry","marine biology","conservation","environmental management","geography"]
+  },
+  "domainLabels": {
+    "performing_arts":"Performing Arts","music":"Music","visual_arts":"Visual Arts","design":"Design","film_media":"Film & Media","creative_writing":"Creative Writing","computer_science":"Computer Science","engineering":"Engineering","business":"Business","sciences":"Sciences","medicine_health":"Medicine & Health","law":"Law","social_sciences":"Social Sciences","humanities":"Humanities","architecture":"Architecture","education":"Education","sports":"Sport Science","hospitality_tourism":"Hospitality","agriculture_environment":"Environment"
+  }
+}

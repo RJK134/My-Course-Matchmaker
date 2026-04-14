@@ -1,0 +1,4024 @@
+[
+  {
+    "id": 1,
+    "title": "BFA Acting",
+    "institution": "RADA",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "voice",
+      "physical theatre"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 23333,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Audition-based — no formal qualifications required. Talent-led. Mature students welcome. No upper age limit.",
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Drama Teacher",
+      "Voice Coach"
+    ],
+    "avgSalary": "£20k-£60k+",
+    "employability": 65,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 2,
+    "title": "BA Acting",
+    "institution": "Royal Central School of Speech and Drama",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "devised theatre",
+      "voice"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 21000,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 2,
+    "entryReqs": "Audition + interview. No formal academic requirements. Access courses accepted. Mature students encouraged.",
+    "careerPaths": [
+      "Actor",
+      "Theatre Director",
+      "Drama Facilitator"
+    ],
+    "avgSalary": "£20k-£50k+",
+    "employability": 62,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 3,
+    "title": "BFA Theatre Arts",
+    "institution": "Tisch School of the Arts, NYU",
+    "country": "USA",
+    "city": "New York",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "directing",
+      "playwriting"
+    ],
+    "feeHome": 30000,
+    "feeIntl": 30000,
+    "livingCost": 25000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Audition + SAT/ACT. Transfer & mature applicants accepted.",
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Playwright",
+      "Producer"
+    ],
+    "avgSalary": "$30k-$80k+",
+    "employability": 68,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 4,
+    "title": "BA Theatre",
+    "institution": "Royal Conservatoire of Scotland",
+    "country": "Scotland",
+    "city": "Glasgow",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "musical theatre"
+    ],
+    "feeHome": 1820,
+    "feeIntl": 20100,
+    "livingCost": 10500,
+    "duration": "3 years",
+    "ranking": 3,
+    "entryReqs": "Audition. Scottish-domiciled: FREE via SAAS. No formal academic requirements. All ages.",
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Drama Teacher"
+    ],
+    "avgSalary": "£20k-£45k",
+    "employability": 63,
+    "online": false,
+    "free": false,
+    "feeScotland": 9250
+  },
+  {
+    "id": 5,
+    "title": "BFA Musical Theatre",
+    "institution": "Carnegie Mellon University",
+    "country": "USA",
+    "city": "Pittsburgh",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "musical theatre",
+      "acting",
+      "singing",
+      "dance",
+      "performing arts",
+      "theatre"
+    ],
+    "feeHome": 32500,
+    "feeIntl": 32500,
+    "livingCost": 15000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Audition + SAT/ACT.",
+    "careerPaths": [
+      "Musical Theatre Performer",
+      "Singer",
+      "Choreographer"
+    ],
+    "avgSalary": "$28k-$70k+",
+    "employability": 60,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 6,
+    "title": "BFA Dance",
+    "institution": "Juilliard School",
+    "country": "USA",
+    "city": "New York",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "dance",
+      "choreography",
+      "performance",
+      "performing arts",
+      "ballet",
+      "contemporary dance"
+    ],
+    "feeHome": 35000,
+    "feeIntl": 35000,
+    "livingCost": 25000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Audition. Need-blind admissions for US citizens.",
+    "careerPaths": [
+      "Dancer",
+      "Choreographer",
+      "Dance Teacher"
+    ],
+    "avgSalary": "$25k-$60k",
+    "employability": 55,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 7,
+    "title": "BA Theatre & Performance",
+    "institution": "University of Leeds",
+    "country": "UK",
+    "city": "Leeds",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "theatre",
+      "performance",
+      "drama",
+      "performing arts",
+      "devised theatre"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24500,
+    "livingCost": 10500,
+    "duration": "3 years",
+    "ranking": 20,
+    "entryReqs": "ABB A-Level. Mature: Access to HE Diploma accepted. BTEC DDM also considered.",
+    "careerPaths": [
+      "Theatre Maker",
+      "Arts Manager",
+      "Drama Teacher"
+    ],
+    "avgSalary": "£22k-£38k",
+    "employability": 70,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 8,
+    "title": "MA Theatre Directing",
+    "institution": "Birkbeck, University of London",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "directing",
+      "theatre",
+      "drama",
+      "performing arts",
+      "dramaturgy"
+    ],
+    "feeHome": 11100,
+    "feeIntl": 18800,
+    "livingCost": 18000,
+    "duration": "1 year",
+    "ranking": 0,
+    "entryReqs": "2:1 + directing experience. Equivalent professional experience considered for mature applicants without degree.",
+    "careerPaths": [
+      "Theatre Director",
+      "Artistic Director",
+      "Producer"
+    ],
+    "avgSalary": "£25k-£55k",
+    "employability": 60,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 9,
+    "title": "BA Theatre & Digital Innovation",
+    "institution": "University of Exeter",
+    "country": "UK",
+    "city": "Exeter",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "theatre",
+      "drama",
+      "digital",
+      "technology",
+      "performing arts",
+      "immersive"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 25000,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 12,
+    "entryReqs": "ABB. Access to HE accepted. BTEC DDM.",
+    "careerPaths": [
+      "Digital Theatre Maker",
+      "Immersive Designer",
+      "Technical Director"
+    ],
+    "avgSalary": "£24k-£45k",
+    "employability": 72,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 10,
+    "title": "BA Drama & Theatre",
+    "institution": "University of Bristol",
+    "country": "UK",
+    "city": "Bristol",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "drama",
+      "theatre",
+      "performing arts",
+      "devised theatre",
+      "performance"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24700,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 5,
+    "entryReqs": "AAB. IB 34. Access accepted. Mature applicants welcome.",
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Theatre Maker",
+      "Drama Teacher"
+    ],
+    "avgSalary": "£22k-£40k",
+    "employability": 68,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 11,
+    "title": "BA Performing Arts",
+    "institution": "Zürich University of the Arts (ZHdK)",
+    "country": "Switzerland",
+    "city": "Zurich",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "performing arts",
+      "theatre",
+      "dance",
+      "acting",
+      "physical theatre"
+    ],
+    "feeHome": 1440,
+    "feeIntl": 1440,
+    "livingCost": 24000,
+    "duration": "3 years",
+    "ranking": 0,
+    "entryReqs": "Audition + entrance exam. Same low fees for ALL nationalities.",
+    "careerPaths": [
+      "Performer",
+      "Choreographer",
+      "Theatre Maker"
+    ],
+    "avgSalary": "CHF 40k-80k",
+    "employability": 55,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 12,
+    "title": "BA Theatre",
+    "institution": "University of Amsterdam (DAS)",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "theatre",
+      "performance",
+      "performing arts",
+      "devised theatre",
+      "directing"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 11160,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 50,
+    "entryReqs": "Portfolio + audition. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "Theatre Maker",
+      "Director",
+      "Performance Artist"
+    ],
+    "avgSalary": "€25k-€45k",
+    "employability": 58,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 13,
+    "title": "Introduction to Acting (Free Online)",
+    "institution": "MasterClass / Various",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "Self-paced",
+    "ranking": 0,
+    "entryReqs": "None. Open to all ages.",
+    "careerPaths": [
+      "Foundation for further study"
+    ],
+    "avgSalary": "N/A",
+    "employability": 20,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 14,
+    "title": "Theatre & Performance Studies",
+    "institution": "FutureLearn / Various",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "performing_arts",
+    "subjects": [
+      "theatre",
+      "performance",
+      "drama",
+      "performing arts",
+      "critical analysis"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "8 weeks",
+    "ranking": 0,
+    "entryReqs": "None. Free to access.",
+    "careerPaths": [
+      "Foundation for degree study"
+    ],
+    "avgSalary": "N/A",
+    "employability": 25,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 15,
+    "title": "BMus Music Performance",
+    "institution": "Berklee College of Music",
+    "country": "USA",
+    "city": "Boston",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "performance",
+      "composition",
+      "songwriting",
+      "music production"
+    ],
+    "feeHome": 48600,
+    "feeIntl": 48600,
+    "livingCost": 20000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Audition + portfolio.",
+    "careerPaths": [
+      "Musician",
+      "Music Producer",
+      "Composer"
+    ],
+    "avgSalary": "$30k-$80k",
+    "employability": 60,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 16,
+    "title": "BMus Music",
+    "institution": "Royal Academy of Music",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "performance",
+      "composition",
+      "classical music",
+      "conducting"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 27400,
+    "livingCost": 18000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Audition + ABRSM Grade 8+. Mature applicants on merit.",
+    "careerPaths": [
+      "Performer",
+      "Conductor",
+      "Composer"
+    ],
+    "avgSalary": "£22k-£55k",
+    "employability": 58,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 17,
+    "title": "BMus Music",
+    "institution": "Sibelius Academy (Helsinki)",
+    "country": "Finland",
+    "city": "Helsinki",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "performance",
+      "composition",
+      "classical music",
+      "jazz",
+      "conducting"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Audition. FREE for ALL nationalities.",
+    "careerPaths": [
+      "Performer",
+      "Conductor",
+      "Composer"
+    ],
+    "avgSalary": "€30k-€55k",
+    "employability": 55,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 18,
+    "title": "BMus Music",
+    "institution": "Hochschule für Musik Hanns Eisler Berlin",
+    "country": "Germany",
+    "city": "Berlin",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "performance",
+      "composition",
+      "conducting",
+      "opera",
+      "classical music"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 11000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Audition. No tuition fees (~€300/semester admin). ALL nationalities.",
+    "careerPaths": [
+      "Performer",
+      "Conductor",
+      "Opera Singer"
+    ],
+    "avgSalary": "€30k-€60k",
+    "employability": 55,
+    "online": false,
+    "free": true
+  },
+  {
+    "id": 19,
+    "title": "BA Music",
+    "institution": "University of York",
+    "country": "UK",
+    "city": "York",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "composition",
+      "sound design",
+      "music technology",
+      "performance"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 23700,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 8,
+    "entryReqs": "ABB + Grade 7. Access to HE accepted.",
+    "careerPaths": [
+      "Composer",
+      "Sound Designer",
+      "Music Technologist"
+    ],
+    "avgSalary": "£22k-£40k",
+    "employability": 65,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 20,
+    "title": "Berklee Online Music Production",
+    "institution": "Berklee Online",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music production",
+      "audio",
+      "recording",
+      "mixing",
+      "mastering"
+    ],
+    "feeHome": 1500,
+    "feeIntl": 1500,
+    "livingCost": 0,
+    "duration": "6 months",
+    "ranking": 1,
+    "entryReqs": "None.",
+    "careerPaths": [
+      "Music Producer",
+      "Audio Engineer"
+    ],
+    "avgSalary": "$25k-$50k",
+    "employability": 55,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 21,
+    "title": "Introduction to Music Production",
+    "institution": "Coursera / Berklee",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music production",
+      "audio",
+      "recording",
+      "music"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "4 weeks",
+    "ranking": 0,
+    "entryReqs": "None. Free to audit.",
+    "careerPaths": [
+      "Foundation for further study"
+    ],
+    "avgSalary": "N/A",
+    "employability": 20,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 22,
+    "title": "BA Music & Sound Recording (Tonmeister)",
+    "institution": "University of Surrey",
+    "country": "UK",
+    "city": "Guildford",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "sound design",
+      "recording",
+      "audio",
+      "acoustics"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 22000,
+    "livingCost": 11000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "AAB + Grade 8. Mature: professional experience considered.",
+    "careerPaths": [
+      "Recording Engineer",
+      "Sound Designer"
+    ],
+    "avgSalary": "£28k-£55k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 23,
+    "title": "BMus Popular Music",
+    "institution": "Goldsmiths",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "music",
+    "subjects": [
+      "music",
+      "popular music",
+      "songwriting",
+      "performance",
+      "music production"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 20820,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 0,
+    "entryReqs": "BBB + audition. Access accepted. Mature students welcome.",
+    "careerPaths": [
+      "Musician",
+      "Songwriter",
+      "Producer"
+    ],
+    "avgSalary": "£20k-£45k",
+    "employability": 58,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 24,
+    "title": "BFA Film Production",
+    "institution": "USC Cinematic Arts",
+    "country": "USA",
+    "city": "Los Angeles",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "filmmaking",
+      "film production",
+      "screenwriting",
+      "directing",
+      "cinematography"
+    ],
+    "feeHome": 37500,
+    "feeIntl": 37500,
+    "livingCost": 20000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio + application.",
+    "careerPaths": [
+      "Film Director",
+      "Screenwriter",
+      "Producer",
+      "Cinematographer"
+    ],
+    "avgSalary": "$35k-$100k+",
+    "employability": 70,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 25,
+    "title": "BA Film Studies",
+    "institution": "University of Warwick",
+    "country": "UK",
+    "city": "Coventry",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "cinema",
+      "media",
+      "film theory",
+      "screenwriting"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 22280,
+    "livingCost": 10500,
+    "duration": "3 years",
+    "ranking": 8,
+    "entryReqs": "ABB. Access accepted. Mature welcome.",
+    "careerPaths": [
+      "Film Critic",
+      "Producer",
+      "Screenwriter"
+    ],
+    "avgSalary": "£23k-£40k",
+    "employability": 68,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 26,
+    "title": "BA Film",
+    "institution": "DFFB (Berlin Film Academy)",
+    "country": "Germany",
+    "city": "Berlin",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "filmmaking",
+      "directing",
+      "screenwriting",
+      "documentary",
+      "cinematography"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 11000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio + entrance exam. No tuition fees. ALL nationalities. Age 18-30.",
+    "careerPaths": [
+      "Film Director",
+      "Screenwriter",
+      "Cinematographer"
+    ],
+    "avgSalary": "€30k-€60k",
+    "employability": 65,
+    "online": false,
+    "free": true
+  },
+  {
+    "id": 27,
+    "title": "BA Film Studies",
+    "institution": "University of Amsterdam",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "cinema",
+      "media studies",
+      "film theory"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 11160,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 50,
+    "entryReqs": "Diploma or equivalent. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "Film Critic",
+      "Media Researcher"
+    ],
+    "avgSalary": "€25k-€40k",
+    "employability": 65,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 28,
+    "title": "MA Filmmaking",
+    "institution": "London Film School",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "filmmaking",
+      "directing",
+      "screenwriting",
+      "cinematography",
+      "documentary"
+    ],
+    "feeHome": 16800,
+    "feeIntl": 32000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 1,
+    "entryReqs": "Degree + portfolio. Professional experience accepted in lieu of degree for mature applicants.",
+    "careerPaths": [
+      "Film Director",
+      "Producer",
+      "Screenwriter"
+    ],
+    "avgSalary": "£25k-£60k+",
+    "employability": 65,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 29,
+    "title": "BA Animation",
+    "institution": "Bournemouth University",
+    "country": "UK",
+    "city": "Bournemouth",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "animation",
+      "film",
+      "visual effects",
+      "3D",
+      "motion graphics"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 18950,
+    "livingCost": 10000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio + interview. Foundation year available. Mature welcome.",
+    "careerPaths": [
+      "Animator",
+      "VFX Artist",
+      "Motion Designer"
+    ],
+    "avgSalary": "£25k-£50k",
+    "employability": 80,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 30,
+    "title": "BA Film & TV Production",
+    "institution": "University of York",
+    "country": "UK",
+    "city": "York",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "television",
+      "directing",
+      "cinematography",
+      "editing"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 23700,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 10,
+    "entryReqs": "ABB. BTEC DDM. Access accepted.",
+    "careerPaths": [
+      "Film Director",
+      "TV Producer",
+      "Editor"
+    ],
+    "avgSalary": "£22k-£45k",
+    "employability": 70,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 31,
+    "title": "Filmmaking Specialization (Free)",
+    "institution": "Michigan State (Coursera)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "filmmaking",
+      "screenwriting",
+      "directing",
+      "documentary"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "6 months",
+    "ranking": 0,
+    "entryReqs": "None. Free to audit. Financial aid available.",
+    "careerPaths": [
+      "Indie Filmmaker",
+      "Content Creator"
+    ],
+    "avgSalary": "$25k-$50k",
+    "employability": 50,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 32,
+    "title": "Film Production Fundamentals",
+    "institution": "FutureLearn",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "film",
+      "filmmaking",
+      "production",
+      "directing",
+      "editing"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "6 weeks",
+    "ranking": 0,
+    "entryReqs": "None. Free.",
+    "careerPaths": [
+      "Foundation for further study"
+    ],
+    "avgSalary": "N/A",
+    "employability": 20,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 33,
+    "title": "BA Media Studies",
+    "institution": "University of Sussex",
+    "country": "UK",
+    "city": "Brighton",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "film_media",
+    "subjects": [
+      "media studies",
+      "broadcasting",
+      "journalism",
+      "film",
+      "digital media"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 21500,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 15,
+    "entryReqs": "ABB. Access accepted. BTEC DDM.",
+    "careerPaths": [
+      "Journalist",
+      "Media Planner",
+      "PR Executive"
+    ],
+    "avgSalary": "£22k-£38k",
+    "employability": 72,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 34,
+    "title": "MA Creative Writing",
+    "institution": "University of East Anglia",
+    "country": "UK",
+    "city": "Norwich",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "creative writing",
+      "fiction",
+      "poetry",
+      "screenwriting",
+      "publishing",
+      "playwriting"
+    ],
+    "feeHome": 11100,
+    "feeIntl": 21700,
+    "livingCost": 10000,
+    "duration": "1 year",
+    "ranking": 1,
+    "entryReqs": "2:1 + writing portfolio. Professional writers without degrees considered on portfolio.",
+    "careerPaths": [
+      "Author",
+      "Screenwriter",
+      "Editor",
+      "Publisher"
+    ],
+    "avgSalary": "£22k-£45k",
+    "employability": 72,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 35,
+    "title": "BA English Literature",
+    "institution": "University of Oxford",
+    "country": "UK",
+    "city": "Oxford",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "english literature",
+      "literature",
+      "creative writing",
+      "humanities"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 29700,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "AAA. Mature: Access to HE Diploma accepted.",
+    "careerPaths": [
+      "Teacher",
+      "Journalist",
+      "Editor",
+      "Publishing"
+    ],
+    "avgSalary": "£25k-£40k",
+    "employability": 78,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 36,
+    "title": "BA English & Creative Writing",
+    "institution": "University of Warwick",
+    "country": "UK",
+    "city": "Coventry",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "creative writing",
+      "english literature",
+      "fiction",
+      "poetry"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 22280,
+    "livingCost": 10500,
+    "duration": "3 years",
+    "ranking": 5,
+    "entryReqs": "AAB. Access accepted.",
+    "careerPaths": [
+      "Author",
+      "Journalist",
+      "Editor",
+      "Teacher"
+    ],
+    "avgSalary": "£23k-£38k",
+    "employability": 75,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 37,
+    "title": "MFA Creative Writing",
+    "institution": "Columbia University",
+    "country": "USA",
+    "city": "New York",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "creative writing",
+      "fiction",
+      "poetry",
+      "literary studies"
+    ],
+    "feeHome": 35000,
+    "feeIntl": 35000,
+    "livingCost": 25000,
+    "duration": "2 years",
+    "ranking": 1,
+    "entryReqs": "Bachelor's + writing sample.",
+    "careerPaths": [
+      "Author",
+      "Poet",
+      "Professor",
+      "Editor"
+    ],
+    "avgSalary": "$30k-$60k",
+    "employability": 60,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 38,
+    "title": "BA Journalism",
+    "institution": "City, University of London",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "journalism",
+      "media",
+      "writing",
+      "broadcasting",
+      "editing"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 21000,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "ABB. Mature: Access or professional experience.",
+    "careerPaths": [
+      "Journalist",
+      "Reporter",
+      "Editor"
+    ],
+    "avgSalary": "£22k-£45k",
+    "employability": 75,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 39,
+    "title": "BA Creative Writing",
+    "institution": "University of Gothenburg",
+    "country": "Sweden",
+    "city": "Gothenburg",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "creative writing",
+      "fiction",
+      "poetry",
+      "literature"
+    ],
+    "feeHome": 0,
+    "feeIntl": 13500,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 0,
+    "entryReqs": "Upper secondary or equivalent. EU/EEA: FREE tuition.",
+    "careerPaths": [
+      "Author",
+      "Editor",
+      "Publisher"
+    ],
+    "avgSalary": "SEK 280k-450k",
+    "employability": 60,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 40,
+    "title": "Creative Writing Specialization (Free)",
+    "institution": "Wesleyan (Coursera)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "creative_writing",
+    "subjects": [
+      "creative writing",
+      "fiction",
+      "poetry",
+      "memoir"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "6 months",
+    "ranking": 0,
+    "entryReqs": "None. Free to audit.",
+    "careerPaths": [
+      "Writer",
+      "Blogger"
+    ],
+    "avgSalary": "N/A",
+    "employability": 40,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 41,
+    "title": "BFA Visual Arts",
+    "institution": "RISD",
+    "country": "USA",
+    "city": "Providence",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "visual_arts",
+    "subjects": [
+      "fine art",
+      "painting",
+      "sculpture",
+      "visual arts",
+      "photography"
+    ],
+    "feeHome": 32500,
+    "feeIntl": 32500,
+    "livingCost": 15000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio.",
+    "careerPaths": [
+      "Artist",
+      "Gallery Curator",
+      "Illustrator"
+    ],
+    "avgSalary": "$28k-$55k",
+    "employability": 62,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 42,
+    "title": "BA Fine Art",
+    "institution": "Central Saint Martins (UAL)",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "visual_arts",
+    "subjects": [
+      "fine art",
+      "painting",
+      "sculpture",
+      "contemporary art",
+      "art"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24500,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Foundation + portfolio. Mature: portfolio-led, no upper age limit.",
+    "careerPaths": [
+      "Artist",
+      "Curator",
+      "Art Teacher"
+    ],
+    "avgSalary": "£20k-£45k",
+    "employability": 55,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 43,
+    "title": "BA Fine Art",
+    "institution": "Gerrit Rietveld Academie",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "visual_arts",
+    "subjects": [
+      "fine art",
+      "contemporary art",
+      "visual arts",
+      "painting",
+      "sculpture"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 11160,
+    "livingCost": 14000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio + assignment. EU/EEA: statutory fee. All ages.",
+    "careerPaths": [
+      "Artist",
+      "Curator",
+      "Gallery Director"
+    ],
+    "avgSalary": "€22k-€40k",
+    "employability": 50,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 44,
+    "title": "MA Fine Art",
+    "institution": "Royal College of Art",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "visual_arts",
+    "subjects": [
+      "fine art",
+      "contemporary art",
+      "sculpture",
+      "painting",
+      "art"
+    ],
+    "feeHome": 15800,
+    "feeIntl": 37000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio + interview. No min degree classification — artistic merit.",
+    "careerPaths": [
+      "Artist",
+      "Lecturer",
+      "Curator"
+    ],
+    "avgSalary": "£22k-£50k",
+    "employability": 50,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 45,
+    "title": "BA Illustration",
+    "institution": "Falmouth University",
+    "country": "UK",
+    "city": "Falmouth",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "visual_arts",
+    "subjects": [
+      "illustration",
+      "art",
+      "visual arts",
+      "drawing",
+      "storytelling"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 18000,
+    "livingCost": 9000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio. Foundation year available. Access accepted.",
+    "careerPaths": [
+      "Illustrator",
+      "Graphic Novelist",
+      "Concept Artist"
+    ],
+    "avgSalary": "£22k-£40k",
+    "employability": 70,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 46,
+    "title": "Modern Art & Ideas (Free)",
+    "institution": "MoMA (Coursera)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "visual_arts",
+    "subjects": [
+      "art",
+      "contemporary art",
+      "visual arts",
+      "art history"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "4 weeks",
+    "ranking": 0,
+    "entryReqs": "None. Free to audit.",
+    "careerPaths": [
+      "Foundation / appreciation"
+    ],
+    "avgSalary": "N/A",
+    "employability": 15,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 47,
+    "title": "BA Graphic Design",
+    "institution": "Central Saint Martins (UAL)",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "design",
+    "subjects": [
+      "graphic design",
+      "design",
+      "typography",
+      "branding"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24500,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Foundation + portfolio. Mature: portfolio-led.",
+    "careerPaths": [
+      "Graphic Designer",
+      "Art Director"
+    ],
+    "avgSalary": "£24k-£50k",
+    "employability": 80,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 48,
+    "title": "BA Industrial Design",
+    "institution": "Eindhoven University of Technology",
+    "country": "Netherlands",
+    "city": "Eindhoven",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "design",
+    "subjects": [
+      "industrial design",
+      "product design",
+      "design",
+      "technology"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 14100,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Maths + Physics. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "Product Designer",
+      "UX Designer",
+      "Design Engineer"
+    ],
+    "avgSalary": "€30k-€55k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 49,
+    "title": "BDes Communication Design",
+    "institution": "Aalto University",
+    "country": "Finland",
+    "city": "Helsinki",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "design",
+    "subjects": [
+      "graphic design",
+      "design",
+      "visual communication",
+      "branding"
+    ],
+    "feeHome": 0,
+    "feeIntl": 15000,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 6,
+    "entryReqs": "Portfolio + exam. EU/EEA: FREE tuition.",
+    "careerPaths": [
+      "Graphic Designer",
+      "Brand Strategist"
+    ],
+    "avgSalary": "€30k-€50k",
+    "employability": 80,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 50,
+    "title": "BSc Product Design",
+    "institution": "Loughborough University",
+    "country": "UK",
+    "city": "Loughborough",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "design",
+    "subjects": [
+      "product design",
+      "industrial design",
+      "design",
+      "engineering"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 27250,
+    "livingCost": 9500,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "AAB. BTEC DDM. Foundation year for non-standard qualifications. Mature considered.",
+    "careerPaths": [
+      "Product Designer",
+      "Industrial Designer"
+    ],
+    "avgSalary": "£26k-£50k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 51,
+    "title": "Google UX Design Certificate",
+    "institution": "Coursera / Google",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "design",
+    "subjects": [
+      "UX design",
+      "user research",
+      "prototyping",
+      "design thinking",
+      "UI"
+    ],
+    "feeHome": 300,
+    "feeIntl": 300,
+    "livingCost": 0,
+    "duration": "6 months",
+    "ranking": 0,
+    "entryReqs": "None. No experience required. Financial aid available.",
+    "careerPaths": [
+      "UX Designer",
+      "UI Designer",
+      "Product Designer"
+    ],
+    "avgSalary": "£30k-£55k",
+    "employability": 85,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 52,
+    "title": "BA Fashion Design",
+    "institution": "London College of Fashion (UAL)",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "design",
+    "subjects": [
+      "fashion design",
+      "design",
+      "textiles",
+      "fashion",
+      "art"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24500,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Foundation + portfolio.",
+    "careerPaths": [
+      "Fashion Designer",
+      "Stylist",
+      "Buyer"
+    ],
+    "avgSalary": "£22k-£50k",
+    "employability": 65,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 53,
+    "title": "MDes Interaction Design",
+    "institution": "Royal College of Art",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "design",
+    "subjects": [
+      "interaction design",
+      "UX design",
+      "design",
+      "service design"
+    ],
+    "feeHome": 15800,
+    "feeIntl": 37000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 1,
+    "entryReqs": "Portfolio + interview.",
+    "careerPaths": [
+      "Interaction Designer",
+      "UX Lead",
+      "Design Director"
+    ],
+    "avgSalary": "£35k-£70k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 54,
+    "title": "BSc Computer Science",
+    "institution": "University of Edinburgh",
+    "country": "UK",
+    "city": "Edinburgh",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "programming",
+      "software engineering",
+      "AI",
+      "machine learning"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 34800,
+    "livingCost": 12000,
+    "duration": "4 years",
+    "ranking": 15,
+    "entryReqs": "ABB-AAA. Access accepted. Mature with professional experience considered.",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Scientist"
+    ],
+    "avgSalary": "£35k-£55k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 55,
+    "title": "BSc Computer Science",
+    "institution": "TU Munich (TUM)",
+    "country": "Germany",
+    "city": "Munich",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "programming",
+      "algorithms",
+      "AI",
+      "systems"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 37,
+    "entryReqs": "HZB or equivalent. No tuition fees for ANY nationality (~€144/semester).",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Scientist",
+      "Research Scientist"
+    ],
+    "avgSalary": "€45k-€70k",
+    "employability": 93,
+    "online": false,
+    "free": true
+  },
+  {
+    "id": 56,
+    "title": "BSc Computer Science",
+    "institution": "ETH Zurich",
+    "country": "Switzerland",
+    "city": "Zurich",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "algorithms",
+      "systems",
+      "programming",
+      "mathematics"
+    ],
+    "feeHome": 1460,
+    "feeIntl": 1460,
+    "livingCost": 24000,
+    "duration": "3 years",
+    "ranking": 7,
+    "entryReqs": "Swiss Matura or entrance exam. Same fees ALL nationalities.",
+    "careerPaths": [
+      "Software Engineer",
+      "Research Scientist"
+    ],
+    "avgSalary": "CHF 90k-130k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 57,
+    "title": "BSc Informatik",
+    "institution": "EPFL Lausanne",
+    "country": "Switzerland",
+    "city": "Lausanne",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "algorithms",
+      "programming",
+      "mathematics",
+      "AI"
+    ],
+    "feeHome": 1266,
+    "feeIntl": 1266,
+    "livingCost": 20000,
+    "duration": "3 years",
+    "ranking": 14,
+    "entryReqs": "Swiss Matura or equivalent. Same fees for all.",
+    "careerPaths": [
+      "Software Engineer",
+      "Startup Founder"
+    ],
+    "avgSalary": "CHF 85k-125k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 58,
+    "title": "MSc AI",
+    "institution": "University of Edinburgh",
+    "country": "UK",
+    "city": "Edinburgh",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "AI",
+      "machine learning",
+      "NLP",
+      "computer science",
+      "robotics"
+    ],
+    "feeHome": 16200,
+    "feeIntl": 37500,
+    "livingCost": 12000,
+    "duration": "1 year",
+    "ranking": 15,
+    "entryReqs": "2:1 in CS/Maths. Professional experience may be considered.",
+    "careerPaths": [
+      "AI Engineer",
+      "ML Researcher"
+    ],
+    "avgSalary": "£50k-£90k",
+    "employability": 96,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 59,
+    "title": "MSc Data Science",
+    "institution": "Imperial College London",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "data science",
+      "statistics",
+      "machine learning",
+      "programming"
+    ],
+    "feeHome": 18500,
+    "feeIntl": 38200,
+    "livingCost": 18000,
+    "duration": "1 year",
+    "ranking": 6,
+    "entryReqs": "2:1 in quantitative subject.",
+    "careerPaths": [
+      "Data Scientist",
+      "ML Engineer"
+    ],
+    "avgSalary": "£45k-£75k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 60,
+    "title": "BSc Computer Science",
+    "institution": "University of Toronto",
+    "country": "Canada",
+    "city": "Toronto",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "AI",
+      "software engineering",
+      "programming"
+    ],
+    "feeHome": 6100,
+    "feeIntl": 57020,
+    "livingCost": 16000,
+    "duration": "4 years",
+    "ranking": 21,
+    "entryReqs": "87%+ average.",
+    "careerPaths": [
+      "Software Engineer",
+      "AI Researcher",
+      "CTO"
+    ],
+    "avgSalary": "CAD 65k-110k",
+    "employability": 93,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 61,
+    "title": "CS50 (Free)",
+    "institution": "Harvard (edX)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "programming",
+      "algorithms",
+      "web development"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "12 weeks",
+    "ranking": 1,
+    "entryReqs": "None. Completely free. Paid certificate optional ($149).",
+    "careerPaths": [
+      "Software Developer",
+      "Web Developer"
+    ],
+    "avgSalary": "£25k-£45k",
+    "employability": 70,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 62,
+    "title": "Google Data Analytics Certificate",
+    "institution": "Coursera / Google",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "data analytics",
+      "SQL",
+      "data visualisation",
+      "statistics"
+    ],
+    "feeHome": 300,
+    "feeIntl": 300,
+    "livingCost": 0,
+    "duration": "6 months",
+    "ranking": 0,
+    "entryReqs": "None. Financial aid available.",
+    "careerPaths": [
+      "Data Analyst",
+      "Business Analyst"
+    ],
+    "avgSalary": "£28k-£45k",
+    "employability": 80,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 63,
+    "title": "Full Stack Web Dev (Free)",
+    "institution": "The Odin Project",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "web development",
+      "programming",
+      "software engineering"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "6-12 months",
+    "ranking": 0,
+    "entryReqs": "None. Completely free, open source.",
+    "careerPaths": [
+      "Web Developer",
+      "Full Stack Engineer"
+    ],
+    "avgSalary": "£30k-£55k",
+    "employability": 75,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 64,
+    "title": "BEng Mechanical Engineering",
+    "institution": "ETH Zurich",
+    "country": "Switzerland",
+    "city": "Zurich",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "engineering",
+      "mechanical",
+      "physics",
+      "mathematics"
+    ],
+    "feeHome": 1460,
+    "feeIntl": 1460,
+    "livingCost": 24000,
+    "duration": "3 years",
+    "ranking": 7,
+    "entryReqs": "Swiss Matura or entrance exam. Same fees all.",
+    "careerPaths": [
+      "Mechanical Engineer",
+      "Product Designer"
+    ],
+    "avgSalary": "CHF 80k-120k",
+    "employability": 94,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 65,
+    "title": "BEng Civil Engineering",
+    "institution": "Politecnico di Milano",
+    "country": "Italy",
+    "city": "Milan",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "engineering",
+      "civil",
+      "structural",
+      "construction"
+    ],
+    "feeHome": 3900,
+    "feeIntl": 3900,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 10,
+    "entryReqs": "Diploma + entrance test. Same fees EU and non-EU.",
+    "careerPaths": [
+      "Civil Engineer",
+      "Structural Engineer"
+    ],
+    "avgSalary": "€30k-€55k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 66,
+    "title": "BSc Mechanical Engineering",
+    "institution": "TU Delft",
+    "country": "Netherlands",
+    "city": "Delft",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "engineering",
+      "mechanical",
+      "physics",
+      "robotics"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 15600,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 10,
+    "entryReqs": "Maths + Physics. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "Mechanical Engineer",
+      "Robotics Engineer"
+    ],
+    "avgSalary": "€35k-€60k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 67,
+    "title": "MSc Sustainable Energy",
+    "institution": "DTU Denmark",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "energy",
+      "sustainability",
+      "engineering",
+      "renewable energy"
+    ],
+    "feeHome": 0,
+    "feeIntl": 15000,
+    "livingCost": 14000,
+    "duration": "2 years",
+    "ranking": 35,
+    "entryReqs": "BSc Engineering/Science. EU/EEA: FREE.",
+    "careerPaths": [
+      "Energy Consultant",
+      "Renewable Energy Engineer"
+    ],
+    "avgSalary": "DKK 450k-650k",
+    "employability": 91,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 68,
+    "title": "MEng Electrical Engineering",
+    "institution": "Imperial College London",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "engineering",
+      "electrical",
+      "electronics",
+      "physics"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 38200,
+    "livingCost": 18000,
+    "duration": "4 years",
+    "ranking": 6,
+    "entryReqs": "A*AA. Mature: Access to Engineering.",
+    "careerPaths": [
+      "Electrical Engineer",
+      "Electronics Designer"
+    ],
+    "avgSalary": "£32k-£55k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 69,
+    "title": "Engineering MicroMasters (Online)",
+    "institution": "edX / Various",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "engineering",
+      "physics",
+      "mathematics",
+      "systems"
+    ],
+    "feeHome": 800,
+    "feeIntl": 800,
+    "livingCost": 0,
+    "duration": "6-12 months",
+    "ranking": 0,
+    "entryReqs": "None. Can count towards Master's at some universities.",
+    "careerPaths": [
+      "Foundation for degree"
+    ],
+    "avgSalary": "Varies",
+    "employability": 50,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 70,
+    "title": "BSc Business",
+    "institution": "University of St Andrews",
+    "country": "Scotland",
+    "city": "St Andrews",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "economics",
+      "finance",
+      "marketing"
+    ],
+    "feeHome": 1820,
+    "feeIntl": 28350,
+    "livingCost": 11000,
+    "duration": "4 years",
+    "ranking": 3,
+    "entryReqs": "AAB. Scottish: FREE via SAAS.",
+    "careerPaths": [
+      "Consultant",
+      "Marketing Manager"
+    ],
+    "avgSalary": "£30k-£55k",
+    "employability": 88,
+    "online": false,
+    "free": false,
+    "feeScotland": 9250
+  },
+  {
+    "id": 71,
+    "title": "MBA",
+    "institution": "INSEAD",
+    "country": "France",
+    "city": "Fontainebleau",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "leadership",
+      "strategy",
+      "finance"
+    ],
+    "feeHome": 95000,
+    "feeIntl": 95000,
+    "livingCost": 20000,
+    "duration": "1 year",
+    "ranking": 2,
+    "entryReqs": "Bachelor's + GMAT + work experience.",
+    "careerPaths": [
+      "CEO",
+      "Strategy Consultant"
+    ],
+    "avgSalary": "£80k-£150k+",
+    "employability": 97,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 72,
+    "title": "BSc Economics",
+    "institution": "LSE",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "economics",
+      "finance",
+      "mathematics",
+      "statistics"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 25200,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "A*AA. Mature: Access accepted.",
+    "careerPaths": [
+      "Economist",
+      "Financial Analyst"
+    ],
+    "avgSalary": "£35k-£70k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 73,
+    "title": "BSc Economics",
+    "institution": "University of Mannheim",
+    "country": "Germany",
+    "city": "Mannheim",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "economics",
+      "business",
+      "finance",
+      "mathematics"
+    ],
+    "feeHome": 0,
+    "feeIntl": 1500,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Abitur or equivalent. No fees EU/EEA. Non-EU: €1,500/sem.",
+    "careerPaths": [
+      "Economist",
+      "Business Analyst"
+    ],
+    "avgSalary": "€40k-€65k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 74,
+    "title": "BSc International Business",
+    "institution": "Copenhagen Business School",
+    "country": "Denmark",
+    "city": "Copenhagen",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "international business",
+      "economics",
+      "management"
+    ],
+    "feeHome": 0,
+    "feeIntl": 15000,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "Danish secondary or equivalent. EU/EEA: FREE.",
+    "careerPaths": [
+      "International Business Manager"
+    ],
+    "avgSalary": "DKK 400k-600k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 75,
+    "title": "Digital Marketing (Online)",
+    "institution": "Uni of Illinois (Coursera)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "business",
+    "subjects": [
+      "marketing",
+      "digital marketing",
+      "SEO",
+      "social media"
+    ],
+    "feeHome": 400,
+    "feeIntl": 400,
+    "livingCost": 0,
+    "duration": "8 months",
+    "ranking": 0,
+    "entryReqs": "None. Financial aid available.",
+    "careerPaths": [
+      "Digital Marketing Manager"
+    ],
+    "avgSalary": "£28k-£50k",
+    "employability": 82,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 76,
+    "title": "BBA International Business",
+    "institution": "HEC Montréal",
+    "country": "Canada",
+    "city": "Montreal",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "international business",
+      "management",
+      "finance"
+    ],
+    "feeHome": 4500,
+    "feeIntl": 22000,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "DEC or equivalent.",
+    "careerPaths": [
+      "Business Manager",
+      "Consultant"
+    ],
+    "avgSalary": "CAD 55k-85k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 77,
+    "title": "BSc Environmental Science",
+    "institution": "University of Melbourne",
+    "country": "Australia",
+    "city": "Melbourne",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "environmental science",
+      "ecology",
+      "sustainability",
+      "biology"
+    ],
+    "feeHome": 9500,
+    "feeIntl": 42000,
+    "livingCost": 21000,
+    "duration": "3 years",
+    "ranking": 14,
+    "entryReqs": "ATAR 80+.",
+    "careerPaths": [
+      "Environmental Consultant",
+      "Conservation Officer"
+    ],
+    "avgSalary": "AUD 60k-90k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 78,
+    "title": "BSc Mathematics",
+    "institution": "University of Warwick",
+    "country": "UK",
+    "city": "Coventry",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "mathematics",
+      "statistics",
+      "pure maths",
+      "applied maths"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 29000,
+    "livingCost": 10500,
+    "duration": "3 years",
+    "ranking": 5,
+    "entryReqs": "A*A*A inc Maths + FM.",
+    "careerPaths": [
+      "Actuary",
+      "Quant Analyst"
+    ],
+    "avgSalary": "£35k-£70k",
+    "employability": 91,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 79,
+    "title": "BSc Physics",
+    "institution": "LMU Munich",
+    "country": "Germany",
+    "city": "Munich",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "physics",
+      "mathematics",
+      "quantum mechanics",
+      "astrophysics"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 32,
+    "entryReqs": "HZB or equivalent. No tuition fees (any nationality).",
+    "careerPaths": [
+      "Physicist",
+      "Research Scientist"
+    ],
+    "avgSalary": "€40k-€65k",
+    "employability": 88,
+    "online": false,
+    "free": true
+  },
+  {
+    "id": 80,
+    "title": "BSc Chemistry",
+    "institution": "University of Oxford",
+    "country": "UK",
+    "city": "Oxford",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "chemistry",
+      "organic chemistry",
+      "biochemistry"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 39740,
+    "livingCost": 14000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "A*A*A.",
+    "careerPaths": [
+      "Chemist",
+      "Pharmaceutical Scientist"
+    ],
+    "avgSalary": "£28k-£50k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 81,
+    "title": "BSc Marine Biology",
+    "institution": "University of Southampton",
+    "country": "UK",
+    "city": "Southampton",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "marine biology",
+      "biology",
+      "ecology",
+      "oceanography"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24500,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "AAB inc Biology. Access accepted. Mature welcome.",
+    "careerPaths": [
+      "Marine Biologist",
+      "Ecologist"
+    ],
+    "avgSalary": "£24k-£40k",
+    "employability": 75,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 82,
+    "title": "BSc Biology",
+    "institution": "Uppsala University",
+    "country": "Sweden",
+    "city": "Uppsala",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "biology",
+      "genetics",
+      "ecology",
+      "evolution"
+    ],
+    "feeHome": 0,
+    "feeIntl": 14000,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 77,
+    "entryReqs": "Upper secondary. EU/EEA: FREE.",
+    "careerPaths": [
+      "Biologist",
+      "Researcher"
+    ],
+    "avgSalary": "SEK 300k-450k",
+    "employability": 78,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 83,
+    "title": "BSc Biomedical Sciences",
+    "institution": "King's College London",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "biomedical science",
+      "biology",
+      "chemistry",
+      "anatomy"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 29100,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 23,
+    "entryReqs": "AAB inc Bio + Chem. Access accepted.",
+    "careerPaths": [
+      "Biomedical Scientist",
+      "Lab Manager"
+    ],
+    "avgSalary": "£28k-£55k",
+    "employability": 87,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 84,
+    "title": "Science Fundamentals (Free)",
+    "institution": "edX / Khan Academy",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "biology",
+      "chemistry",
+      "physics",
+      "mathematics"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "Self-paced",
+    "ranking": 0,
+    "entryReqs": "None. Free.",
+    "careerPaths": [
+      "Foundation for further study"
+    ],
+    "avgSalary": "N/A",
+    "employability": 30,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 85,
+    "title": "BSc Nursing",
+    "institution": "University of Manchester",
+    "country": "UK",
+    "city": "Manchester",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "medicine_health",
+    "subjects": [
+      "nursing",
+      "healthcare",
+      "biology",
+      "patient care"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 28000,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 27,
+    "entryReqs": "BBB inc a science. Access accepted. Mature strongly encouraged — NHS values life experience.",
+    "careerPaths": [
+      "Registered Nurse",
+      "Midwife"
+    ],
+    "avgSalary": "£25k-£45k",
+    "employability": 98,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 86,
+    "title": "MBChB Medicine",
+    "institution": "University of Edinburgh",
+    "country": "UK",
+    "city": "Edinburgh",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "medicine_health",
+    "subjects": [
+      "medicine",
+      "clinical",
+      "anatomy",
+      "surgery"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 34800,
+    "livingCost": 12000,
+    "duration": "6 years",
+    "ranking": 15,
+    "entryReqs": "AAA + UCAT. Graduate entry (4yr) available for mature students with any degree.",
+    "careerPaths": [
+      "Doctor",
+      "Surgeon",
+      "GP"
+    ],
+    "avgSalary": "£30k-£100k+",
+    "employability": 99,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 87,
+    "title": "BSc Psychology",
+    "institution": "University of Amsterdam",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "social_sciences",
+    "subjects": [
+      "psychology",
+      "neuroscience",
+      "research methods",
+      "behavioural science"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 12114,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 18,
+    "entryReqs": "IB 34+ or equivalent. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "Psychologist",
+      "Counsellor",
+      "Researcher"
+    ],
+    "avgSalary": "€30k-€55k",
+    "employability": 82,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 88,
+    "title": "MSc Public Health",
+    "institution": "LSHTM",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "medicine_health",
+    "subjects": [
+      "public health",
+      "epidemiology",
+      "global health"
+    ],
+    "feeHome": 12200,
+    "feeIntl": 26750,
+    "livingCost": 18000,
+    "duration": "1 year",
+    "ranking": 3,
+    "entryReqs": "2:1 + experience. Professional experience may substitute for degree.",
+    "careerPaths": [
+      "Public Health Consultant",
+      "Epidemiologist"
+    ],
+    "avgSalary": "£35k-£60k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 89,
+    "title": "Introduction to Psychology (Free)",
+    "institution": "Yale (Coursera)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "social_sciences",
+    "subjects": [
+      "psychology",
+      "neuroscience",
+      "behavioural science"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "6 weeks",
+    "ranking": 1,
+    "entryReqs": "None. Free to audit.",
+    "careerPaths": [
+      "Foundation for degree"
+    ],
+    "avgSalary": "N/A",
+    "employability": 20,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 90,
+    "title": "LLB Law",
+    "institution": "UCL",
+    "country": "UK",
+    "city": "London",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "law",
+    "subjects": [
+      "law",
+      "criminal law",
+      "constitutional law",
+      "human rights"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 28500,
+    "livingCost": 18000,
+    "duration": "3 years",
+    "ranking": 8,
+    "entryReqs": "A*AA. Access accepted. Mature: CILEX route also available.",
+    "careerPaths": [
+      "Solicitor",
+      "Barrister"
+    ],
+    "avgSalary": "£30k-£100k+",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 91,
+    "title": "LLB Law (English-taught)",
+    "institution": "Maastricht University",
+    "country": "Netherlands",
+    "city": "Maastricht",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "law",
+    "subjects": [
+      "law",
+      "EU law",
+      "international law",
+      "human rights"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 11160,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 0,
+    "entryReqs": "Diploma or equivalent. Problem-based learning. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "EU Lawyer",
+      "International Legal Advisor"
+    ],
+    "avgSalary": "€35k-€65k",
+    "employability": 80,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 92,
+    "title": "Criminology & Law",
+    "institution": "University of Sheffield",
+    "country": "UK",
+    "city": "Sheffield",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "law",
+    "subjects": [
+      "law",
+      "criminology",
+      "criminal justice",
+      "sociology"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 21450,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 12,
+    "entryReqs": "AAB. BTEC DDM. Access accepted. Mature welcome.",
+    "careerPaths": [
+      "Solicitor",
+      "Probation Officer"
+    ],
+    "avgSalary": "£25k-£50k",
+    "employability": 82,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 93,
+    "title": "LLB Law",
+    "institution": "University of Amsterdam",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "law",
+    "subjects": [
+      "law",
+      "international law",
+      "EU law",
+      "human rights"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 11160,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 50,
+    "entryReqs": "Diploma or equivalent. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "International Lawyer",
+      "Legal Advisor"
+    ],
+    "avgSalary": "€35k-€65k",
+    "employability": 82,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 94,
+    "title": "Understanding Law (Free Online)",
+    "institution": "FutureLearn",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "law",
+    "subjects": [
+      "law",
+      "legal studies",
+      "human rights",
+      "criminal law"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "8 weeks",
+    "ranking": 0,
+    "entryReqs": "None. Free.",
+    "careerPaths": [
+      "Foundation for LLB"
+    ],
+    "avgSalary": "N/A",
+    "employability": 15,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 95,
+    "title": "BA History",
+    "institution": "University of Glasgow",
+    "country": "Scotland",
+    "city": "Glasgow",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "humanities",
+    "subjects": [
+      "history",
+      "politics",
+      "social science",
+      "research"
+    ],
+    "feeHome": 1820,
+    "feeIntl": 22000,
+    "livingCost": 10500,
+    "duration": "4 years",
+    "ranking": 76,
+    "entryReqs": "ABB. Access accepted. Scottish: FREE via SAAS.",
+    "careerPaths": [
+      "Historian",
+      "Museum Curator",
+      "Teacher"
+    ],
+    "avgSalary": "£24k-£40k",
+    "employability": 75,
+    "online": false,
+    "free": false,
+    "feeScotland": 9250
+  },
+  {
+    "id": 96,
+    "title": "BA International Relations",
+    "institution": "Sciences Po Paris",
+    "country": "France",
+    "city": "Paris",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "social_sciences",
+    "subjects": [
+      "international relations",
+      "politics",
+      "economics",
+      "diplomacy"
+    ],
+    "feeHome": 0,
+    "feeIntl": 13190,
+    "livingCost": 16000,
+    "duration": "3 years",
+    "ranking": 3,
+    "entryReqs": "Baccalauréat + exam. Means-tested fees for French/EU.",
+    "careerPaths": [
+      "Diplomat",
+      "Policy Analyst"
+    ],
+    "avgSalary": "€35k-€70k",
+    "employability": 84,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 97,
+    "title": "BA PPE",
+    "institution": "University of Oxford",
+    "country": "UK",
+    "city": "Oxford",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "social_sciences",
+    "subjects": [
+      "philosophy",
+      "politics",
+      "economics"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 29700,
+    "livingCost": 14000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "AAA.",
+    "careerPaths": [
+      "Political Adviser",
+      "Civil Servant",
+      "Consultant"
+    ],
+    "avgSalary": "£30k-£65k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 98,
+    "title": "BA Philosophy",
+    "institution": "Humboldt University Berlin",
+    "country": "Germany",
+    "city": "Berlin",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "humanities",
+    "subjects": [
+      "philosophy",
+      "ethics",
+      "logic",
+      "political philosophy"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 50,
+    "entryReqs": "HZB or equivalent. No tuition fees (any nationality).",
+    "careerPaths": [
+      "Philosopher",
+      "Policy Analyst",
+      "Teacher"
+    ],
+    "avgSalary": "€30k-€50k",
+    "employability": 68,
+    "online": false,
+    "free": true
+  },
+  {
+    "id": 99,
+    "title": "BA Liberal Arts & Sciences",
+    "institution": "University College Utrecht",
+    "country": "Netherlands",
+    "city": "Utrecht",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "humanities",
+    "subjects": [
+      "humanities",
+      "social science",
+      "science",
+      "philosophy",
+      "politics"
+    ],
+    "feeHome": 2314,
+    "feeIntl": 11160,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 0,
+    "entryReqs": "IB 32+ or equivalent. EU/EEA: statutory fee.",
+    "careerPaths": [
+      "Consultant",
+      "Civil Servant",
+      "Various"
+    ],
+    "avgSalary": "€30k-€50k",
+    "employability": 78,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 100,
+    "title": "BA Archaeology",
+    "institution": "Durham University",
+    "country": "UK",
+    "city": "Durham",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "humanities",
+    "subjects": [
+      "archaeology",
+      "history",
+      "anthropology",
+      "excavation"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 24500,
+    "livingCost": 10000,
+    "duration": "3 years",
+    "ranking": 3,
+    "entryReqs": "AAB. Access accepted. Mature welcome — fieldwork experience valued.",
+    "careerPaths": [
+      "Archaeologist",
+      "Museum Curator",
+      "Heritage Officer"
+    ],
+    "avgSalary": "£22k-£38k",
+    "employability": 70,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 101,
+    "title": "BA Sociology",
+    "institution": "University of Cambridge",
+    "country": "UK",
+    "city": "Cambridge",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "social_sciences",
+    "subjects": [
+      "sociology",
+      "social science",
+      "research methods"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 25000,
+    "livingCost": 13000,
+    "duration": "3 years",
+    "ranking": 2,
+    "entryReqs": "A*AA. Access accepted.",
+    "careerPaths": [
+      "Social Researcher",
+      "Policy Analyst",
+      "HR"
+    ],
+    "avgSalary": "£24k-£42k",
+    "employability": 78,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 102,
+    "title": "Humanities courses (Free)",
+    "institution": "Khan Academy / MIT OCW",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "humanities",
+    "subjects": [
+      "history",
+      "philosophy",
+      "economics",
+      "humanities"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "Self-paced",
+    "ranking": 0,
+    "entryReqs": "None. Completely free.",
+    "careerPaths": [
+      "Self-improvement"
+    ],
+    "avgSalary": "N/A",
+    "employability": 15,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 103,
+    "title": "BEd Education",
+    "institution": "University of Cambridge",
+    "country": "UK",
+    "city": "Cambridge",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "education",
+    "subjects": [
+      "education",
+      "teaching",
+      "pedagogy",
+      "child development"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 25000,
+    "livingCost": 13000,
+    "duration": "3 years",
+    "ranking": 2,
+    "entryReqs": "A*AA. Access accepted.",
+    "careerPaths": [
+      "Teacher",
+      "Education Consultant"
+    ],
+    "avgSalary": "£25k-£50k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 104,
+    "title": "PGCE Secondary",
+    "institution": "University of Manchester",
+    "country": "UK",
+    "city": "Manchester",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "education",
+    "subjects": [
+      "teaching",
+      "education",
+      "PGCE",
+      "pedagogy"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 20000,
+    "livingCost": 11000,
+    "duration": "1 year",
+    "ranking": 0,
+    "entryReqs": "2:2+ in relevant subject. No upper age limit. Career changers welcome. Salaried School Direct routes also available.",
+    "careerPaths": [
+      "Secondary Teacher"
+    ],
+    "avgSalary": "£25k-£50k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 105,
+    "title": "MA TESOL",
+    "institution": "University of Nottingham",
+    "country": "UK",
+    "city": "Nottingham",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "education",
+    "subjects": [
+      "TESOL",
+      "education",
+      "linguistics"
+    ],
+    "feeHome": 10800,
+    "feeIntl": 22600,
+    "livingCost": 10000,
+    "duration": "1 year",
+    "ranking": 0,
+    "entryReqs": "2:1. Professional teaching experience may substitute.",
+    "careerPaths": [
+      "EFL Teacher",
+      "TESOL Trainer"
+    ],
+    "avgSalary": "£24k-£45k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 106,
+    "title": "TESOL (Free Online)",
+    "institution": "Arizona State (Coursera)",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "education",
+    "subjects": [
+      "TESOL",
+      "teaching",
+      "english"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "6 months",
+    "ranking": 0,
+    "entryReqs": "None. Free to audit.",
+    "careerPaths": [
+      "EFL Teacher"
+    ],
+    "avgSalary": "£18k-£35k",
+    "employability": 70,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 107,
+    "title": "BSc Architecture",
+    "institution": "Politecnico di Milano",
+    "country": "Italy",
+    "city": "Milan",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "architecture",
+    "subjects": [
+      "architecture",
+      "design",
+      "urban planning",
+      "sustainability"
+    ],
+    "feeHome": 3900,
+    "feeIntl": 3900,
+    "livingCost": 12000,
+    "duration": "3 years",
+    "ranking": 10,
+    "entryReqs": "Diploma + entrance test. Same fees EU & non-EU.",
+    "careerPaths": [
+      "Architect",
+      "Urban Planner"
+    ],
+    "avgSalary": "€30k-€60k",
+    "employability": 86,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 108,
+    "title": "BA Architecture",
+    "institution": "University of Bath",
+    "country": "UK",
+    "city": "Bath",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "architecture",
+    "subjects": [
+      "architecture",
+      "design",
+      "structural engineering"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 22000,
+    "livingCost": 11500,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "A*AA. Foundation year available.",
+    "careerPaths": [
+      "Architect",
+      "Urban Designer"
+    ],
+    "avgSalary": "£25k-£50k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 109,
+    "title": "MArch",
+    "institution": "Bartlett (UCL)",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "architecture",
+    "subjects": [
+      "architecture",
+      "design",
+      "digital fabrication"
+    ],
+    "feeHome": 13200,
+    "feeIntl": 34100,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 3,
+    "entryReqs": "2:1 + portfolio + RIBA Part 1.",
+    "careerPaths": [
+      "Architect",
+      "Design Lead"
+    ],
+    "avgSalary": "£32k-£60k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 110,
+    "title": "BSc Sport & Exercise Science",
+    "institution": "Loughborough",
+    "country": "UK",
+    "city": "Loughborough",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sports",
+    "subjects": [
+      "sport science",
+      "exercise science",
+      "physiology"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 27250,
+    "livingCost": 9500,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "AAA.",
+    "careerPaths": [
+      "Sports Scientist",
+      "PE Teacher"
+    ],
+    "avgSalary": "£24k-£40k",
+    "employability": 80,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 111,
+    "title": "BSc Hospitality Management",
+    "institution": "University of Surrey",
+    "country": "UK",
+    "city": "Guildford",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "hospitality_tourism",
+    "subjects": [
+      "hospitality",
+      "hotel management",
+      "tourism",
+      "event management"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 22000,
+    "livingCost": 11000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "ABB. BTEC accepted. Mature: industry experience valued.",
+    "careerPaths": [
+      "Hotel Manager",
+      "Event Manager"
+    ],
+    "avgSalary": "£24k-£45k",
+    "employability": 82,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 112,
+    "title": "BBA Hotel Management",
+    "institution": "EHL Lausanne",
+    "country": "Switzerland",
+    "city": "Lausanne",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "hospitality_tourism",
+    "subjects": [
+      "hospitality",
+      "hotel management",
+      "business",
+      "luxury"
+    ],
+    "feeHome": 42000,
+    "feeIntl": 42000,
+    "livingCost": 18000,
+    "duration": "4 years",
+    "ranking": 1,
+    "entryReqs": "IB or equivalent + interview.",
+    "careerPaths": [
+      "Hotel GM",
+      "Luxury Brand Manager"
+    ],
+    "avgSalary": "CHF 70k-120k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 113,
+    "title": "BSc Agriculture",
+    "institution": "University of Reading",
+    "country": "UK",
+    "city": "Reading",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "agriculture_environment",
+    "subjects": [
+      "agriculture",
+      "farming",
+      "food science",
+      "sustainability"
+    ],
+    "feeHome": 9250,
+    "feeIntl": 23700,
+    "livingCost": 11000,
+    "duration": "3 years",
+    "ranking": 1,
+    "entryReqs": "ABB. BTEC DDM. Mature: relevant work experience considered.",
+    "careerPaths": [
+      "Agricultural Manager",
+      "Agronomist"
+    ],
+    "avgSalary": "£24k-£42k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 114,
+    "title": "MSc Conservation Science",
+    "institution": "Imperial College London",
+    "country": "UK",
+    "city": "London",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "agriculture_environment",
+    "subjects": [
+      "conservation",
+      "ecology",
+      "biodiversity",
+      "sustainability"
+    ],
+    "feeHome": 15200,
+    "feeIntl": 34000,
+    "livingCost": 18000,
+    "duration": "1 year",
+    "ranking": 6,
+    "entryReqs": "2:1 in biological/environmental science.",
+    "careerPaths": [
+      "Conservation Scientist",
+      "Biodiversity Officer"
+    ],
+    "avgSalary": "£28k-£48k",
+    "employability": 80,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 115,
+    "title": "MIT OpenCourseWare (Free)",
+    "institution": "MIT",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "engineering",
+      "computer science",
+      "physics",
+      "mathematics"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "Self-paced",
+    "ranking": 1,
+    "entryReqs": "None. Completely free.",
+    "careerPaths": [
+      "Various"
+    ],
+    "avgSalary": "Varies",
+    "employability": 60,
+    "online": true,
+    "free": true
+  },
+  {
+    "id": 116,
+    "title": "Open University Degrees",
+    "institution": "The Open University",
+    "country": "UK",
+    "city": "Online",
+    "level": "undergraduate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "education",
+    "subjects": [
+      "arts",
+      "science",
+      "technology",
+      "business",
+      "health",
+      "education",
+      "law"
+    ],
+    "feeHome": 6952,
+    "feeIntl": 6952,
+    "livingCost": 0,
+    "duration": "3-6 years",
+    "ranking": 0,
+    "entryReqs": "NO formal qualifications required. Designed for mature students, career changers, and those without A-Levels.",
+    "careerPaths": [
+      "Various"
+    ],
+    "avgSalary": "Varies",
+    "employability": 75,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 117,
+    "title": "FutureLearn Microcredentials",
+    "institution": "FutureLearn / Various",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "education",
+    "subjects": [
+      "business",
+      "healthcare",
+      "technology",
+      "education",
+      "creative arts"
+    ],
+    "feeHome": 600,
+    "feeIntl": 600,
+    "livingCost": 0,
+    "duration": "10-16 weeks",
+    "ranking": 0,
+    "entryReqs": "Varies. Many free.",
+    "careerPaths": [
+      "Various"
+    ],
+    "avgSalary": "Varies",
+    "employability": 65,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 118,
+    "title": "edX MicroMasters",
+    "institution": "edX / Various",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "AI",
+      "data science",
+      "business",
+      "management"
+    ],
+    "feeHome": 800,
+    "feeIntl": 800,
+    "livingCost": 0,
+    "duration": "6-12 months",
+    "ranking": 0,
+    "entryReqs": "Varies. Can count towards Master's.",
+    "careerPaths": [
+      "Various"
+    ],
+    "avgSalary": "Varies",
+    "employability": 65,
+    "online": true,
+    "free": false
+  },
+  {
+    "id": 119,
+    "title": "Khan Academy (Free)",
+    "institution": "Khan Academy",
+    "country": "Online",
+    "city": "Online",
+    "level": "certificate",
+    "mode": [
+      "part-time",
+      "online"
+    ],
+    "domain": "education",
+    "subjects": [
+      "mathematics",
+      "science",
+      "computing",
+      "economics",
+      "humanities"
+    ],
+    "feeHome": 0,
+    "feeIntl": 0,
+    "livingCost": 0,
+    "duration": "Self-paced",
+    "ranking": 0,
+    "entryReqs": "None. Free. All ages.",
+    "careerPaths": [
+      "Self-improvement"
+    ],
+    "avgSalary": "N/A",
+    "employability": 30,
+    "online": true,
+    "free": true
+  }
+]

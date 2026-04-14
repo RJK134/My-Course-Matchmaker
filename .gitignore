@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.env
+*.local
+
+# Python/Django legacy
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Large/generated files
+Draft Images/
+*.bundle
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
