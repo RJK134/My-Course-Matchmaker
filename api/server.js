@@ -6,6 +6,7 @@ require("dotenv").config();
 const coursesRouter = require("./routes/courses");
 const institutionsRouter = require("./routes/institutions");
 const costOfLivingRouter = require("./routes/costOfLiving");
+const adminRouter = require("./routes/admin");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api/courses", coursesRouter);
 app.use("/api/institutions", institutionsRouter);
 app.use("/api/col", costOfLivingRouter);
+app.use("/api/admin", adminRouter);
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", version: "1.0.0" });

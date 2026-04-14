@@ -1,0 +1,21 @@
+{
+  "name": "mcm-scrapers",
+  "version": "1.0.0",
+  "description": "MyCourseMatchmaker course data scrapers",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node index.js",
+    "scrape:mooc": "node index.js --source mooc",
+    "scrape:ucas": "node index.js --source ucas",
+    "scrape:studyportals": "node index.js --source studyportals",
+    "scrape:qs-the": "node index.js --source qs_the",
+    "scrape:numbeo": "node index.js --source numbeo"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "pg": "^8.13.3",
+    "playwright": "^1.49.1",
+    "dotenv": "^16.4.7"
+  }
+}

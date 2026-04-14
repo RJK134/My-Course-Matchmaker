@@ -1,0 +1,80 @@
+{
+  "name": "MCM Weekly Course Scrape",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "triggerAtHour": 2, "triggerAtDay": 0 }] }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/sources?active=true",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "Get Active Sources",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 300]
+    },
+    {
+      "parameters": { "batchSize": 1, "options": {} },
+      "name": "Loop Sources",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/scrape/trigger",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "body": { "source": "={{$json.name}}" }
+      },
+      "name": "Trigger Scraper",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [900, 300]
+    },
+    {
+      "parameters": { "amount": 600, "unit": "seconds" },
+      "name": "Wait 10 min",
+      "type": "n8n-nodes-base.wait",
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/scrape/status/{{$json.runId}}",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "Check Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/scrape/import/{{$json.id}}",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "Import to Staging",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [1560, 300]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": { "main": [[ { "node": "Get Active Sources", "type": "main", "index": 0 } ]] },
+    "Get Active Sources": { "main": [[ { "node": "Loop Sources", "type": "main", "index": 0 } ]] },
+    "Loop Sources": { "main": [[ { "node": "Trigger Scraper", "type": "main", "index": 0 } ]] },
+    "Trigger Scraper": { "main": [[ { "node": "Wait 10 min", "type": "main", "index": 0 } ]] },
+    "Wait 10 min": { "main": [[ { "node": "Check Status", "type": "main", "index": 0 } ]] },
+    "Check Status": { "main": [[ { "node": "Import to Staging", "type": "main", "index": 0 } ]] },
+    "Import to Staging": { "main": [[ { "node": "Loop Sources", "type": "main", "index": 0 } ]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}
