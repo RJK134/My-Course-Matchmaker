@@ -245,6 +245,38 @@ export default function CourseExplorer({ course, profile, allCourses, onBack, on
                 </div>
               </div>
 
+              {/* ENH-002: Fee comparison across nationality tiers */}
+              {(course.feeHome != null || course.feeIntl != null) && course.country !== "Online" && (
+                <div style={{ marginBottom: 24 }}>
+                  <h4 style={{ fontSize: 15, fontWeight: 600, margin: "0 0 12px", fontFamily: "'Trebuchet MS',sans-serif" }}>
+                    Fee Comparison by Nationality
+                  </h4>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+                    {[
+                      { l: "Home / Domestic", v: course.feeHome, active: fs === "home" },
+                      ...(course.feeScotland || course.fS ? [{ l: "Rest-of-UK (Scottish unis)", v: course.feeScotland || course.fS, active: fs === "ruk" }] : []),
+                      { l: "International", v: course.feeIntl, active: fs === "international" },
+                    ].map((tier, i) => (
+                      <div key={i} style={{
+                        padding: 12, borderRadius: 8,
+                        background: tier.active ? `${P.accent}15` : `${P.navy}80`,
+                        border: `1px solid ${tier.active ? P.accent + "40" : P.surfaceLight}`,
+                        textAlign: "center",
+                      }}>
+                        <div style={{ fontSize: 10, color: P.textDim, textTransform: "uppercase", marginBottom: 4 }}>{tier.l}</div>
+                        <div style={{
+                          fontSize: 18, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif",
+                          color: tier.active ? P.accentLight : tier.v === 0 ? P.success : P.textMuted,
+                        }}>
+                          {tier.v === 0 ? "FREE" : tier.v != null ? "£" + tier.v.toLocaleString() : "N/A"}
+                        </div>
+                        {tier.active && <div style={{ fontSize: 9, color: P.accent, marginTop: 2 }}>YOUR RATE</div>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {col ? (
                 <div>
                   <h4

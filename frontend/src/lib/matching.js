@@ -129,8 +129,21 @@ export function calculateMatch(course, profile) {
   else if (!profile.searchOnline && !course.online) prScore += 2;
   else prScore += 0.5;
 
-  return Math.min(
+  const total = Math.min(
     99,
     Math.round(domScore + kwScore + enScore + lvScore + moScore + loScore + prScore)
   );
+
+  return {
+    total,
+    breakdown: {
+      domain: { score: Math.round(domScore), max: 55, label: "Domain match" },
+      keyword: { score: Math.round(kwScore), max: 15, label: "Subject keywords" },
+      interest: { score: Math.round(enScore), max: 8, label: "Interests & skills" },
+      level: { score: Math.round(lvScore), max: 7, label: "Level" },
+      mode: { score: Math.round(moScore), max: 5, label: "Study mode" },
+      location: { score: Math.round(loScore), max: 5, label: "Location" },
+      preference: { score: Math.round(prScore * 10) / 10, max: 5, label: "Preferences" },
+    },
+  };
 }
