@@ -24,8 +24,10 @@ export default function Results({ results, profile, onNewSearch, onExplore }) {
     return 0;
   });
 
+  // BUG-004 fix: include tuition-free unis (feeHome=0) not just MOOC free courses
+  const isFreeOrTuitionFree = (c) => c.free || c.feeHome === 0 || c.feeIntl === 0;
   const displayed = showFreeAlts
-    ? sorted.filter((c) => c.free && c.online)
+    ? sorted.filter(isFreeOrTuitionFree)
     : sorted;
 
   return (
@@ -138,13 +140,13 @@ export default function Results({ results, profile, onNewSearch, onExplore }) {
           {[
             { l: "Top", v: `${sorted[0]?.matchPercent || 0}%`, c: P.success },
             {
-              l: "Avg",
+              l: "Avg Match",
               v: `${Math.round(results.reduce((s, r) => s + r.matchPercent, 0) / results.length)}%`,
               c: P.accent,
             },
             {
               l: "Free",
-              v: results.filter((r) => r.free).length,
+              v: results.filter(isFreeOrTuitionFree).length,
               c: P.goldLight,
             },
             {
