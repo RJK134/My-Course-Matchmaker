@@ -104,12 +104,58 @@ export default function Questionnaire({ profile, onUpdate, onGenerate, onBack })
                     marginTop: 8,
                     padding: "6px 12px",
                     borderRadius: 6,
-                    background: `${P.gold}12`,
+                    background: `${P.gold}25`,
+                    border: `1px solid ${P.gold}40`,
                     fontSize: 12,
                     color: P.goldLight,
                   }}
                 >
                   🏴 Scottish: FREE tuition at Scottish universities via SAAS
+                </div>
+              )}
+              {profile.ukNation === "England" && (
+                <div
+                  style={{
+                    marginTop: 8,
+                    padding: "6px 12px",
+                    borderRadius: 6,
+                    background: `${P.accent}15`,
+                    border: `1px solid ${P.accent}30`,
+                    fontSize: 12,
+                    color: P.accentLight,
+                  }}
+                >
+                  🏴󠁧󠁢󠁥󠁮󠁧󠁿 England: £9,250/yr tuition fees. Student Finance England loans available.
+                </div>
+              )}
+              {profile.ukNation === "Wales" && (
+                <div
+                  style={{
+                    marginTop: 8,
+                    padding: "6px 12px",
+                    borderRadius: 6,
+                    background: `${P.accent}15`,
+                    border: `1px solid ${P.accent}30`,
+                    fontSize: 12,
+                    color: P.accentLight,
+                  }}
+                >
+                  🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales: Up to £9,250/yr. Student Finance Wales grants may reduce costs.
+                </div>
+              )}
+              {profile.ukNation === "Northern Ireland" && (
+                <div
+                  style={{
+                    marginTop: 8,
+                    padding: "6px 12px",
+                    borderRadius: 6,
+                    background: `${P.accent}15`,
+                    border: `1px solid ${P.accent}30`,
+                    fontSize: 12,
+                    color: P.accentLight,
+                  }}
+                >
+                  ☘️ Northern Ireland: Up to £9,250/yr. Student Finance NI available.
                 </div>
               )}
             </FormGroup>
@@ -334,9 +380,20 @@ export default function Questionnaire({ profile, onUpdate, onGenerate, onBack })
                 profile.nationality +
                 (profile.ukNation ? ` (${profile.ukNation})` : ""),
             },
+            { l: "Residence", v: profile.residence },
             { l: "Subject", v: profile.subjects },
             { l: "Level", v: profile.level || "Any" },
+            { l: "Mode", v: profile.modes.length ? profile.modes.join(", ") : "Any" },
+            { l: "Interests", v: profile.interests },
+            { l: "Skills", v: profile.skills },
+            { l: "Learning", v: profile.learningStyle },
             { l: "Location", v: profile.locations || "Worldwide" },
+            { l: "Options", v: [
+              profile.searchGlobal && "Worldwide",
+              profile.searchOnline && "Online",
+              profile.searchFree && "Free/low-cost",
+            ].filter(Boolean).join(", ") },
+            { l: "Activities", v: profile.extraCurricular },
           ].map((x, i) => (
             <div
               key={i}

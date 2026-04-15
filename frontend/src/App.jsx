@@ -88,7 +88,14 @@ function AppRoutes() {
     setLoading(true);
     navigate("/results");
     setTimeout(() => {
-      const scored = allCourses.map((c) => ({
+      // BUG-002 fix: Hard-filter by level before scoring (unless "any")
+      let filtered = allCourses;
+      if (profile.level && profile.level !== "any") {
+        filtered = filtered.filter((c) => c.level === profile.level);
+      }
+
+      // Score the filtered set
+      const scored = filtered.map((c) => ({
         ...c,
         matchPercent: calculateMatch(c, profile),
         feeStatus: detFeeStatus(
@@ -99,7 +106,25 @@ function AppRoutes() {
         ),
       }));
       scored.sort((a, b) => b.matchPercent - a.matchPercent);
-      dispatch({ type: "SET_RESULTS", payload: scored.slice(0, 30) });
+
+      // BUG-001 fix: Hard-filter by location (keep worldwide in separate set)
+      let locationFiltered = scored;
+      if (profile.locations && profile.locations.trim()) {
+        const locTokens = profile.locations.toLowerCase().split(/[\s,;]+/).filter(Boolean);
+        locationFiltered = scored.filter((c) => {
+          const cl = (c.country + " " + c.city).toLowerCase();
+          return locTokens.some((t) => cl.includes(t));
+        });
+        // Fall back to soft scoring if fewer than 10 location-matched results
+        if (locationFiltered.length < 10) {
+          locationFiltered = scored;
+        }
+      }
+
+      // Eliminate low-quality noise: minimum 30% match threshold
+      const thresholded = locationFiltered.filter((c) => c.matchPercent >= 30);
+
+      dispatch({ type: "SET_RESULTS", payload: thresholded.slice(0, 30) });
       setLoading(false);
     }, 2400);
   }, [profile, allCourses, dispatch, navigate]);
