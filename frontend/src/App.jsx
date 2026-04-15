@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate, useSearchParams } from "react-router-dom";
 import { AppProvider, useAppContext } from "./context/AppContext";
 import { calculateMatch } from "./lib/matching";
 import { detFeeStatus } from "./lib/nationalityResolver";
@@ -79,6 +79,39 @@ function AppRoutes() {
   const [loading, setLoading] = useState(false);
   const [explorer, setExplorer] = useState(null);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  // ENH-003: Load shared profile from URL parameter on mount
+  useEffect(() => {
+    const shared = searchParams.get("p");
+    if (shared && !results.length && allCourses.length) {
+      try {
+        const decoded = JSON.parse(atob(shared));
+        dispatch({ type: "SET_PROFILE", payload: decoded });
+        // Auto-generate after a tick to let profile state settle
+        setTimeout(() => {
+          const match = calculateMatch;
+          const fee = detFeeStatus;
+          let filtered = allCourses;
+          if (decoded.level && decoded.level !== "any") {
+            filtered = filtered.filter((c) => c.level === decoded.level);
+          }
+          const scored = filtered.map((c) => {
+            const m = match(c, decoded);
+            return { ...c, matchPercent: m.total, matchBreakdown: m.breakdown, feeStatus: fee(decoded.nationality, decoded.residence, c.country, decoded.ukNation) };
+          });
+          scored.sort((a, b) => b.matchPercent - a.matchPercent);
+          let loc = scored;
+          if (decoded.locations && decoded.locations.trim()) {
+            const lt = decoded.locations.toLowerCase().split(/[\s,;]+/).filter(Boolean);
+            const lf = scored.filter((c) => lt.some((t) => (c.country + " " + c.city).toLowerCase().includes(t)));
+            if (lf.length >= 10) loc = lf;
+          }
+          dispatch({ type: "SET_RESULTS", payload: loc.filter((c) => c.matchPercent >= 30).slice(0, 30) });
+        }, 100);
+      } catch (e) { /* ignore invalid share codes */ }
+    }
+  }, [searchParams, allCourses]);
 
   const dName = profile.name.trim()
     ? profile.name.trim().split(/\s+/)[0]
@@ -94,17 +127,21 @@ function AppRoutes() {
         filtered = filtered.filter((c) => c.level === profile.level);
       }
 
-      // Score the filtered set
-      const scored = filtered.map((c) => ({
-        ...c,
-        matchPercent: calculateMatch(c, profile),
-        feeStatus: detFeeStatus(
-          profile.nationality,
-          profile.residence,
-          c.country,
-          profile.ukNation
-        ),
-      }));
+      // Score the filtered set — calculateMatch now returns { total, breakdown }
+      const scored = filtered.map((c) => {
+        const match = calculateMatch(c, profile);
+        return {
+          ...c,
+          matchPercent: match.total,
+          matchBreakdown: match.breakdown,
+          feeStatus: detFeeStatus(
+            profile.nationality,
+            profile.residence,
+            c.country,
+            profile.ukNation
+          ),
+        };
+      });
       scored.sort((a, b) => b.matchPercent - a.matchPercent);
 
       // BUG-001 fix: Hard-filter by location (keep worldwide in separate set)
@@ -129,6 +166,12 @@ function AppRoutes() {
     }, 2400);
   }, [profile, allCourses, dispatch, navigate]);
 
+  // ENH-003: Generate shareable URL
+  const getShareUrl = useCallback(() => {
+    const encoded = btoa(JSON.stringify(profile));
+    return `${window.location.origin}/results?p=${encoded}`;
+  }, [profile]);
+
   if (explorer) {
     return (
       <CourseExplorer
@@ -139,7 +182,7 @@ function AppRoutes() {
         onSelectAlt={(alt) =>
           setExplorer({
             ...alt,
-            matchPercent: alt.matchPercent || calculateMatch(alt, profile),
+            matchPercent: alt.matchPercent || calculateMatch(alt, profile).total,
             feeStatus: detFeeStatus(
               profile.nationality,
               profile.residence,
@@ -190,6 +233,7 @@ function AppRoutes() {
                 navigate("/questionnaire");
               }}
               onExplore={(c) => setExplorer(c)}
+              getShareUrl={getShareUrl}
             />
           )
         }

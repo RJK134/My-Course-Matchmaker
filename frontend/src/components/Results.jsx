@@ -4,9 +4,10 @@ import { getFee } from "../lib/nationalityResolver";
 import { tokenise, identifyPrimaryDomain } from "../lib/matching";
 import MatchBadge from "./MatchBadge";
 
-export default function Results({ results, profile, onNewSearch, onExplore }) {
+export default function Results({ results, profile, onNewSearch, onExplore, getShareUrl }) {
   const [sortBy, setSortBy] = useState("match");
   const [showFreeAlts, setShowFreeAlts] = useState(false);
+  const [expandedBreakdown, setExpandedBreakdown] = useState(null);
 
   const dName = profile.name.trim()
     ? profile.name.trim().split(/\s+/)[0]
@@ -110,6 +111,26 @@ export default function Results({ results, profile, onNewSearch, onExplore }) {
             >
               {showFreeAlts ? "✓ Free Only" : "💡 Free"}
             </button>
+            {getShareUrl && (
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(getShareUrl());
+                  alert("Shareable link copied to clipboard!");
+                }}
+                style={{
+                  padding: "8px 14px",
+                  borderRadius: 8,
+                  background: `${P.success}20`,
+                  border: `1px solid ${P.success}40`,
+                  color: P.success,
+                  fontSize: 12,
+                  cursor: "pointer",
+                  fontFamily: "'Trebuchet MS',sans-serif",
+                }}
+              >
+                🔗 Share
+              </button>
+            )}
             <button
               onClick={onNewSearch}
               style={{
@@ -206,8 +227,8 @@ export default function Results({ results, profile, onNewSearch, onExplore }) {
           {displayed.map((c) => {
             const f = getFee(c, c.feeStatus);
             return (
+              <div key={c.id} style={{ borderRadius: 12, overflow: "hidden" }}>
               <div
-                key={c.id}
                 onClick={() => onExplore(c)}
                 style={{
                   display: "grid",
@@ -215,7 +236,7 @@ export default function Results({ results, profile, onNewSearch, onExplore }) {
                   gap: 14,
                   alignItems: "center",
                   padding: "14px 18px",
-                  borderRadius: 12,
+                  borderRadius: expandedBreakdown === c.id ? "12px 12px 0 0" : 12,
                   background: P.surface,
                   border: `1px solid ${P.surfaceLight}`,
                   cursor: "pointer",
@@ -309,20 +330,74 @@ export default function Results({ results, profile, onNewSearch, onExplore }) {
                     </span>
                   </div>
                 </div>
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: P.accentLight,
-                    fontFamily: "'Trebuchet MS',sans-serif",
-                    textAlign: "right",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Explore
-                  <br />
-                  details →
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: P.accentLight,
+                      fontFamily: "'Trebuchet MS',sans-serif",
+                      textAlign: "right",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Explore
+                    <br />
+                    details →
+                  </div>
+                  {c.matchBreakdown && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setExpandedBreakdown(expandedBreakdown === c.id ? null : c.id);
+                      }}
+                      style={{
+                        fontSize: 10, color: P.textDim, background: "none",
+                        border: "none", cursor: "pointer", padding: 0,
+                        fontFamily: "'Trebuchet MS',sans-serif",
+                      }}
+                    >
+                      {expandedBreakdown === c.id ? "Hide ▲" : "Why? ▼"}
+                    </button>
+                  )}
                 </div>
               </div>
+              {/* ENH-001: Match score breakdown */}
+              {expandedBreakdown === c.id && c.matchBreakdown && (
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+                    gap: 6,
+                    padding: "8px 18px 14px",
+                    background: P.surface,
+                    borderRadius: "0 0 12px 12px",
+                    borderTop: `1px solid ${P.surfaceLight}30`,
+                  }}
+                >
+                  {Object.values(c.matchBreakdown).map((b, i) => (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                      <div style={{ flex: 1 }}>
+                        <div style={{ fontSize: 10, color: P.textDim, marginBottom: 2 }}>{b.label}</div>
+                        <div style={{ height: 4, borderRadius: 2, background: P.surfaceLight }}>
+                          <div
+                            style={{
+                              height: "100%",
+                              borderRadius: 2,
+                              background: b.score >= b.max * 0.7 ? P.success : b.score >= b.max * 0.4 ? P.accent : P.gold,
+                              width: `${(b.score / b.max) * 100}%`,
+                              transition: "width 0.3s",
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <span style={{ fontSize: 10, color: P.textMuted, fontFamily: "'Trebuchet MS',sans-serif", minWidth: 32, textAlign: "right" }}>
+                        {b.score}/{b.max}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             );
           })}
         </div>
