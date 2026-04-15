@@ -999,5 +999,44 @@
     "lat": 52.0249,
     "lng": -0.7097,
     "desc": "UK's largest university by student numbers. NO formal entry requirements. Study anywhere."
+  },
+  {
+    "key": "LAMDA",
+    "full": "London Academy of Music & Dramatic Art",
+    "type": "Conservatoire",
+    "founded": 1861,
+    "students": 250,
+    "url": "https://www.lamda.ac.uk",
+    "apply": "https://www.lamda.ac.uk/courses",
+    "contact": "admissions@lamda.ac.uk",
+    "lat": 51.4927,
+    "lng": -0.2239,
+    "desc": "One of the UK's oldest and most prestigious drama schools. Based in Hammersmith, West London. Alumni include Benedict Cumberbatch, Chiwetel Ejiofor, and Ruth Wilson."
+  },
+  {
+    "key": "Guildhall School of Music & Drama",
+    "full": "Guildhall School of Music & Drama",
+    "type": "Conservatoire",
+    "founded": 1880,
+    "students": 900,
+    "url": "https://www.gsmd.ac.uk",
+    "apply": "https://www.gsmd.ac.uk/study-with-guildhall",
+    "contact": "registry@gsmd.ac.uk",
+    "lat": 51.5200,
+    "lng": -0.0900,
+    "desc": "Located in the Barbican Centre, City of London. World-class training in acting, music, production arts, and stage management. Alumni include Orlando Bloom, Ewan McGregor, and Daniel Craig."
+  },
+  {
+    "key": "Rose Bruford College",
+    "full": "Rose Bruford College of Theatre and Performance",
+    "type": "Conservatoire",
+    "founded": 1950,
+    "students": 900,
+    "url": "https://www.bruford.ac.uk",
+    "apply": "https://www.bruford.ac.uk/courses",
+    "contact": "enquiries@bruford.ac.uk",
+    "lat": 51.4377,
+    "lng": 0.1240,
+    "desc": "Specialist drama school in Sidcup, south-east London. Known for innovative approaches to acting, directing, and design. Strong industry connections."
   }
 ]
