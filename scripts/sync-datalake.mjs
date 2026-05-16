@@ -47,7 +47,12 @@ function parseArgs(argv) {
     const a = argv[i];
     if (a === '--dry-run') args.dryRun = true;
     else if (a === '--source-dir') {
-      args.sourceDir = argv[i + 1];
+      const next = argv[i + 1];
+      if (next === undefined || next.startsWith('-')) {
+        console.error('[sync-datalake] --source-dir requires a directory path');
+        process.exit(2);
+      }
+      args.sourceDir = next;
       i += 1;
     } else if (a === '--help' || a === '-h') {
       console.log(
