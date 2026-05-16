@@ -1,0 +1,11 @@
+{
+  "name": "mycoursematchmaker",
+  "private": true,
+  "version": "0.0.0",
+  "description": "MyCourseMatchmaker — course-matching platform. This root package.json hosts repo-level scripts (datalake sync, etc.); the React frontend lives in `frontend/` and the Express API in `api/`.",
+  "type": "module",
+  "scripts": {
+    "sync-datalake": "node scripts/sync-datalake.mjs",
+    "test": "node --test scripts/datalake/*.test.mjs"
+  }
+}
