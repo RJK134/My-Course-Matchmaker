@@ -20,7 +20,7 @@
 //   npm run sync-datalake -- --dry-run          # validate only, no write
 //   npm run sync-datalake -- --source-dir <DIR> # local CSVs, no rclone
 
-import { mkdtempSync, readFileSync, existsSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, existsSync, writeFileSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname, isAbsolute, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -40,6 +40,7 @@ const PATHWAYS_CSV = 'course_career_pathways.csv';
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = join(REPO_ROOT, 'frontend', 'src', 'data');
+const API_DATA_DIR = join(REPO_ROOT, 'api', 'data');
 
 function parseArgs(argv) {
   const args = { dryRun: false, sourceDir: undefined };
@@ -163,6 +164,16 @@ function main() {
   );
   console.log(`[sync-datalake] wrote ${coursesOut}`);
   console.log(`[sync-datalake] wrote ${pathwaysOut}`);
+
+  // Also emit JSON copies in api/data/ so the CommonJS API can require them
+  // without needing an ESM bridge. Same data, machine-readable.
+  if (!existsSync(API_DATA_DIR)) mkdirSync(API_DATA_DIR, { recursive: true });
+  const apiCoursesPath = join(API_DATA_DIR, 'lake-courses.json');
+  const apiPathwaysPath = join(API_DATA_DIR, 'career-pathways.json');
+  writeFileSync(apiCoursesPath, JSON.stringify(courses.accepted), 'utf8');
+  writeFileSync(apiPathwaysPath, JSON.stringify(pathways.accepted), 'utf8');
+  console.log(`[sync-datalake] wrote ${apiCoursesPath}`);
+  console.log(`[sync-datalake] wrote ${apiPathwaysPath}`);
 }
 
 main();

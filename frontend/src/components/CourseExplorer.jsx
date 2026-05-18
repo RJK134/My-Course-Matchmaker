@@ -1,16 +1,67 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { P, DL } from "../styles/theme";
 import { getFee } from "../lib/nationalityResolver";
 import { getFund } from "../lib/fundingSources";
 import { getCourseUrl, getInstData } from "../lib/courseUrl";
 import { calculateMatch, identifyPrimaryDomain, tokenise } from "../lib/matching";
 import { detFeeStatus } from "../lib/nationalityResolver";
+import { api } from "../lib/api";
 import costOfLivingData from "../data/costOfLiving.json";
 
 const COL_LOOKUP = Object.fromEntries(costOfLivingData.map((c) => [c.city, c]));
 
+function parseSkillsOverlap(raw) {
+  // Lake CSV ships skills as a Python-style stringified list, e.g.
+  //   "['Programming', 'Statistics', 'ML']"
+  // Decode best-effort into a JS array.
+  if (!raw) return [];
+  if (Array.isArray(raw)) return raw;
+  try {
+    const normalised = String(raw).replace(/'/g, '"');
+    const parsed = JSON.parse(normalised);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return String(raw)
+      .replace(/[[\]']/g, "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+}
+
 export default function CourseExplorer({ course, profile, allCourses, onBack, onSelectAlt }) {
   const [tab, setTab] = useState("costs");
+  const [careers, setCareers] = useState({ status: "idle", matchedSubject: null, careers: [] });
+
+  // Look up the subject most relevant to this course in the career-pathways lake.
+  // We try: explicit course.subjects[0] → course.domain → DL[domain] display label.
+  const careerLookupKey = (
+    (course.subjects && course.subjects[0]) ||
+    course.domain ||
+    (DL[course.domain] && DL[course.domain].toLowerCase()) ||
+    course.title
+  );
+
+  useEffect(() => {
+    let active = true;
+    setCareers({ status: "loading", matchedSubject: null, careers: [] });
+    api.careers
+      .forSubject(careerLookupKey)
+      .then((j) => {
+        if (!active) return;
+        setCareers({
+          status: "ok",
+          matchedSubject: j.matchedSubject,
+          careers: j.careers || [],
+        });
+      })
+      .catch(() => {
+        if (active) setCareers({ status: "error", matchedSubject: null, careers: [] });
+      });
+    return () => {
+      active = false;
+    };
+  }, [careerLookupKey]);
   const inst = getInstData(course.institution);
   const col = COL_LOOKUP[course.city] || null;
   const fs = course.feeStatus;
@@ -137,6 +188,7 @@ export default function CourseExplorer({ course, profile, allCourses, onBack, on
         >
           {[
             { k: "costs", l: "💰 Costs & Living" },
+            { k: "careers", l: "💼 Career Outcomes" },
             { k: "inst", l: "🏛️ Institution" },
             { k: "prep", l: "📚 Preparation" },
             { k: "map", l: "📍 Location & Map" },
@@ -693,6 +745,124 @@ export default function CourseExplorer({ course, profile, allCourses, onBack, on
                   </a>
                 )}
               </div>
+            </div>
+          )}
+
+          {/* CAREER OUTCOMES TAB — backed by /api/careers/subject/:subject (lake) */}
+          {tab === "careers" && (
+            <div>
+              <h3 style={{ fontSize: 18, fontWeight: 600, margin: "0 0 12px", fontFamily: "'Trebuchet MS',sans-serif" }}>
+                Where {course.title} graduates go
+              </h3>
+              <p style={{ fontSize: 12, color: P.textDim, margin: "0 0 16px" }}>
+                Demand, salary and growth data from the workhorse datalake (Perplexity + Gemini, refreshed weekly).
+                {careers.matchedSubject ? (
+                  <> Matched on subject <strong style={{ color: P.accentLight }}>{careers.matchedSubject}</strong>.</>
+                ) : null}
+              </p>
+
+              {careers.status === "loading" && (
+                <div style={{ color: P.textMuted, fontSize: 13 }}>Loading career outcomes…</div>
+              )}
+
+              {careers.status === "error" && (
+                <div style={{ color: P.gold, fontSize: 13 }}>
+                  Career outcomes are unavailable right now (API offline?). Try refreshing the page.
+                </div>
+              )}
+
+              {careers.status === "ok" && careers.careers.length === 0 && (
+                <div style={{ color: P.textMuted, fontSize: 13 }}>
+                  No career-pathway data yet for this subject. The datalake is UK-focused and refreshes weekly —
+                  check back, or browse careers for a broader related subject.
+                </div>
+              )}
+
+              {careers.status === "ok" && careers.careers.length > 0 && (
+                <div style={{ display: "grid", gap: 10 }}>
+                  {careers.careers.map((c) => {
+                    const skills = parseSkillsOverlap(c.skillsOverlap);
+                    const growthColor =
+                      typeof c.growthPct === "number" && c.growthPct >= 10
+                        ? P.success
+                        : typeof c.growthPct === "number" && c.growthPct >= 5
+                          ? P.accentLight
+                          : P.textMuted;
+                    return (
+                      <div
+                        key={c.id}
+                        style={{
+                          padding: 14,
+                          borderRadius: 10,
+                          background: `${P.navy}80`,
+                          border: `1px solid ${P.surfaceLight}`,
+                        }}
+                      >
+                        <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+                          <div style={{ minWidth: 0, flex: 1 }}>
+                            <div style={{ fontSize: 14, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>
+                              {c.careerTitle}
+                            </div>
+                            {c.careerSector && (
+                              <div style={{ fontSize: 11, color: P.textDim, marginTop: 2 }}>
+                                {c.careerSector}
+                              </div>
+                            )}
+                          </div>
+                          <div style={{ display: "flex", gap: 16, alignItems: "center", flexShrink: 0 }}>
+                            {Number.isFinite(c.medianSalaryGbp) && (
+                              <div style={{ textAlign: "right" }}>
+                                <div style={{ fontSize: 16, fontWeight: 700, color: P.goldLight, fontFamily: "'Trebuchet MS',sans-serif" }}>
+                                  £{c.medianSalaryGbp.toLocaleString()}
+                                </div>
+                                <div style={{ fontSize: 10, color: P.textDim }}>median / yr</div>
+                              </div>
+                            )}
+                            {Number.isFinite(c.salary5yrGbp) && (
+                              <div style={{ textAlign: "right" }}>
+                                <div style={{ fontSize: 13, fontWeight: 700, color: P.success, fontFamily: "'Trebuchet MS',sans-serif" }}>
+                                  £{c.salary5yrGbp.toLocaleString()}
+                                </div>
+                                <div style={{ fontSize: 10, color: P.textDim }}>5-yr salary</div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                        <div style={{ display: "flex", gap: 12, marginTop: 8, flexWrap: "wrap", fontSize: 11 }}>
+                          {c.demandTrend && (
+                            <span style={{ color: P.textMuted }}>📊 Demand: <strong style={{ color: P.text }}>{c.demandTrend}</strong></span>
+                          )}
+                          {Number.isFinite(c.growthPct) && (
+                            <span style={{ color: growthColor }}>↗ Growth: <strong>{c.growthPct}%</strong></span>
+                          )}
+                          {c.source && (
+                            <span style={{ color: P.textDim }}>· {c.source}</span>
+                          )}
+                        </div>
+                        {skills.length > 0 && (
+                          <div style={{ marginTop: 10, display: "flex", gap: 6, flexWrap: "wrap" }}>
+                            {skills.slice(0, 8).map((s, i) => (
+                              <span key={i} style={{
+                                padding: "3px 9px",
+                                borderRadius: 12,
+                                background: `${P.accent}15`,
+                                color: P.accentLight,
+                                fontSize: 10,
+                                fontFamily: "'Trebuchet MS',sans-serif",
+                              }}>{s}</span>
+                            ))}
+                            {skills.length > 8 && (
+                              <span style={{ fontSize: 10, color: P.textDim, alignSelf: "center" }}>
+                                +{skills.length - 8} more
+                              </span>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           )}
 

@@ -294,6 +294,39 @@ export default function Results({ results, profile, onNewSearch, onExplore, getS
                         ONLINE
                       </span>
                     )}
+                    {c.isProvisional ? (
+                      <span
+                        title={`Provisional row from ${c.provenance || "lake"}; last seen ${c.lastSeenAt || "?"}`}
+                        style={{
+                          marginLeft: 4,
+                          padding: "2px 7px",
+                          borderRadius: 10,
+                          background: `${P.gold}25`,
+                          color: P.goldLight,
+                          fontSize: 10,
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {c.provenance || "lake"} · provisional
+                      </span>
+                    ) : (
+                      <span
+                        title="Hand-verified by Future Horizons Education"
+                        style={{
+                          marginLeft: 4,
+                          padding: "2px 7px",
+                          borderRadius: 10,
+                          background: `${P.success}15`,
+                          color: P.success,
+                          fontSize: 10,
+                          fontWeight: 700,
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        verified
+                      </span>
+                    )}
                   </div>
                   <div
                     style={{ fontSize: 12, color: P.textMuted, marginTop: 2 }}
