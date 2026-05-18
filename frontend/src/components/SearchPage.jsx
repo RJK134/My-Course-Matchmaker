@@ -216,7 +216,7 @@ export default function SearchPage() {
           </select>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "240px 1fr", gap: 18 }}>
+        <div className="mcm-search-layout">
           {/* Facet sidebar */}
           <aside style={{ background: P.surface, borderRadius: 12, padding: 16, height: "fit-content", border: `1px solid ${P.surfaceLight}` }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 12 }}>

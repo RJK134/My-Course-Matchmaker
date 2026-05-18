@@ -97,7 +97,7 @@ export default function CompareDrawer({ items, onClose }) {
           </button>
         </div>
 
-        <div style={{ overflowX: "auto" }}>
+        <div className="mcm-compare-table" style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: "'Trebuchet MS',sans-serif", fontSize: 12 }}>
             <thead>
               <tr>

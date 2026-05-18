@@ -16,3 +16,49 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Mobile-responsive overrides — most components use inline styles, so we add
+   class-based escape hatches that win on specificity. Anything that places a
+   sidebar-then-content grid on desktop should stack vertically below 720px. */
+.mcm-search-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 720px) {
+  .mcm-search-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .mcm-search-layout aside {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+/* Compare drawer table — let it scroll horizontally on small screens. */
+.mcm-compare-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Generic hint for any flex toolbar so chips never break off-screen. */
+@media (max-width: 480px) {
+  .mcm-toolbar {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .mcm-toolbar > * {
+    flex: 0 1 auto;
+  }
+}
+
+/* Reduce horizontal padding on small viewports so cards aren't cramped. */
+@media (max-width: 480px) {
+  .mcm-page-wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
