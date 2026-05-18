@@ -7,6 +7,8 @@
   "scripts": {
     "sync-datalake": "node scripts/sync-datalake.mjs",
     "index-courses": "node scripts/index-courses.mjs",
+    "merge-international": "node scripts/merge-international.mjs",
+    "test:personas": "node scripts/test-personas.mjs",
     "test": "node --test scripts/datalake/*.test.mjs"
   },
   "dependencies": {

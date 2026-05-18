@@ -20,6 +20,8 @@ import CourseExplorer from "./components/CourseExplorer";
 const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
 const StagingReview = lazy(() => import("./components/admin/StagingReview"));
 const SearchPage = lazy(() => import("./components/SearchPage"));
+const ShortlistPage = lazy(() => import("./components/ShortlistPage"));
+const CourseDetailFromSearch = lazy(() => import("./components/CourseDetailFromSearch"));
 
 // Adapt a workhorse-datalake row into the shape the matcher + UI expect.
 // Lake rows are sparse: only title + provider + subject_area + url + source.
@@ -298,6 +300,22 @@ function AppRoutes() {
         element={
           <Suspense fallback={<LoadingScreen name="Search" />}>
             <SearchPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/shortlist"
+        element={
+          <Suspense fallback={<LoadingScreen name="Shortlist" />}>
+            <ShortlistPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/course/:id"
+        element={
+          <Suspense fallback={<LoadingScreen name="Course" />}>
+            <CourseDetailFromSearch />
           </Suspense>
         }
       />

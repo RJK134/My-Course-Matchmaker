@@ -9,7 +9,7 @@
     "apply": "https://www.rada.ac.uk/courses",
     "contact": "enquiries@rada.ac.uk",
     "lat": 51.5246,
-    "lng": -0.1340,
+    "lng": -0.134,
     "desc": "World-renowned drama school in Bloomsbury. Intensive, audition-based training. Notable alumni include Anthony Hopkins, Ralph Fiennes, and Phoebe Waller-Bridge."
   },
   {
@@ -22,7 +22,7 @@
     "apply": "https://www.cssd.ac.uk/courses",
     "contact": "enquiries@cssd.ac.uk",
     "lat": 51.5463,
-    "lng": -0.1780,
+    "lng": -0.178,
     "desc": "Part of University of London. Located in Swiss Cottage. Strong industry connections in theatre, film, and TV."
   },
   {
@@ -74,7 +74,7 @@
     "apply": "https://www.juilliard.edu/admissions",
     "contact": "admissions@juilliard.edu",
     "lat": 40.7738,
-    "lng": -73.9830,
+    "lng": -73.983,
     "desc": "Lincoln Center, Manhattan. Among the world's leading performing arts conservatories."
   },
   {
@@ -87,7 +87,7 @@
     "apply": "https://www.leeds.ac.uk/study",
     "contact": "study@leeds.ac.uk",
     "lat": 53.8067,
-    "lng": -1.5550,
+    "lng": -1.555,
     "desc": "Large Russell Group university in West Yorkshire. Strong arts and humanities faculty."
   },
   {
@@ -126,7 +126,7 @@
     "apply": "https://www.bristol.ac.uk/study",
     "contact": "ug-admissions@bristol.ac.uk",
     "lat": 51.4584,
-    "lng": -2.6030,
+    "lng": -2.603,
     "desc": "Major Russell Group university in vibrant Bristol. Excellent theatre and drama department."
   },
   {
@@ -151,7 +151,7 @@
     "url": "https://www.uva.nl/en",
     "apply": "https://www.uva.nl/en/programmes",
     "contact": "studentenservice@uva.nl",
-    "lat": 52.3560,
+    "lat": 52.356,
     "lng": 4.9554,
     "desc": "One of Europe's leading research universities in the heart of Amsterdam."
   },
@@ -191,7 +191,7 @@
     "apply": "https://www.uniarts.fi/en/admissions/",
     "contact": "admissions@uniarts.fi",
     "lat": 60.1812,
-    "lng": 24.9440,
+    "lng": 24.944,
     "desc": "One of Europe's largest music academies. FREE tuition for ALL nationalities."
   },
   {
@@ -216,8 +216,8 @@
     "url": "https://www.york.ac.uk",
     "apply": "https://www.york.ac.uk/study",
     "contact": "ug-admissions@york.ac.uk",
-    "lat": 53.9470,
-    "lng": -1.0540,
+    "lat": 53.947,
+    "lng": -1.054,
     "desc": "Campus university with lake. Russell Group. Excellent music and film departments."
   },
   {
@@ -229,8 +229,8 @@
     "url": "https://www.surrey.ac.uk",
     "apply": "https://www.surrey.ac.uk/apply",
     "contact": "admissions@surrey.ac.uk",
-    "lat": 51.2430,
-    "lng": -0.5890,
+    "lat": 51.243,
+    "lng": -0.589,
     "desc": "Guildford campus. #1 for hospitality management. Excellent employability record."
   },
   {
@@ -282,7 +282,7 @@
     "apply": "https://www.dffb.de/en/application/",
     "contact": "info@dffb.de",
     "lat": 52.5094,
-    "lng": 13.3730,
+    "lng": 13.373,
     "desc": "Prestigious German film school at Potsdamer Platz. FREE tuition. All nationalities."
   },
   {
@@ -294,7 +294,7 @@
     "url": "https://www.uva.nl/en",
     "apply": "https://www.uva.nl/en/programmes",
     "contact": "studentenservice@uva.nl",
-    "lat": 52.3560,
+    "lat": 52.356,
     "lng": 4.9554,
     "desc": "Top European research university in Amsterdam's city centre."
   },
@@ -308,7 +308,7 @@
     "apply": "https://www.lfs.org.uk/apply",
     "contact": "info@lfs.org.uk",
     "lat": 51.5155,
-    "lng": -0.1310,
+    "lng": -0.131,
     "desc": "Independent postgraduate film school in Covent Garden. Highly practical training."
   },
   {
@@ -346,7 +346,7 @@
     "url": "https://www.uea.ac.uk",
     "apply": "https://www.uea.ac.uk/study",
     "contact": "admissions@uea.ac.uk",
-    "lat": 52.6220,
+    "lat": 52.622,
     "lng": 1.2424,
     "desc": "Norwich campus. Iconic Sainsbury Centre. #1 for Creative Writing -- alumni: Ian McEwan, Kazuo Ishiguro."
   },
@@ -359,7 +359,7 @@
     "url": "https://www.ox.ac.uk",
     "apply": "https://www.ox.ac.uk/admissions",
     "contact": "undergraduate.admissions@admin.ox.ac.uk",
-    "lat": 51.7520,
+    "lat": 51.752,
     "lng": -1.2577,
     "desc": "World's oldest English-speaking university. Tutorial system. 39 colleges."
   },
@@ -411,8 +411,8 @@
     "url": "https://www.risd.edu",
     "apply": "https://www.risd.edu/admissions",
     "contact": "admissions@risd.edu",
-    "lat": 41.8260,
-    "lng": -71.4070,
+    "lat": 41.826,
+    "lng": -71.407,
     "desc": "Providence, RI. One of world's top art and design schools."
   },
   {
@@ -437,8 +437,8 @@
     "url": "https://rfrietveldacademie.nl/en/",
     "apply": "https://rfrietveldacademie.nl/en/admissions/",
     "contact": "info@rfrietveldacademie.nl",
-    "lat": 52.3580,
-    "lng": 4.8790,
+    "lat": 52.358,
+    "lng": 4.879,
     "desc": "Independent art academy in Amsterdam. Named after De Stijl designer Gerrit Rietveld."
   },
   {
@@ -463,7 +463,7 @@
     "url": "https://www.falmouth.ac.uk",
     "apply": "https://www.falmouth.ac.uk/study",
     "contact": "admissions@falmouth.ac.uk",
-    "lat": 50.1480,
+    "lat": 50.148,
     "lng": -5.0585,
     "desc": "Cornwall's creative university. Beautiful coastal setting. Strong for illustration and games."
   },
@@ -489,7 +489,7 @@
     "url": "https://www.tue.nl/en/",
     "apply": "https://www.tue.nl/en/education/become-a-tue-student/",
     "contact": "studentsupport@tue.nl",
-    "lat": 51.4480,
+    "lat": 51.448,
     "lng": 5.4866,
     "desc": "Leading Dutch tech university. Strong design and engineering integration."
   },
@@ -515,8 +515,8 @@
     "url": "https://www.lboro.ac.uk",
     "apply": "https://www.lboro.ac.uk/study",
     "contact": "admissions@lboro.ac.uk",
-    "lat": 52.7650,
-    "lng": -1.2290,
+    "lat": 52.765,
+    "lng": -1.229,
     "desc": "Campus university. #1 for sport. Excellent engineering and design."
   },
   {
@@ -646,7 +646,7 @@
     "apply": "https://www.uni-mannheim.de/en/academics/coming-to-uni-mannheim/",
     "contact": "service@uni-mannheim.de",
     "lat": 49.4836,
-    "lng": 8.4630,
+    "lng": 8.463,
     "desc": "Germany's top business school. Historic Baroque palace campus. No fees for EU."
   },
   {
@@ -711,7 +711,7 @@
     "apply": "https://www.kcl.ac.uk/study",
     "contact": "ugadmissions@kcl.ac.uk",
     "lat": 51.5115,
-    "lng": -0.1160,
+    "lng": -0.116,
     "desc": "Strand/Waterloo campuses. Russell Group. Strong health sciences and humanities."
   },
   {
@@ -776,7 +776,7 @@
     "apply": "https://www.ucl.ac.uk/prospective-students",
     "contact": "study@ucl.ac.uk",
     "lat": 51.5246,
-    "lng": -0.1340,
+    "lng": -0.134,
     "desc": "London's global university. Bloomsbury. Top 10 globally. Bartlett School of Architecture."
   },
   {
@@ -801,7 +801,7 @@
     "url": "https://www.sheffield.ac.uk",
     "apply": "https://www.sheffield.ac.uk/study",
     "contact": "ask@sheffield.ac.uk",
-    "lat": 53.3810,
+    "lat": 53.381,
     "lng": -1.4884,
     "desc": "Russell Group. Sheffield Student Union voted UK's best."
   },
@@ -841,7 +841,7 @@
     "apply": "https://www.hu-berlin.de/en/studies",
     "contact": "studienberatung@hu-berlin.de",
     "lat": 52.5186,
-    "lng": 13.3930,
+    "lng": 13.393,
     "desc": "Historic Berlin university. No tuition fees for any nationality. Unter den Linden."
   },
   {
@@ -866,7 +866,7 @@
     "url": "https://www.durham.ac.uk",
     "apply": "https://www.durham.ac.uk/study",
     "contact": "admissions@durham.ac.uk",
-    "lat": 54.7680,
+    "lat": 54.768,
     "lng": -1.5728,
     "desc": "Collegiate Russell Group university. UNESCO World Heritage city. Beautiful setting."
   },
@@ -893,7 +893,7 @@
     "apply": "https://www.polimi.it/en/admission-and-tuition-fees/",
     "contact": "urp@polimi.it",
     "lat": 45.4786,
-    "lng": 9.2270,
+    "lng": 9.227,
     "desc": "Italy's largest technical university. QS top 10 for architecture and design."
   },
   {
@@ -957,8 +957,8 @@
     "url": "https://www.ehl.edu",
     "apply": "https://www.ehl.edu/en/apply",
     "contact": "info@ehl.edu",
-    "lat": 46.5140,
-    "lng": 6.5820,
+    "lat": 46.514,
+    "lng": 6.582,
     "desc": "World's #1 hospitality school. Lausanne, Switzerland. Premium education."
   },
   {
@@ -1022,8 +1022,8 @@
     "url": "https://www.gsmd.ac.uk",
     "apply": "https://www.gsmd.ac.uk/study-with-guildhall",
     "contact": "registry@gsmd.ac.uk",
-    "lat": 51.5200,
-    "lng": -0.0900,
+    "lat": 51.52,
+    "lng": -0.09,
     "desc": "Located in the Barbican Centre, City of London. World-class training in acting, music, production arts, and stage management. Alumni include Orlando Bloom, Ewan McGregor, and Daniel Craig."
   },
   {
@@ -1036,7 +1036,384 @@
     "apply": "https://www.bruford.ac.uk/courses",
     "contact": "enquiries@bruford.ac.uk",
     "lat": 51.4377,
-    "lng": 0.1240,
+    "lng": 0.124,
     "desc": "Specialist drama school in Sidcup, south-east London. Known for innovative approaches to acting, directing, and design. Strong industry connections."
+  },
+  {
+    "key": "TU Munich (TUM)",
+    "full": "Technical University of Munich",
+    "type": "research",
+    "founded": 1868,
+    "students": 50000,
+    "url": "https://www.tum.de",
+    "apply": "https://www.tum.de/en/studies/application",
+    "contact": "info@tum.de",
+    "lat": 48.1497,
+    "lng": 11.568,
+    "desc": "Public research university; consistent top-50 in CS and engineering."
+  },
+  {
+    "key": "RWTH Aachen",
+    "full": "RWTH Aachen University",
+    "type": "research",
+    "founded": 1870,
+    "students": 47000,
+    "url": "https://www.rwth-aachen.de",
+    "apply": "https://www.rwth-aachen.de/cms/root/Studium",
+    "contact": "info@rwth-aachen.de",
+    "lat": 50.7777,
+    "lng": 6.0786,
+    "desc": "Germany's largest technical university; engineering and natural sciences focus."
+  },
+  {
+    "key": "Heidelberg University",
+    "full": "Ruprecht Karl University of Heidelberg",
+    "type": "research",
+    "founded": 1386,
+    "students": 28000,
+    "url": "https://www.uni-heidelberg.de",
+    "apply": "https://www.uni-heidelberg.de/en/study",
+    "contact": "info@uni-heidelberg.de",
+    "lat": 49.4178,
+    "lng": 8.675,
+    "desc": "Germany's oldest university; strong in physics and medicine."
+  },
+  {
+    "key": "Eindhoven TU/e",
+    "full": "Eindhoven University of Technology",
+    "type": "research",
+    "founded": 1956,
+    "students": 13000,
+    "url": "https://www.tue.nl/en",
+    "apply": "https://www.tue.nl/en/our-university/our-organisation/student-services",
+    "contact": "info@tue.nl",
+    "lat": 51.4476,
+    "lng": 5.4869,
+    "desc": "Industry-coupled engineering and data science school."
+  },
+  {
+    "key": "Erasmus University Rotterdam",
+    "full": "Erasmus University Rotterdam",
+    "type": "research",
+    "founded": 1913,
+    "students": 33000,
+    "url": "https://www.eur.nl",
+    "apply": "https://www.eur.nl/en/education",
+    "contact": "info@eur.nl",
+    "lat": 51.9171,
+    "lng": 4.5215,
+    "desc": "Renowned for business, economics, and medicine."
+  },
+  {
+    "key": "KTH Stockholm",
+    "full": "KTH Royal Institute of Technology",
+    "type": "research",
+    "founded": 1827,
+    "students": 18000,
+    "url": "https://www.kth.se/en",
+    "apply": "https://www.kth.se/en/studies/master/admissions",
+    "contact": "info@kth.se",
+    "lat": 59.35,
+    "lng": 18.07,
+    "desc": "Sweden's leading technical university; ML, robotics, sustainable tech."
+  },
+  {
+    "key": "Lund University",
+    "full": "Lund University",
+    "type": "research",
+    "founded": 1666,
+    "students": 47000,
+    "url": "https://www.lunduniversity.lu.se",
+    "apply": "https://www.lunduniversity.lu.se/admissions",
+    "contact": "info@lu.se",
+    "lat": 55.7058,
+    "lng": 13.1932,
+    "desc": "One of Northern Europe's oldest, with broad subject coverage."
+  },
+  {
+    "key": "Chalmers",
+    "full": "Chalmers University of Technology",
+    "type": "research",
+    "founded": 1829,
+    "students": 10000,
+    "url": "https://www.chalmers.se/en",
+    "apply": "https://www.chalmers.se/en/education/",
+    "contact": "info@chalmers.se",
+    "lat": 57.6878,
+    "lng": 11.9788,
+    "desc": "Gothenburg-based engineering and architecture university."
+  },
+  {
+    "key": "EPFL",
+    "full": "École Polytechnique Fédérale de Lausanne",
+    "type": "research",
+    "founded": 1853,
+    "students": 12000,
+    "url": "https://www.epfl.ch/en",
+    "apply": "https://www.epfl.ch/education/admission/en/",
+    "contact": "info@epfl.ch",
+    "lat": 46.5197,
+    "lng": 6.5657,
+    "desc": "Sister institution to ETH; computer science, life sciences, engineering."
+  },
+  {
+    "key": "USI Lugano",
+    "full": "Università della Svizzera italiana",
+    "type": "research",
+    "founded": 1996,
+    "students": 3500,
+    "url": "https://www.usi.ch/en",
+    "apply": "https://www.usi.ch/en/study/admission",
+    "contact": "info@usi.ch",
+    "lat": 46.0103,
+    "lng": 8.96,
+    "desc": "Italian-speaking Switzerland's research university; informatics, economics."
+  },
+  {
+    "key": "University of St Gallen",
+    "full": "University of St. Gallen (HSG)",
+    "type": "specialist",
+    "founded": 1898,
+    "students": 9000,
+    "url": "https://www.unisg.ch/en",
+    "apply": "https://www.unisg.ch/en/studium/",
+    "contact": "info@unisg.ch",
+    "lat": 47.4244,
+    "lng": 9.3767,
+    "desc": "Europe's top-ranked business school; MBA and MA programmes."
+  },
+  {
+    "key": "Sciences Po",
+    "full": "Institut d'études politiques de Paris",
+    "type": "specialist",
+    "founded": 1872,
+    "students": 14000,
+    "url": "https://www.sciencespo.fr/en",
+    "apply": "https://www.sciencespo.fr/admissions/en",
+    "contact": "admissions@sciencespo.fr",
+    "lat": 48.8537,
+    "lng": 2.3293,
+    "desc": "France's premier school of political science and international affairs."
+  },
+  {
+    "key": "HEC Paris",
+    "full": "HEC Paris",
+    "type": "specialist",
+    "founded": 1881,
+    "students": 4400,
+    "url": "https://www.hec.edu",
+    "apply": "https://www.hec.edu/en/master-s-programs",
+    "contact": "info@hec.fr",
+    "lat": 48.7551,
+    "lng": 2.1722,
+    "desc": "France's top business school; MiM consistently ranked global #1."
+  },
+  {
+    "key": "École Polytechnique",
+    "full": "École Polytechnique (l'X)",
+    "type": "research",
+    "founded": 1794,
+    "students": 3000,
+    "url": "https://www.polytechnique.edu/en",
+    "apply": "https://www.polytechnique.edu/en/admissions",
+    "contact": "info@polytechnique.edu",
+    "lat": 48.7144,
+    "lng": 2.212,
+    "desc": "Elite French grande école; engineering, mathematics, physics."
+  },
+  {
+    "key": "Sorbonne University",
+    "full": "Sorbonne Université",
+    "type": "research",
+    "founded": 2018,
+    "students": 55000,
+    "url": "https://www.sorbonne-universite.fr/en",
+    "apply": "https://www.sorbonne-universite.fr/en/study-sorbonne",
+    "contact": "info@sorbonne-universite.fr",
+    "lat": 48.8499,
+    "lng": 2.3447,
+    "desc": "Merger of Paris-Sorbonne and Pierre & Marie Curie universities."
+  },
+  {
+    "key": "U Toronto",
+    "full": "University of Toronto",
+    "type": "research",
+    "founded": 1827,
+    "students": 97000,
+    "url": "https://www.utoronto.ca",
+    "apply": "https://future.utoronto.ca/apply/",
+    "contact": "info@utoronto.ca",
+    "lat": 43.6629,
+    "lng": -79.3957,
+    "desc": "Canada's flagship research university; CS, AI, business."
+  },
+  {
+    "key": "UBC",
+    "full": "University of British Columbia",
+    "type": "research",
+    "founded": 1908,
+    "students": 65000,
+    "url": "https://www.ubc.ca",
+    "apply": "https://you.ubc.ca/applying-ubc/",
+    "contact": "info@ubc.ca",
+    "lat": 49.2606,
+    "lng": -123.246,
+    "desc": "Top Canadian university; sustainability, life sciences, engineering."
+  },
+  {
+    "key": "McGill",
+    "full": "McGill University",
+    "type": "research",
+    "founded": 1821,
+    "students": 40000,
+    "url": "https://www.mcgill.ca",
+    "apply": "https://www.mcgill.ca/applying/",
+    "contact": "info@mcgill.ca",
+    "lat": 45.5048,
+    "lng": -73.5772,
+    "desc": "Bilingual Montreal university; medicine, law, engineering."
+  },
+  {
+    "key": "Waterloo",
+    "full": "University of Waterloo",
+    "type": "research",
+    "founded": 1957,
+    "students": 42000,
+    "url": "https://uwaterloo.ca",
+    "apply": "https://uwaterloo.ca/future-students/apply",
+    "contact": "info@uwaterloo.ca",
+    "lat": 43.4723,
+    "lng": -80.5449,
+    "desc": "Famous for its co-op programmes and CS strength."
+  },
+  {
+    "key": "U Melbourne",
+    "full": "University of Melbourne",
+    "type": "research",
+    "founded": 1853,
+    "students": 53000,
+    "url": "https://www.unimelb.edu.au",
+    "apply": "https://study.unimelb.edu.au/how-to-apply",
+    "contact": "info@unimelb.edu.au",
+    "lat": -37.7964,
+    "lng": 144.9612,
+    "desc": "Australia's #1 research university."
+  },
+  {
+    "key": "UNSW Sydney",
+    "full": "University of New South Wales",
+    "type": "research",
+    "founded": 1949,
+    "students": 64000,
+    "url": "https://www.unsw.edu.au",
+    "apply": "https://www.unsw.edu.au/study/how-to-apply",
+    "contact": "info@unsw.edu.au",
+    "lat": -33.9173,
+    "lng": 151.2313,
+    "desc": "Sydney-based; engineering and business strongholds."
+  },
+  {
+    "key": "ANU",
+    "full": "Australian National University",
+    "type": "research",
+    "founded": 1946,
+    "students": 25000,
+    "url": "https://www.anu.edu.au",
+    "apply": "https://www.anu.edu.au/study/apply",
+    "contact": "info@anu.edu.au",
+    "lat": -35.2777,
+    "lng": 149.1185,
+    "desc": "Canberra-based; consistently Australia's top research university."
+  },
+  {
+    "key": "Monash",
+    "full": "Monash University",
+    "type": "research",
+    "founded": 1958,
+    "students": 86000,
+    "url": "https://www.monash.edu",
+    "apply": "https://www.monash.edu/admissions",
+    "contact": "info@monash.edu",
+    "lat": -37.9105,
+    "lng": 145.1362,
+    "desc": "Australia's largest university by enrolment; business, medicine, IT."
+  },
+  {
+    "key": "MIT",
+    "full": "Massachusetts Institute of Technology",
+    "type": "research",
+    "founded": 1861,
+    "students": 11500,
+    "url": "https://www.mit.edu",
+    "apply": "https://mitadmissions.org",
+    "contact": "info@mit.edu",
+    "lat": 42.3601,
+    "lng": -71.0942,
+    "desc": "World leader in engineering, computer science and entrepreneurship."
+  },
+  {
+    "key": "Stanford",
+    "full": "Stanford University",
+    "type": "research",
+    "founded": 1885,
+    "students": 17000,
+    "url": "https://www.stanford.edu",
+    "apply": "https://admission.stanford.edu",
+    "contact": "info@stanford.edu",
+    "lat": 37.4275,
+    "lng": -122.1697,
+    "desc": "Silicon Valley's research and entrepreneurship hub."
+  },
+  {
+    "key": "UC Berkeley",
+    "full": "University of California, Berkeley",
+    "type": "research",
+    "founded": 1868,
+    "students": 45000,
+    "url": "https://www.berkeley.edu",
+    "apply": "https://admissions.berkeley.edu",
+    "contact": "info@berkeley.edu",
+    "lat": 37.8719,
+    "lng": -122.2585,
+    "desc": "Top US public research university; EECS, business, public policy."
+  },
+  {
+    "key": "CMU",
+    "full": "Carnegie Mellon University",
+    "type": "research",
+    "founded": 1900,
+    "students": 15000,
+    "url": "https://www.cmu.edu",
+    "apply": "https://admission.enrollment.cmu.edu",
+    "contact": "info@cmu.edu",
+    "lat": 40.4429,
+    "lng": -79.943,
+    "desc": "Computer science and software engineering powerhouse."
+  },
+  {
+    "key": "U Michigan",
+    "full": "University of Michigan",
+    "type": "research",
+    "founded": 1817,
+    "students": 51000,
+    "url": "https://umich.edu",
+    "apply": "https://admissions.umich.edu",
+    "contact": "info@umich.edu",
+    "lat": 42.278,
+    "lng": -83.7382,
+    "desc": "Top US public research; engineering, business, public health."
+  },
+  {
+    "key": "UT Austin",
+    "full": "University of Texas at Austin",
+    "type": "research",
+    "founded": 1883,
+    "students": 51000,
+    "url": "https://www.utexas.edu",
+    "apply": "https://admissions.utexas.edu",
+    "contact": "info@utexas.edu",
+    "lat": 30.2849,
+    "lng": -97.7341,
+    "desc": "Top US public; CS, engineering, MBA."
   }
 ]

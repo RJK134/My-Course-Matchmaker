@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { P } from "../styles/theme";
 import { api } from "../lib/api";
+import ShortlistButton from "./ShortlistButton";
+import { useShortlist } from "../lib/useShortlist";
+import CompareDrawer from "./CompareDrawer";
 
 const CURRENCY_OPTIONS = ["GBP", "EUR", "USD", "CHF"];
 const SORT_OPTIONS = [
@@ -72,6 +75,10 @@ export default function SearchPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const navigate = useNavigate();
+  const { count: shortlistCount, items: shortlistItems } = useShortlist();
+  const [comparing, setComparing] = useState(false);
+
   const tickRef = useRef(0);
 
   const runSearch = useCallback(async () => {
@@ -130,12 +137,28 @@ export default function SearchPage() {
               5,000+ courses · Meilisearch-backed · costs shown in {respCurrency?.code || currency}
             </div>
           </div>
-          <Link
-            to="/"
-            style={{ fontSize: 12, color: P.accentLight, textDecoration: "none", padding: "8px 14px", borderRadius: 8, background: `${P.accent}15`, border: `1px solid ${P.accent}30`, fontFamily: "'Trebuchet MS',sans-serif" }}
-          >
-            ← Home
-          </Link>
+          <div style={{ display: "flex", gap: 8 }}>
+            <Link
+              to="/shortlist"
+              style={{ fontSize: 12, color: P.danger, textDecoration: "none", padding: "8px 14px", borderRadius: 8, background: `${P.danger}10`, border: `1px solid ${P.danger}40`, fontFamily: "'Trebuchet MS',sans-serif" }}
+            >
+              ♥ Shortlist {shortlistCount > 0 ? `(${shortlistCount})` : ""}
+            </Link>
+            {shortlistCount >= 2 && (
+              <button
+                onClick={() => setComparing(true)}
+                style={{ fontSize: 12, padding: "8px 14px", borderRadius: 8, background: `${P.success}15`, border: `1px solid ${P.success}40`, color: P.success, cursor: "pointer", fontFamily: "'Trebuchet MS',sans-serif" }}
+              >
+                ⚖ Compare {Math.min(shortlistCount, 4)}
+              </button>
+            )}
+            <Link
+              to="/"
+              style={{ fontSize: 12, color: P.accentLight, textDecoration: "none", padding: "8px 14px", borderRadius: 8, background: `${P.accent}15`, border: `1px solid ${P.accent}30`, fontFamily: "'Trebuchet MS',sans-serif" }}
+            >
+              ← Home
+            </Link>
+          </div>
         </div>
 
         {/* Search bar */}
@@ -266,13 +289,11 @@ export default function SearchPage() {
               {hits.map((h) => {
                 const provisional = h.provenance !== "curated";
                 return (
-                  <a
+                  <div
                     key={h.id}
-                    href={h.url || (h.canonical_id != null ? `#/course/${h.canonical_id}` : "#")}
-                    target={h.url ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
+                    onClick={() => navigate(`/course/${encodeURIComponent(h.id)}`)}
                     style={{
-                      textDecoration: "none",
+                      cursor: "pointer",
                       color: P.text,
                       padding: "14px 18px",
                       borderRadius: 12,
@@ -318,21 +339,26 @@ export default function SearchPage() {
                           </div>
                         )}
                       </div>
-                      <div style={{ textAlign: "right", flexShrink: 0 }}>
-                        <div style={{ fontSize: 14, fontWeight: 700, color: P.goldLight, fontFamily: "'Trebuchet MS',sans-serif" }}>
-                          <CurrencyDisplay hit={h} currency={respCurrency?.code || currency} />
-                        </div>
-                        {Number.isFinite(h.roi_score) && h.roi_score > 0 && (
-                          <div style={{ fontSize: 10, color: P.success, marginTop: 4 }}>
-                            ROI +£{(h.roi_score / 1000).toFixed(0)}k
+                      <div style={{ display: "flex", gap: 12, alignItems: "center", flexShrink: 0 }}>
+                        <ShortlistButton course={h} />
+                        <div style={{ textAlign: "right" }}>
+                          <div style={{ fontSize: 14, fontWeight: 700, color: P.goldLight, fontFamily: "'Trebuchet MS',sans-serif" }}>
+                            <CurrencyDisplay hit={h} currency={respCurrency?.code || currency} />
                           </div>
-                        )}
+                          {Number.isFinite(h.roi_score) && h.roi_score > 0 && (
+                            <div style={{ fontSize: 10, color: P.success, marginTop: 4 }}>
+                              ROI +£{(h.roi_score / 1000).toFixed(0)}k
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 );
               })}
             </div>
+
+            {comparing && <CompareDrawer items={shortlistItems.slice(0, 4)} onClose={() => setComparing(false)} />}
 
             {/* Pagination */}
             {totalPages > 1 && (

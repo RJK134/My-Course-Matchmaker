@@ -16,6 +16,9 @@ import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 import { MeiliSearch } from 'meilisearch';
+import { mapSubjectToDomain } from './lib/subject-taxonomy.mjs';
+import { resolveInstitution } from './lib/institution-resolver.mjs';
+import { lookupUkUniversity } from './lib/uk-universities.mjs';
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const LAKE_COURSES_PATH = join(REPO_ROOT, 'api', 'data', 'lake-courses.json');
@@ -159,15 +162,28 @@ function normaliseLakeRow(row, pathwayIndex) {
   const subject = row.subjectArea || null;
   const topPathway = topPathwayFor(subject, pathwayIndex);
   const provenance = SOURCE_PROVENANCE[row.source] || row.source || 'lake';
+  const inst = resolveInstitution(row.provider);
+  // If the curated catalogue didn't match, fall back to the UK universities
+  // dictionary so common lake providers (Bangor, Aston, Sheffield Hallam, …)
+  // still get a city/country instead of just "UK".
+  const ukFallback = inst ? null : lookupUkUniversity(row.provider);
+  const mappedDomain = mapSubjectToDomain(subject);
   return {
     id: `lake-${row.id}`,
     canonical_id: null,
     title: row.title,
     provider: row.provider,
-    country: 'UK', // current lake is 100% UK; honest default
-    city: row.locationCity || null,
+    // Use institution lookup, then UK fallback, then honest UK default.
+    country: inst?.country || ukFallback?.country || 'UK',
+    city: inst?.city || ukFallback?.city || row.locationCity || null,
+    institution_key: inst?.key || null,
+    institution_full_name: inst?.full || null,
+    institution_match: inst?._matchType || (ukFallback ? 'uk-dict' : 'unmatched'),
+    institution_match_score: inst?._matchScore ?? 0,
+    institution_lat: inst?.lat ?? null,
+    institution_lng: inst?.lng ?? null,
     level: 'undergraduate', // best guess for unverified UCAS/CUG rows
-    domain: subject || 'other',
+    domain: mappedDomain,
     subject_area: subject,
     qualification: row.qualification || null,
     duration: null,
@@ -260,6 +276,7 @@ async function main() {
       'fee_home',
       'fee_intl',
       'avg_salary_subject_gbp',
+      'institution_match',
     ],
     sortableAttributes: [
       'fees_for_filter',

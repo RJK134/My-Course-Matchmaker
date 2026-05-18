@@ -4028,16 +4028,31 @@
     "country": "UK",
     "city": "London",
     "level": "undergraduate",
-    "mode": ["full-time", "face-to-face"],
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
     "domain": "performing_arts",
-    "subjects": ["acting", "drama", "theatre", "performing arts", "voice", "movement"],
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "voice",
+      "movement"
+    ],
     "feeHome": 9250,
     "feeIntl": 22610,
     "livingCost": 18000,
     "duration": "3 years",
     "ranking": 2,
     "entryReqs": "Audition-based. No formal academic qualifications required. Applicants assessed on talent and potential. Mature students encouraged. All ages welcome.",
-    "careerPaths": ["Actor", "Director", "Theatre Practitioner", "Voice Coach"],
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Theatre Practitioner",
+      "Voice Coach"
+    ],
     "avgSalary": "£20k-£55k+",
     "employability": 65,
     "online": false,
@@ -4050,16 +4065,31 @@
     "country": "UK",
     "city": "London",
     "level": "undergraduate",
-    "mode": ["full-time", "face-to-face"],
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
     "domain": "performing_arts",
-    "subjects": ["acting", "drama", "theatre", "performing arts", "Shakespeare", "screen acting"],
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "Shakespeare",
+      "screen acting"
+    ],
     "feeHome": 9250,
     "feeIntl": 24500,
     "livingCost": 18000,
     "duration": "3 years",
     "ranking": 2,
     "entryReqs": "Audition and interview. No formal academic qualifications required. Assessed on talent, imagination, and commitment. Mature applicants welcome.",
-    "careerPaths": ["Actor", "Director", "Theatre Maker", "Screen Actor"],
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Theatre Maker",
+      "Screen Actor"
+    ],
     "avgSalary": "£20k-£60k+",
     "employability": 68,
     "online": false,
@@ -4072,16 +4102,30 @@
     "country": "UK",
     "city": "London",
     "level": "undergraduate",
-    "mode": ["full-time", "face-to-face"],
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
     "domain": "music",
-    "subjects": ["music", "music performance", "composition", "classical music", "jazz"],
+    "subjects": [
+      "music",
+      "music performance",
+      "composition",
+      "classical music",
+      "jazz"
+    ],
     "feeHome": 9250,
     "feeIntl": 24500,
     "livingCost": 18000,
     "duration": "4 years",
     "ranking": 3,
     "entryReqs": "Audition-based. Grade 8 or diploma level standard expected. All instruments and voice. Mature students considered.",
-    "careerPaths": ["Orchestral Musician", "Soloist", "Session Musician", "Music Teacher"],
+    "careerPaths": [
+      "Orchestral Musician",
+      "Soloist",
+      "Session Musician",
+      "Music Teacher"
+    ],
     "avgSalary": "£22k-£50k+",
     "employability": 60,
     "online": false,
@@ -4094,16 +4138,30 @@
     "country": "UK",
     "city": "London",
     "level": "undergraduate",
-    "mode": ["full-time", "face-to-face"],
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
     "domain": "performing_arts",
-    "subjects": ["acting", "drama", "theatre", "performing arts", "devised theatre"],
+    "subjects": [
+      "acting",
+      "drama",
+      "theatre",
+      "performing arts",
+      "devised theatre"
+    ],
     "feeHome": 9250,
     "feeIntl": 16500,
     "livingCost": 18000,
     "duration": "3 years",
     "ranking": 5,
     "entryReqs": "Audition and interview. No formal academic qualifications required. BTEC and Access courses accepted. Mature students encouraged.",
-    "careerPaths": ["Actor", "Director", "Theatre Facilitator", "Drama Teacher"],
+    "careerPaths": [
+      "Actor",
+      "Director",
+      "Theatre Facilitator",
+      "Drama Teacher"
+    ],
     "avgSalary": "£20k-£45k+",
     "employability": 62,
     "online": false,
@@ -4116,16 +4174,30 @@
     "country": "UK",
     "city": "London",
     "level": "undergraduate",
-    "mode": ["full-time", "face-to-face"],
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
     "domain": "film_media",
-    "subjects": ["film", "screen acting", "acting", "directing", "cinematography"],
+    "subjects": [
+      "film",
+      "screen acting",
+      "acting",
+      "directing",
+      "cinematography"
+    ],
     "feeHome": 9250,
     "feeIntl": 16500,
     "livingCost": 18000,
     "duration": "3 years",
     "ranking": 6,
     "entryReqs": "Audition and interview. A-levels or BTEC accepted. Portfolio of creative work encouraged. Mature students considered.",
-    "careerPaths": ["Screen Actor", "Film Director", "Producer", "Casting Director"],
+    "careerPaths": [
+      "Screen Actor",
+      "Film Director",
+      "Producer",
+      "Casting Director"
+    ],
     "avgSalary": "£22k-£50k+",
     "employability": 60,
     "online": false,
@@ -4138,18 +4210,1165 @@
     "country": "UK",
     "city": "London",
     "level": "undergraduate",
-    "mode": ["full-time", "face-to-face"],
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
     "domain": "performing_arts",
-    "subjects": ["musical theatre", "acting", "singing", "dance", "performing arts"],
+    "subjects": [
+      "musical theatre",
+      "acting",
+      "singing",
+      "dance",
+      "performing arts"
+    ],
     "feeHome": 9250,
     "feeIntl": 22610,
     "livingCost": 18000,
     "duration": "3 years",
     "ranking": 2,
     "entryReqs": "Audition-based. Must demonstrate ability in acting, singing, and dance. No formal academic qualifications required. All ages welcome.",
-    "careerPaths": ["Musical Theatre Performer", "Singer", "Dancer", "Choreographer"],
+    "careerPaths": [
+      "Musical Theatre Performer",
+      "Singer",
+      "Dancer",
+      "Choreographer"
+    ],
     "avgSalary": "£20k-£50k+",
     "employability": 63,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 126,
+    "title": "MSc Informatics",
+    "institution": "TU Munich (TUM)",
+    "country": "Germany",
+    "city": "Munich",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "software engineering",
+      "AI",
+      "machine learning"
+    ],
+    "feeHome": 144,
+    "feeIntl": 6000,
+    "livingCost": 14400,
+    "duration": "2 years",
+    "ranking": 30,
+    "entryReqs": "Strong undergrad CS or related; English C1 or German B2.",
+    "careerPaths": [
+      "Software Engineer",
+      "ML Engineer",
+      "Research Scientist"
+    ],
+    "avgSalary": "€55k-€90k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 127,
+    "title": "MSc Mechanical Engineering",
+    "institution": "RWTH Aachen",
+    "country": "Germany",
+    "city": "Aachen",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "mechanical engineering",
+      "manufacturing",
+      "automotive"
+    ],
+    "feeHome": 600,
+    "feeIntl": 600,
+    "livingCost": 10800,
+    "duration": "2 years",
+    "ranking": 35,
+    "entryReqs": "BEng/BSc Engineering; English B2 or German B2.",
+    "careerPaths": [
+      "Mechanical Engineer",
+      "Manufacturing Lead",
+      "R&D Engineer"
+    ],
+    "avgSalary": "€50k-€75k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 128,
+    "title": "BSc Computer Science",
+    "institution": "LMU Munich",
+    "country": "Germany",
+    "city": "Munich",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "programming",
+      "algorithms",
+      "mathematics"
+    ],
+    "feeHome": 144,
+    "feeIntl": 144,
+    "livingCost": 14400,
+    "duration": "3 years",
+    "ranking": 60,
+    "entryReqs": "Abitur or recognised equivalent; German B2 required.",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Scientist",
+      "IT Consultant"
+    ],
+    "avgSalary": "€45k-€70k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 129,
+    "title": "MSc Physics",
+    "institution": "Heidelberg University",
+    "country": "Germany",
+    "city": "Heidelberg",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "sciences",
+    "subjects": [
+      "physics",
+      "mathematics",
+      "quantum mechanics"
+    ],
+    "feeHome": 300,
+    "feeIntl": 3000,
+    "livingCost": 12000,
+    "duration": "2 years",
+    "ranking": 40,
+    "entryReqs": "BSc Physics; English B2.",
+    "careerPaths": [
+      "Research Scientist",
+      "Data Scientist",
+      "Quant Analyst"
+    ],
+    "avgSalary": "€48k-€80k",
+    "employability": 85,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 130,
+    "title": "MSc Computer Science",
+    "institution": "TU Delft",
+    "country": "Netherlands",
+    "city": "Delft",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "AI",
+      "software engineering",
+      "data science"
+    ],
+    "feeHome": 2530,
+    "feeIntl": 21000,
+    "livingCost": 13200,
+    "duration": "2 years",
+    "ranking": 25,
+    "entryReqs": "BSc CS or equivalent; English C1 (IELTS 6.5+).",
+    "careerPaths": [
+      "Software Engineer",
+      "ML Engineer",
+      "Data Scientist"
+    ],
+    "avgSalary": "€55k-€85k",
+    "employability": 93,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 131,
+    "title": "MSc Aerospace Engineering",
+    "institution": "TU Delft",
+    "country": "Netherlands",
+    "city": "Delft",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "aerospace",
+      "engineering",
+      "aeronautics"
+    ],
+    "feeHome": 2530,
+    "feeIntl": 21000,
+    "livingCost": 13200,
+    "duration": "2 years",
+    "ranking": 15,
+    "entryReqs": "BSc Aerospace or related engineering; English C1.",
+    "careerPaths": [
+      "Aerospace Engineer",
+      "Flight Test Engineer",
+      "Systems Architect"
+    ],
+    "avgSalary": "€55k-€90k",
+    "employability": 91,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 132,
+    "title": "MSc Artificial Intelligence",
+    "institution": "University of Amsterdam",
+    "country": "Netherlands",
+    "city": "Amsterdam",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "AI",
+      "machine learning",
+      "computer science"
+    ],
+    "feeHome": 2530,
+    "feeIntl": 18000,
+    "livingCost": 15600,
+    "duration": "2 years",
+    "ranking": 28,
+    "entryReqs": "BSc CS / Maths / AI; strong programming; English C1.",
+    "careerPaths": [
+      "ML Engineer",
+      "AI Researcher",
+      "Data Scientist"
+    ],
+    "avgSalary": "€55k-€95k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 133,
+    "title": "MSc Data Science and Artificial Intelligence",
+    "institution": "Eindhoven TU/e",
+    "country": "Netherlands",
+    "city": "Eindhoven",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "data science",
+      "AI",
+      "machine learning"
+    ],
+    "feeHome": 2530,
+    "feeIntl": 18500,
+    "livingCost": 12000,
+    "duration": "2 years",
+    "ranking": 45,
+    "entryReqs": "BSc CS / Maths / Eng; English C1.",
+    "careerPaths": [
+      "Data Scientist",
+      "ML Engineer",
+      "Analytics Lead"
+    ],
+    "avgSalary": "€55k-€80k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 134,
+    "title": "MSc International Management (MIM)",
+    "institution": "Erasmus University Rotterdam",
+    "country": "Netherlands",
+    "city": "Rotterdam",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "international business"
+    ],
+    "feeHome": 2530,
+    "feeIntl": 20000,
+    "livingCost": 13200,
+    "duration": "1 year",
+    "ranking": 22,
+    "entryReqs": "Strong UG in business or related; GMAT 600+.",
+    "careerPaths": [
+      "Consultant",
+      "Brand Manager",
+      "Business Analyst"
+    ],
+    "avgSalary": "€55k-€90k",
+    "employability": 91,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 135,
+    "title": "MSc Machine Learning",
+    "institution": "KTH Stockholm",
+    "country": "Sweden",
+    "city": "Stockholm",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "machine learning",
+      "AI",
+      "data science",
+      "computer science"
+    ],
+    "feeHome": 0,
+    "feeIntl": 12500,
+    "livingCost": 14400,
+    "duration": "2 years",
+    "ranking": 30,
+    "entryReqs": "BSc CS / Maths / Eng; English B2 (IELTS 6.5).",
+    "careerPaths": [
+      "ML Engineer",
+      "Data Scientist",
+      "Research Scientist"
+    ],
+    "avgSalary": "SEK 600k-900k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 136,
+    "title": "MSc Management",
+    "institution": "Lund University",
+    "country": "Sweden",
+    "city": "Lund",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "strategy"
+    ],
+    "feeHome": 0,
+    "feeIntl": 10500,
+    "livingCost": 12000,
+    "duration": "1 year",
+    "ranking": 65,
+    "entryReqs": "Undergrad in any discipline; English B2.",
+    "careerPaths": [
+      "Consultant",
+      "Project Manager",
+      "Business Analyst"
+    ],
+    "avgSalary": "SEK 450k-700k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 137,
+    "title": "MSc Sustainable Energy Systems",
+    "institution": "Chalmers",
+    "country": "Sweden",
+    "city": "Gothenburg",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "engineering",
+      "sustainable energy",
+      "environmental engineering"
+    ],
+    "feeHome": 0,
+    "feeIntl": 13000,
+    "livingCost": 13200,
+    "duration": "2 years",
+    "ranking": 75,
+    "entryReqs": "BEng Energy/Mechanical/Electrical; English B2.",
+    "careerPaths": [
+      "Energy Engineer",
+      "Sustainability Consultant",
+      "R&D Engineer"
+    ],
+    "avgSalary": "SEK 500k-800k",
+    "employability": 89,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 138,
+    "title": "MSc Robotics, Systems and Control",
+    "institution": "ETH Zurich",
+    "country": "Switzerland",
+    "city": "Zurich",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "robotics",
+      "engineering",
+      "control systems",
+      "AI"
+    ],
+    "feeHome": 1460,
+    "feeIntl": 1460,
+    "livingCost": 24000,
+    "duration": "2 years",
+    "ranking": 5,
+    "entryReqs": "Strong UG in EE / ME / CS; English C1.",
+    "careerPaths": [
+      "Robotics Engineer",
+      "Control Systems Engineer",
+      "R&D Lead"
+    ],
+    "avgSalary": "CHF 100k-140k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 139,
+    "title": "MSc Data Science",
+    "institution": "EPFL",
+    "country": "Switzerland",
+    "city": "Lausanne",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "data science",
+      "machine learning",
+      "statistics",
+      "computer science"
+    ],
+    "feeHome": 1460,
+    "feeIntl": 1460,
+    "livingCost": 22800,
+    "duration": "2 years",
+    "ranking": 12,
+    "entryReqs": "BSc CS / Maths / Eng; English C1.",
+    "careerPaths": [
+      "Data Scientist",
+      "ML Engineer",
+      "Quant Analyst"
+    ],
+    "avgSalary": "CHF 100k-135k",
+    "employability": 95,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 140,
+    "title": "MSc Software and Data Engineering",
+    "institution": "USI Lugano",
+    "country": "Switzerland",
+    "city": "Lugano",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "software engineering",
+      "data engineering",
+      "computer science"
+    ],
+    "feeHome": 4000,
+    "feeIntl": 4000,
+    "livingCost": 19200,
+    "duration": "2 years",
+    "ranking": 110,
+    "entryReqs": "BSc CS or related; English B2.",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Engineer",
+      "Platform Engineer"
+    ],
+    "avgSalary": "CHF 85k-115k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 141,
+    "title": "MBA",
+    "institution": "University of St Gallen",
+    "country": "Switzerland",
+    "city": "St. Gallen",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "MBA",
+      "strategy"
+    ],
+    "feeHome": 47500,
+    "feeIntl": 47500,
+    "livingCost": 21600,
+    "duration": "1 year",
+    "ranking": 18,
+    "entryReqs": "5+ years work experience; GMAT 650+; English C1.",
+    "careerPaths": [
+      "Consultant",
+      "Strategy Lead",
+      "Investment Manager"
+    ],
+    "avgSalary": "CHF 130k-200k",
+    "employability": 94,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 142,
+    "title": "MA International Affairs",
+    "institution": "Sciences Po",
+    "country": "France",
+    "city": "Paris",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "social_sciences",
+    "subjects": [
+      "international relations",
+      "politics",
+      "political science"
+    ],
+    "feeHome": 0,
+    "feeIntl": 19200,
+    "livingCost": 16800,
+    "duration": "2 years",
+    "ranking": 30,
+    "entryReqs": "UG in social sciences / politics; English C1 or French B2.",
+    "careerPaths": [
+      "Diplomat",
+      "Policy Analyst",
+      "NGO Lead"
+    ],
+    "avgSalary": "€45k-€75k",
+    "employability": 87,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 143,
+    "title": "MBA",
+    "institution": "HEC Paris",
+    "country": "France",
+    "city": "Jouy-en-Josas",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "MBA",
+      "strategy"
+    ],
+    "feeHome": 84000,
+    "feeIntl": 84000,
+    "livingCost": 22800,
+    "duration": "16 months",
+    "ranking": 4,
+    "entryReqs": "2+ years work experience; GMAT 690+; English C1.",
+    "careerPaths": [
+      "Consultant",
+      "Finance Lead",
+      "Entrepreneur"
+    ],
+    "avgSalary": "€130k-€220k",
+    "employability": 96,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 144,
+    "title": "MSc Cybersecurity",
+    "institution": "École Polytechnique",
+    "country": "France",
+    "city": "Palaiseau",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "cybersecurity",
+      "computer science",
+      "cryptography"
+    ],
+    "feeHome": 0,
+    "feeIntl": 12000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 50,
+    "entryReqs": "BSc CS / Maths / Eng; English C1.",
+    "careerPaths": [
+      "Security Engineer",
+      "Penetration Tester",
+      "Security Architect"
+    ],
+    "avgSalary": "€55k-€90k",
+    "employability": 93,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 145,
+    "title": "BSc Computer Science",
+    "institution": "Sorbonne University",
+    "country": "France",
+    "city": "Paris",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "programming",
+      "algorithms"
+    ],
+    "feeHome": 170,
+    "feeIntl": 2770,
+    "livingCost": 16800,
+    "duration": "3 years",
+    "ranking": 80,
+    "entryReqs": "Baccalauréat or equivalent; French B2.",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Analyst",
+      "Web Developer"
+    ],
+    "avgSalary": "€40k-€65k",
+    "employability": 84,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 146,
+    "title": "MSc Applied Computing",
+    "institution": "U Toronto",
+    "country": "Canada",
+    "city": "Toronto",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "data science",
+      "AI",
+      "machine learning"
+    ],
+    "feeHome": 14000,
+    "feeIntl": 36500,
+    "livingCost": 16800,
+    "duration": "16 months",
+    "ranking": 18,
+    "entryReqs": "BSc CS or related; English C1.",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Scientist",
+      "ML Engineer"
+    ],
+    "avgSalary": "CAD 90k-140k",
+    "employability": 93,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 147,
+    "title": "MSc Sustainability",
+    "institution": "UBC",
+    "country": "Canada",
+    "city": "Vancouver",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "agriculture_environment",
+    "subjects": [
+      "sustainability",
+      "environmental science",
+      "policy"
+    ],
+    "feeHome": 9000,
+    "feeIntl": 30000,
+    "livingCost": 19200,
+    "duration": "1.5 years",
+    "ranking": 38,
+    "entryReqs": "UG in any discipline with relevant experience; English C1.",
+    "careerPaths": [
+      "Sustainability Consultant",
+      "Policy Analyst",
+      "ESG Lead"
+    ],
+    "avgSalary": "CAD 65k-100k",
+    "employability": 86,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 148,
+    "title": "MEng Mechanical Engineering",
+    "institution": "McGill",
+    "country": "Canada",
+    "city": "Montreal",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "mechanical engineering",
+      "robotics",
+      "manufacturing"
+    ],
+    "feeHome": 9500,
+    "feeIntl": 30500,
+    "livingCost": 14400,
+    "duration": "2 years",
+    "ranking": 30,
+    "entryReqs": "BEng Mechanical; English C1 (or French B2 for some streams).",
+    "careerPaths": [
+      "Mechanical Engineer",
+      "R&D Engineer",
+      "Robotics Engineer"
+    ],
+    "avgSalary": "CAD 80k-115k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 149,
+    "title": "BSc Computer Science (Co-op)",
+    "institution": "Waterloo",
+    "country": "Canada",
+    "city": "Waterloo",
+    "level": "undergraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "programming",
+      "algorithms",
+      "software engineering"
+    ],
+    "feeHome": 17000,
+    "feeIntl": 64000,
+    "livingCost": 14400,
+    "duration": "5 years (incl. co-op)",
+    "ranking": 24,
+    "entryReqs": "High school maths/physics; English C1.",
+    "careerPaths": [
+      "Software Engineer (FAANG pipeline)",
+      "Founder",
+      "Quant Developer"
+    ],
+    "avgSalary": "CAD 90k-180k",
+    "employability": 96,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 150,
+    "title": "MSc Information Technology",
+    "institution": "U Melbourne",
+    "country": "Australia",
+    "city": "Melbourne",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "IT",
+      "software engineering",
+      "computer science"
+    ],
+    "feeHome": 28000,
+    "feeIntl": 49000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 22,
+    "entryReqs": "UG in any discipline (CS preferred); English C1.",
+    "careerPaths": [
+      "Software Engineer",
+      "Cloud Architect",
+      "Data Engineer"
+    ],
+    "avgSalary": "AUD 90k-140k",
+    "employability": 92,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 151,
+    "title": "MSc Data Science and Decisions",
+    "institution": "UNSW Sydney",
+    "country": "Australia",
+    "city": "Sydney",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "data science",
+      "statistics",
+      "machine learning"
+    ],
+    "feeHome": 27000,
+    "feeIntl": 45000,
+    "livingCost": 21600,
+    "duration": "1.5 years",
+    "ranking": 28,
+    "entryReqs": "UG in quant discipline; English C1.",
+    "careerPaths": [
+      "Data Scientist",
+      "Analytics Lead",
+      "Consultant"
+    ],
+    "avgSalary": "AUD 95k-150k",
+    "employability": 91,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 152,
+    "title": "MEng (Civil)",
+    "institution": "ANU",
+    "country": "Australia",
+    "city": "Canberra",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "engineering",
+    "subjects": [
+      "civil engineering",
+      "engineering",
+      "sustainability"
+    ],
+    "feeHome": 29000,
+    "feeIntl": 47000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 35,
+    "entryReqs": "BEng Civil; English C1.",
+    "careerPaths": [
+      "Civil Engineer",
+      "Infrastructure Lead",
+      "Sustainability Engineer"
+    ],
+    "avgSalary": "AUD 90k-130k",
+    "employability": 90,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 153,
+    "title": "Master of Business (MBus)",
+    "institution": "Monash",
+    "country": "Australia",
+    "city": "Melbourne",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "business",
+    "subjects": [
+      "business",
+      "management",
+      "strategy"
+    ],
+    "feeHome": 35000,
+    "feeIntl": 49000,
+    "livingCost": 18000,
+    "duration": "1.5 years",
+    "ranking": 45,
+    "entryReqs": "UG in any discipline; English C1.",
+    "careerPaths": [
+      "Consultant",
+      "Project Manager",
+      "Business Analyst"
+    ],
+    "avgSalary": "AUD 85k-140k",
+    "employability": 88,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 154,
+    "title": "MEng Electrical Engineering and Computer Science",
+    "institution": "MIT",
+    "country": "USA",
+    "city": "Cambridge MA",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "EECS",
+      "computer science",
+      "electrical engineering"
+    ],
+    "feeHome": 61990,
+    "feeIntl": 61990,
+    "livingCost": 24000,
+    "duration": "1.5 years",
+    "ranking": 1,
+    "entryReqs": "Top-tier UG in CS/EE; English C1; GRE.",
+    "careerPaths": [
+      "Software Engineer",
+      "Research Scientist",
+      "Founder"
+    ],
+    "avgSalary": "USD 150k-220k",
+    "employability": 97,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 155,
+    "title": "MS Artificial Intelligence",
+    "institution": "Stanford",
+    "country": "USA",
+    "city": "Stanford CA",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "AI",
+      "machine learning",
+      "computer science"
+    ],
+    "feeHome": 61875,
+    "feeIntl": 61875,
+    "livingCost": 28800,
+    "duration": "2 years",
+    "ranking": 2,
+    "entryReqs": "Top-tier UG in CS/Maths; English C1; GRE optional.",
+    "careerPaths": [
+      "ML Engineer",
+      "AI Researcher",
+      "Founder"
+    ],
+    "avgSalary": "USD 160k-250k",
+    "employability": 97,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 156,
+    "title": "MS Computer Science",
+    "institution": "UC Berkeley",
+    "country": "USA",
+    "city": "Berkeley CA",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "systems",
+      "AI",
+      "data science"
+    ],
+    "feeHome": 14250,
+    "feeIntl": 33000,
+    "livingCost": 25200,
+    "duration": "2 years",
+    "ranking": 4,
+    "entryReqs": "Strong UG in CS; English C1; GRE.",
+    "careerPaths": [
+      "Software Engineer",
+      "Researcher",
+      "Founder"
+    ],
+    "avgSalary": "USD 140k-210k",
+    "employability": 96,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 157,
+    "title": "MS Software Engineering",
+    "institution": "CMU",
+    "country": "USA",
+    "city": "Pittsburgh PA",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "software engineering",
+      "computer science"
+    ],
+    "feeHome": 58000,
+    "feeIntl": 58000,
+    "livingCost": 19200,
+    "duration": "16 months",
+    "ranking": 3,
+    "entryReqs": "UG in CS or related; 2+ years industry experience preferred.",
+    "careerPaths": [
+      "Software Engineer",
+      "Tech Lead",
+      "Engineering Manager"
+    ],
+    "avgSalary": "USD 140k-200k",
+    "employability": 96,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 158,
+    "title": "MEng Computer Science and Engineering",
+    "institution": "U Michigan",
+    "country": "USA",
+    "city": "Ann Arbor MI",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "engineering",
+      "AI"
+    ],
+    "feeHome": 26500,
+    "feeIntl": 53000,
+    "livingCost": 18000,
+    "duration": "1.5 years",
+    "ranking": 12,
+    "entryReqs": "BSc CS or related; English C1.",
+    "careerPaths": [
+      "Software Engineer",
+      "ML Engineer",
+      "Systems Engineer"
+    ],
+    "avgSalary": "USD 130k-180k",
+    "employability": 94,
+    "online": false,
+    "free": false
+  },
+  {
+    "id": 159,
+    "title": "MS Computer Science",
+    "institution": "UT Austin",
+    "country": "USA",
+    "city": "Austin TX",
+    "level": "postgraduate",
+    "mode": [
+      "full-time",
+      "face-to-face"
+    ],
+    "domain": "computer_science",
+    "subjects": [
+      "computer science",
+      "systems",
+      "AI",
+      "software engineering"
+    ],
+    "feeHome": 11500,
+    "feeIntl": 22000,
+    "livingCost": 18000,
+    "duration": "2 years",
+    "ranking": 10,
+    "entryReqs": "Strong UG in CS; English C1; GRE.",
+    "careerPaths": [
+      "Software Engineer",
+      "Data Scientist",
+      "Researcher"
+    ],
+    "avgSalary": "USD 130k-180k",
+    "employability": 94,
     "online": false,
     "free": false
   }
