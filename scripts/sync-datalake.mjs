@@ -32,11 +32,17 @@ import {
   rowsToObjects,
   validateCareerPathwayRow,
   validateCourseRow,
+  validateCoursePulseRow,
+  validateFundingRow,
+  validateFxRow,
 } from './datalake/mcm-importer.mjs';
 
 const RCLONE_REMOTE_DIR = 'gdrive5tb:workhorse-datalake/latest';
 const COURSES_CSV = 'courses.csv';
 const PATHWAYS_CSV = 'course_career_pathways.csv';
+const INSIGHTS_CSV = 'coursepulse_insights.csv';
+const FUNDING_CSV = 'funding_opportunities.csv';
+const FX_CSV = 'exchange_rates.csv';
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = join(REPO_ROOT, 'frontend', 'src', 'data');
@@ -116,64 +122,71 @@ function writeGeneratedFile(filename, exportName, items, sourceLabel) {
 function main() {
   const args = parseArgs(process.argv.slice(2));
 
-  let coursesPath;
-  let pathwaysPath;
+  // Each entry: [filename, validator, jsExport, jsFilename, apiFilename, optional?]
+  const sources = [
+    [COURSES_CSV, validateCourseRow, 'lakeCourses', 'datalake-courses.generated.js', 'lake-courses.json', false],
+    [PATHWAYS_CSV, validateCareerPathwayRow, 'lakeCareerPathways', 'datalake-career-pathways.generated.js', 'career-pathways.json', false],
+    [INSIGHTS_CSV, validateCoursePulseRow, 'lakeInsights', 'datalake-insights.generated.js', 'insights.json', true],
+    [FUNDING_CSV, validateFundingRow, 'lakeFunding', 'datalake-funding.generated.js', 'funding.json', true],
+    [FX_CSV, validateFxRow, 'lakeExchangeRates', 'datalake-fx.generated.js', 'fx.json', true],
+  ];
+
+  let dir;
   let snapshotLabel;
+  let cleanupStaging = false;
   if (args.sourceDir) {
-    const dir = isAbsolute(args.sourceDir) ? args.sourceDir : resolve(args.sourceDir);
+    dir = isAbsolute(args.sourceDir) ? args.sourceDir : resolve(args.sourceDir);
     if (!existsSync(dir)) {
       console.error(`[sync-datalake] source dir not found: ${dir}`);
       process.exit(1);
     }
-    coursesPath = join(dir, COURSES_CSV);
-    pathwaysPath = join(dir, PATHWAYS_CSV);
-    if (!existsSync(coursesPath) || !existsSync(pathwaysPath)) {
-      console.error(
-        `[sync-datalake] source dir is missing ${COURSES_CSV} or ${PATHWAYS_CSV}: ${dir}`,
-      );
-      process.exit(1);
+    // Required files must exist; optional may be skipped.
+    for (const [filename, , , , , optional] of sources) {
+      if (!optional && !existsSync(join(dir, filename))) {
+        console.error(`[sync-datalake] source dir is missing required ${filename}: ${dir}`);
+        process.exit(1);
+      }
     }
     snapshotLabel = `local:${dir}`;
   } else {
-    const staging = mkdtempSync(join(tmpdir(), 'mcm-datalake-'));
-    console.log(`[sync-datalake] staging ${staging}`);
-    coursesPath = fetchFromRclone(staging, COURSES_CSV);
-    pathwaysPath = fetchFromRclone(staging, PATHWAYS_CSV);
+    dir = mkdtempSync(join(tmpdir(), 'mcm-datalake-'));
+    cleanupStaging = true;
+    console.log(`[sync-datalake] staging ${dir}`);
+    for (const [filename, , , , , optional] of sources) {
+      try {
+        fetchFromRclone(dir, filename);
+      } catch (err) {
+        if (optional) {
+          console.warn(`[sync-datalake] optional ${filename} missing from lake — skipping`);
+        } else {
+          throw err;
+        }
+      }
+    }
     snapshotLabel = RCLONE_REMOTE_DIR;
   }
 
-  const courses = ingestCsv(coursesPath, validateCourseRow, 'courses');
-  const pathways = ingestCsv(pathwaysPath, validateCareerPathwayRow, 'pathways');
+  if (!existsSync(API_DATA_DIR)) mkdirSync(API_DATA_DIR, { recursive: true });
 
-  if (args.dryRun) {
-    console.log('[sync-datalake] dry-run — skipping write');
-    return;
+  for (const [filename, validator, exportName, jsFile, apiFile, optional] of sources) {
+    const path = join(dir, filename);
+    if (!existsSync(path)) {
+      if (optional) continue;
+      throw new Error(`Missing required CSV: ${filename}`);
+    }
+    const label = filename.replace('.csv', '');
+    const result = ingestCsv(path, validator, label);
+    if (args.dryRun) continue;
+    const jsOut = writeGeneratedFile(jsFile, exportName, result.accepted, snapshotLabel);
+    const apiOut = join(API_DATA_DIR, apiFile);
+    writeFileSync(apiOut, JSON.stringify(result.accepted), 'utf8');
+    console.log(`[sync-datalake] wrote ${jsOut}`);
+    console.log(`[sync-datalake] wrote ${apiOut}`);
   }
 
-  const coursesOut = writeGeneratedFile(
-    'datalake-courses.generated.js',
-    'lakeCourses',
-    courses.accepted,
-    snapshotLabel,
-  );
-  const pathwaysOut = writeGeneratedFile(
-    'datalake-career-pathways.generated.js',
-    'lakeCareerPathways',
-    pathways.accepted,
-    snapshotLabel,
-  );
-  console.log(`[sync-datalake] wrote ${coursesOut}`);
-  console.log(`[sync-datalake] wrote ${pathwaysOut}`);
-
-  // Also emit JSON copies in api/data/ so the CommonJS API can require them
-  // without needing an ESM bridge. Same data, machine-readable.
-  if (!existsSync(API_DATA_DIR)) mkdirSync(API_DATA_DIR, { recursive: true });
-  const apiCoursesPath = join(API_DATA_DIR, 'lake-courses.json');
-  const apiPathwaysPath = join(API_DATA_DIR, 'career-pathways.json');
-  writeFileSync(apiCoursesPath, JSON.stringify(courses.accepted), 'utf8');
-  writeFileSync(apiPathwaysPath, JSON.stringify(pathways.accepted), 'utf8');
-  console.log(`[sync-datalake] wrote ${apiCoursesPath}`);
-  console.log(`[sync-datalake] wrote ${apiPathwaysPath}`);
+  if (cleanupStaging) {
+    // Leave staging dir behind for debugging — it's in /tmp and the OS will reap it.
+  }
 }
 
 main();

@@ -1,0 +1,89 @@
+{
+  "name": "MCM Data Quality Weekly Report",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "triggerAtHour": 6, "triggerAtDay": 0 }] }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/stats",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "Get Stats",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 220]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/scrape/report/latest",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "Get Latest Runs",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 380]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/search/health",
+        "method": "GET"
+      },
+      "name": "Get Search Health",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 540]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "name": "Merge Signals",
+      "type": "n8n-nodes-base.merge",
+      "position": [700, 380]
+    },
+    {
+      "parameters": {
+        "jsCode": "const stats = $('Get Stats').first().json;\nconst runs = $('Get Latest Runs').first().json;\nconst search = $('Get Search Health').first().json;\nconst lines = [];\nlines.push(`# MyCourseMatchmaker — Weekly Data Quality Report`);\nlines.push(`Generated ${new Date().toISOString()}`);\nlines.push(``);\nlines.push(`## Corpus`);\nlines.push(`- Courses (curated): **${stats.totalCourses}**`);\nlines.push(`- Institutions: **${stats.totalInstitutions}**`);\nlines.push(`- Cities with COL: **${stats.totalCities}**`);\nlines.push(`- Pending review (staging): **${stats.pendingReview}**`);\nlines.push(`- Meilisearch documents: **${search.numberOfDocuments || 'n/a'}**`);\nlines.push(``);\nlines.push(`## Scrape sources`);\nfor (const s of stats.sources || []) {\n  lines.push(`- ${s.display_name}: ${s.last_run_status || 'never run'} (last count ${s.last_run_count || 0})`);\n}\nlines.push(``);\nlines.push(`## Latest 10 runs`);\nfor (const r of (runs || []).slice(0, 10)) {\n  lines.push(`- ${r.started_at} · ${r.source_name} · ${r.status} · +${r.courses_new || 0} new / ${r.courses_updated || 0} updated`);\n}\nreturn [{ json: { reportMarkdown: lines.join('\\n') } }];"
+      },
+      "name": "Compose Report",
+      "type": "n8n-nodes-base.code",
+      "position": [920, 380]
+    },
+    {
+      "parameters": {
+        "fromEmail": "mcm-reports@futurehorizons.education",
+        "toEmail": "={{$env.MCM_REPORT_RECIPIENT}}",
+        "subject": "MCM Weekly Data Quality Report",
+        "emailType": "text",
+        "text": "={{$json.reportMarkdown}}"
+      },
+      "name": "Email Report",
+      "type": "n8n-nodes-base.emailSend",
+      "position": [1140, 380]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[
+        { "node": "Get Stats", "type": "main", "index": 0 },
+        { "node": "Get Latest Runs", "type": "main", "index": 0 },
+        { "node": "Get Search Health", "type": "main", "index": 0 }
+      ]]
+    },
+    "Get Stats": { "main": [[{ "node": "Merge Signals", "type": "main", "index": 0 }]] },
+    "Get Latest Runs": { "main": [[{ "node": "Merge Signals", "type": "main", "index": 1 }]] },
+    "Get Search Health": { "main": [[{ "node": "Merge Signals", "type": "main", "index": 2 }]] },
+    "Merge Signals": { "main": [[{ "node": "Compose Report", "type": "main", "index": 0 }]] },
+    "Compose Report": { "main": [[{ "node": "Email Report", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

@@ -1,5 +1,6 @@
 const express = require("express");
 const { getCoursesIndex } = require("../lib/meilisearch");
+const { getRate } = require("./fx");
 const router = express.Router();
 
 /**
@@ -68,8 +69,39 @@ router.get("/", async (req, res) => {
 
     const idx = getCoursesIndex();
     const result = await idx.search(q || "", params);
+
+    // Currency layer: every doc is indexed in GBP. When ?currency=XXX is
+    // passed, attach a `_converted` block so the client can render in the
+    // user's home currency without a per-row round-trip.
+    const requestedCurrency = (req.query.currency || "GBP").toUpperCase();
+    let rate = 1;
+    if (requestedCurrency !== "GBP") {
+      rate = getRate("GBP", requestedCurrency) ?? 1;
+    }
+    const hits = result.hits.map((h) => {
+      if (requestedCurrency === "GBP" || rate === 1) {
+        return { ...h, _currency: { code: "GBP", rate: 1, source: "indexed" } };
+      }
+      const convert = (n) => (Number.isFinite(n) ? Math.round(n * rate) : null);
+      return {
+        ...h,
+        _currency: {
+          code: requestedCurrency,
+          rate,
+          source: "ecb-via-workhorse-datalake",
+        },
+        _converted: {
+          fee_home: convert(h.fee_home),
+          fee_intl: convert(h.fee_intl),
+          fees_for_filter: convert(h.fees_for_filter),
+          avg_salary_subject_gbp: convert(h.avg_salary_subject_gbp),
+          top_career_salary_gbp: convert(h.top_career_salary_gbp),
+        },
+      };
+    });
+
     res.json({
-      hits: result.hits,
+      hits,
       total: result.estimatedTotalHits ?? result.totalHits ?? result.hits.length,
       page: Number(page),
       pageSize: Number(page_size),
@@ -77,6 +109,7 @@ router.get("/", async (req, res) => {
       processingTimeMs: result.processingTimeMs,
       query: q,
       appliedFilters: filters,
+      currency: { code: requestedCurrency, rate, source: requestedCurrency === "GBP" ? "indexed" : "ecb-via-workhorse-datalake" },
     });
   } catch (err) {
     res.status(500).json({ error: err.message, hint: "Is the indexer up to date? Run: node scripts/index-courses.mjs" });

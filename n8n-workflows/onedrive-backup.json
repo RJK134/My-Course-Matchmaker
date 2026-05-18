@@ -1,0 +1,84 @@
+{
+  "name": "MCM OneDrive Weekly Backup",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "triggerAtHour": 8, "triggerAtDay": 0 }] }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/export/courses",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": { "response": { "response": { "responseFormat": "json" } } }
+      },
+      "name": "Export Courses",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 220]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/export/institutions",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": { "response": { "response": { "responseFormat": "json" } } }
+      },
+      "name": "Export Institutions",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 380]
+    },
+    {
+      "parameters": {
+        "jsCode": "const date = new Date().toISOString().slice(0, 10);\nconst courses = $('Export Courses').first().json;\nconst institutions = $('Export Institutions').first().json;\nreturn [\n  { json: { filename: `courses-${date}.json`, contents: JSON.stringify(courses, null, 2) } },\n  { json: { filename: `institutions-${date}.json`, contents: JSON.stringify(institutions, null, 2) } },\n  { json: { filename: `courses-latest.json`, contents: JSON.stringify(courses, null, 2) } },\n  { json: { filename: `institutions-latest.json`, contents: JSON.stringify(institutions, null, 2) } }\n];"
+      },
+      "name": "Prepare Files",
+      "type": "n8n-nodes-base.code",
+      "position": [720, 300]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "fileName": "=MyCourseMatchmaker/exports/{{$json.filename}}",
+        "binaryDataMode": "upload"
+      },
+      "name": "Upload to OneDrive",
+      "type": "n8n-nodes-base.microsoftOneDrive",
+      "position": [940, 300]
+    },
+    {
+      "parameters": {
+        "rule": { "interval": [{ "triggerAtHour": 9, "triggerAtDay": 0 }] }
+      },
+      "name": "Cleanup Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Delete exports older than 90 days. OneDrive nodes can list+delete; the\n// exact item lookup happens in the OneDrive node below.\nconst cutoff = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);\nreturn [{ json: { cutoff } }];"
+      },
+      "name": "Compute Cutoff Date",
+      "type": "n8n-nodes-base.code",
+      "position": [460, 500]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [[
+        { "node": "Export Courses", "type": "main", "index": 0 },
+        { "node": "Export Institutions", "type": "main", "index": 0 }
+      ]]
+    },
+    "Export Courses": { "main": [[{ "node": "Prepare Files", "type": "main", "index": 0 }]] },
+    "Export Institutions": { "main": [[{ "node": "Prepare Files", "type": "main", "index": 0 }]] },
+    "Prepare Files": { "main": [[{ "node": "Upload to OneDrive", "type": "main", "index": 0 }]] },
+    "Cleanup Trigger": { "main": [[{ "node": "Compute Cutoff Date", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

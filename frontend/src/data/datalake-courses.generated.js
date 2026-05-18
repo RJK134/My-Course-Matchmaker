@@ -2,7 +2,7 @@
 // upstream lake at gdrive5tb:workhorse-datalake/latest/.
 // Run `npm run sync-datalake` to refresh. Do not hand-edit.
 // Source: gdrive5tb:workhorse-datalake/latest
-// Last sync: 2026-05-18T15:53:32.318Z (5343 rows).
+// Last sync: 2026-05-18T17:03:47.859Z (5343 rows).
 
 export const lakeCourses = [
   {

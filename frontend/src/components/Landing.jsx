@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { P } from "../styles/theme";
 
 export default function Landing({ onStart, courseCount, institutionCount, cityCount }) {
@@ -86,33 +87,53 @@ export default function Landing({ onStart, courseCount, institutionCount, cityCo
           {cityCount} cities with cost data • Fees by nationality • Clickable
           funding links
         </p>
-        <button
-          onClick={onStart}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 10,
-            padding: "16px 40px",
-            fontSize: 17,
-            fontFamily: "'Trebuchet MS',sans-serif",
-            fontWeight: 600,
-            color: P.white,
-            background: `linear-gradient(135deg,${P.accent},#2563EB)`,
-            border: "none",
-            borderRadius: 12,
-            cursor: "pointer",
-            boxShadow: `0 4px 24px ${P.accent}40`,
-            transition: "transform 0.2s",
-          }}
-          onMouseOver={(e) =>
-            (e.currentTarget.style.transform = "translateY(-2px)")
-          }
-          onMouseOut={(e) =>
-            (e.currentTarget.style.transform = "translateY(0)")
-          }
-        >
-          Start Matching →
-        </button>
+        <div style={{ display: "inline-flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+          <button
+            onClick={onStart}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "16px 40px",
+              fontSize: 17,
+              fontFamily: "'Trebuchet MS',sans-serif",
+              fontWeight: 600,
+              color: P.white,
+              background: `linear-gradient(135deg,${P.accent},#2563EB)`,
+              border: "none",
+              borderRadius: 12,
+              cursor: "pointer",
+              boxShadow: `0 4px 24px ${P.accent}40`,
+              transition: "transform 0.2s",
+            }}
+            onMouseOver={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
+            onMouseOut={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+          >
+            Start Matching →
+          </button>
+          <Link
+            to="/search"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "16px 32px",
+              fontSize: 16,
+              fontFamily: "'Trebuchet MS',sans-serif",
+              fontWeight: 600,
+              color: P.text,
+              background: `${P.surface}DD`,
+              border: `1px solid ${P.surfaceLight}`,
+              borderRadius: 12,
+              textDecoration: "none",
+              transition: "transform 0.2s, border-color 0.2s",
+            }}
+            onMouseOver={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.borderColor = P.accent; }}
+            onMouseOut={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = P.surfaceLight; }}
+          >
+            🔍 Search 5,000+ courses
+          </Link>
+        </div>
         <div
           style={{
             display: "grid",

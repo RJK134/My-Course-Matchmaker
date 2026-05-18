@@ -32,6 +32,7 @@ function parseSkillsOverlap(raw) {
 export default function CourseExplorer({ course, profile, allCourses, onBack, onSelectAlt }) {
   const [tab, setTab] = useState("costs");
   const [careers, setCareers] = useState({ status: "idle", matchedSubject: null, careers: [] });
+  const [funding, setFunding] = useState({ status: "idle", total: 0, items: [] });
 
   // Look up the subject most relevant to this course in the career-pathways lake.
   // We try: explicit course.subjects[0] → course.domain → DL[domain] display label.
@@ -62,6 +63,22 @@ export default function CourseExplorer({ course, profile, allCourses, onBack, on
       active = false;
     };
   }, [careerLookupKey]);
+
+  // Funding lookup: pull lake funding rows that match this course's country.
+  // The current lake is UK-heavy; broader coverage will come with the
+  // international scrapers (Phase C of the scope).
+  useEffect(() => {
+    let active = true;
+    setFunding({ status: "loading", total: 0, items: [] });
+    api.funding
+      .list({ country: course.country, page_size: 20 })
+      .then((j) => {
+        if (!active) return;
+        setFunding({ status: "ok", total: j.total, items: j.funding || [] });
+      })
+      .catch(() => active && setFunding({ status: "error", total: 0, items: [] }));
+    return () => { active = false; };
+  }, [course.country]);
   const inst = getInstData(course.institution);
   const col = COL_LOOKUP[course.city] || null;
   const fs = course.feeStatus;
@@ -189,6 +206,7 @@ export default function CourseExplorer({ course, profile, allCourses, onBack, on
           {[
             { k: "costs", l: "💰 Costs & Living" },
             { k: "careers", l: "💼 Career Outcomes" },
+            { k: "funding", l: "🎓 Funding" },
             { k: "inst", l: "🏛️ Institution" },
             { k: "prep", l: "📚 Preparation" },
             { k: "map", l: "📍 Location & Map" },
@@ -861,6 +879,76 @@ export default function CourseExplorer({ course, profile, allCourses, onBack, on
                       </div>
                     );
                   })}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* FUNDING TAB — backed by /api/funding (lake) */}
+          {tab === "funding" && (
+            <div>
+              <h3 style={{ fontSize: 18, fontWeight: 600, margin: "0 0 12px", fontFamily: "'Trebuchet MS',sans-serif" }}>
+                Funding opportunities · {course.country}
+              </h3>
+              <p style={{ fontSize: 12, color: P.textDim, margin: "0 0 16px" }}>
+                Live opportunities from the workhorse datalake (UKRI, Innovate UK, gov.uk and partners).
+                {" "}{funding.status === "ok" ? <>Showing top {funding.items.length} of <strong style={{ color: P.text }}>{funding.total}</strong>.</> : null}
+              </p>
+              {funding.status === "loading" && (
+                <div style={{ color: P.textMuted, fontSize: 13 }}>Loading funding…</div>
+              )}
+              {funding.status === "error" && (
+                <div style={{ color: P.gold, fontSize: 13 }}>Funding feed unavailable.</div>
+              )}
+              {funding.status === "ok" && funding.items.length === 0 && (
+                <div style={{ color: P.textMuted, fontSize: 13 }}>
+                  No funding rows for {course.country} yet — the lake is currently UK-heavy.
+                  International funding scrapers are scoped for the next sprint.
+                </div>
+              )}
+              {funding.status === "ok" && funding.items.length > 0 && (
+                <div style={{ display: "grid", gap: 8 }}>
+                  {funding.items.map((f) => (
+                    <a
+                      key={f.id}
+                      href={f.url || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textDecoration: "none",
+                        padding: 12,
+                        borderRadius: 8,
+                        background: `${P.navy}80`,
+                        border: `1px solid ${P.surfaceLight}`,
+                        color: P.text,
+                        display: "block",
+                      }}
+                    >
+                      <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+                        <div style={{ minWidth: 0, flex: 1 }}>
+                          <div style={{ fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>
+                            {f.title}
+                          </div>
+                          <div style={{ fontSize: 11, color: P.textMuted, marginTop: 2 }}>
+                            {f.funder}{f.programme ? ` · ${f.programme}` : ""}
+                          </div>
+                          {(f.category || f.status) && (
+                            <div style={{ display: "flex", gap: 8, marginTop: 4, fontSize: 10 }}>
+                              {f.category && <span style={{ color: P.accentLight }}>· {f.category}</span>}
+                              {f.status && <span style={{ color: f.status === "open" ? P.success : P.textDim }}>· {f.status}</span>}
+                            </div>
+                          )}
+                        </div>
+                        {(f.amountMin || f.amountMax) && (
+                          <div style={{ textAlign: "right", flexShrink: 0 }}>
+                            <div style={{ fontSize: 12, color: P.goldLight, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 700 }}>
+                              {f.amountMin && f.amountMax ? `${f.currency || "£"}${f.amountMin.toLocaleString()}–${f.amountMax.toLocaleString()}` : `${f.currency || "£"}${(f.amountMax || f.amountMin).toLocaleString()}`}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </a>
+                  ))}
                 </div>
               )}
             </div>

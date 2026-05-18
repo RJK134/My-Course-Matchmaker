@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { P, DL } from "../styles/theme";
 import { getFee } from "../lib/nationalityResolver";
 import { tokenise, identifyPrimaryDomain } from "../lib/matching";
 import MatchBadge from "./MatchBadge";
+import TrendsPanel from "./TrendsPanel";
 
 export default function Results({ results, profile, onNewSearch, onExplore, getShareUrl }) {
   const [sortBy, setSortBy] = useState("match");
@@ -131,6 +133,22 @@ export default function Results({ results, profile, onNewSearch, onExplore, getS
                 🔗 Share
               </button>
             )}
+            <Link
+              to="/search"
+              style={{
+                padding: "8px 14px",
+                borderRadius: 8,
+                background: P.surface,
+                border: `1px solid ${P.surfaceLight}`,
+                color: P.text,
+                fontSize: 12,
+                cursor: "pointer",
+                fontFamily: "'Trebuchet MS',sans-serif",
+                textDecoration: "none",
+              }}
+            >
+              🔍 Search all 5,000+
+            </Link>
             <button
               onClick={onNewSearch}
               style={{
@@ -221,6 +239,15 @@ export default function Results({ results, profile, onNewSearch, onExplore, getS
             Showing free online courses only
           </div>
         )}
+
+        {/* CoursePulse trends — surfaces 19 AI-generated insight rows from the lake */}
+        <TrendsPanel
+          subject={(() => {
+            const t = tokenise(profile.subjects);
+            const i = identifyPrimaryDomain(t);
+            return DL[i.primary] || profile.subjects || "";
+          })()}
+        />
 
         {/* Course cards */}
         <div style={{ display: "grid", gap: 10 }}>
