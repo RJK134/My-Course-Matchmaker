@@ -19,10 +19,13 @@ import { MeiliSearch } from 'meilisearch';
 import { mapSubjectToDomain } from './lib/subject-taxonomy.mjs';
 import { resolveInstitution } from './lib/institution-resolver.mjs';
 import { lookupUkUniversity } from './lib/uk-universities.mjs';
+import { enrichFees } from './lib/fee-heuristics.mjs';
+import { createHash } from 'node:crypto';
 
 const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const LAKE_COURSES_PATH = join(REPO_ROOT, 'api', 'data', 'lake-courses.json');
 const CAREER_PATHWAYS_PATH = join(REPO_ROOT, 'api', 'data', 'career-pathways.json');
+const GLOBAL_COL_PATH = join(REPO_ROOT, 'frontend', 'src', 'data', 'costOfLiving.global.json');
 
 const MEILI_HOST = process.env.MEILI_HOST || 'http://localhost:7700';
 const MEILI_KEY = process.env.MEILI_KEY || 'mcm-dev-master-key-change-me';
@@ -36,7 +39,53 @@ const DB_CONFIG = {
   password: process.env.DB_PASSWORD || 'changeme',
 };
 
-const DEFAULT_MONTHLY_COL_GBP = 1100; // UK student average; used when no city COL match
+const DEFAULT_MONTHLY_COL_GBP = 1100; // fallback when no city COL match
+
+// Build city → GBP monthly COL lookup from the global JSON + curated DB rows
+// (the DB rows already happen to be GBP).
+function buildColIndex(globalRows, curatedRows) {
+  const map = new Map();
+  for (const c of globalRows) {
+    const monthly =
+      (c.gbpRent ?? 0) +
+      (c.gbpFood ?? 0) +
+      (c.gbpTransport ?? 0) +
+      (c.gbpUtils ?? 0) +
+      (c.gbpMisc ?? 0);
+    if (monthly > 0) map.set(c.city.toLowerCase(), { monthly, source: 'global' });
+  }
+  for (const c of curatedRows) {
+    if (!map.has(c.city.toLowerCase())) {
+      const monthly =
+        Number(c.rent || 0) +
+        Number(c.food || 0) +
+        Number(c.transport || 0) +
+        Number(c.utilities || 0) +
+        Number(c.misc || 0);
+      if (monthly > 0) map.set(c.city.toLowerCase(), { monthly, source: 'curated-db' });
+    }
+  }
+  return map;
+}
+
+function lookupMonthlyCol(colIndex, city) {
+  if (!city) return null;
+  return colIndex.get(String(city).toLowerCase()) || null;
+}
+
+// Lake↔curated dedup. Fingerprint = sha256(provider_norm + subject_norm + level).
+function fingerprintFor(provider, subject, level) {
+  const norm = (s) =>
+    String(s || '')
+      .toLowerCase()
+      .normalize('NFKD')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  return createHash('sha256')
+    .update(`${norm(provider)}|${norm(subject)}|${norm(level)}`)
+    .digest('hex')
+    .slice(0, 16);
+}
 
 const SOURCE_PROVENANCE = {
   ucas: 'ucas',
@@ -98,31 +147,32 @@ function durationYears(row) {
   return 3;
 }
 
-function affordabilityForFilter(row) {
+function affordabilityForFilter(row, monthlyCol) {
   // Use fee_home where present, else fee_intl, else 0.
   const fee =
     [row.fee_home, row.fee_intl, row.feesUkGbp, row.feesIntlGbp]
       .map((v) => (v == null ? null : Number(v)))
       .find((n) => Number.isFinite(n)) ?? 0;
-  const yearCol = DEFAULT_MONTHLY_COL_GBP * 9;
-  return Math.round(fee + yearCol);
+  const monthly = monthlyCol ?? DEFAULT_MONTHLY_COL_GBP;
+  return Math.round(fee + monthly * 9);
 }
 
-function roiFor(row, pathwayIndex) {
+function roiFor(row, pathwayIndex, monthlyCol) {
   const pathway = topPathwayFor(row.subject_area || row.subjectArea || row.domain, pathwayIndex);
   if (!pathway) return null;
   const salary5 =
     pathway.salary5yrGbp ?? (pathway.medianSalaryGbp ? pathway.medianSalaryGbp * 5 : null);
   if (!Number.isFinite(salary5)) return null;
   const years = durationYears(row);
-  const total = affordabilityForFilter(row) * years;
+  const total = affordabilityForFilter(row, monthlyCol) * years;
   return Math.round(salary5 - total);
 }
 
-function normaliseCuratedRow(row, pathwayIndex) {
+function normaliseCuratedRow(row, pathwayIndex, colIndex) {
   // From Postgres `courses` table.
   const subject = (row.subjects && row.subjects[0]) || row.domain;
   const topPathway = topPathwayFor(subject || row.domain, pathwayIndex);
+  const col = lookupMonthlyCol(colIndex, row.city);
   return {
     id: `curated-${row.id}`,
     canonical_id: row.id,
@@ -130,6 +180,8 @@ function normaliseCuratedRow(row, pathwayIndex) {
     provider: row.institution_key,
     country: row.country,
     city: row.city,
+    city_monthly_col_gbp: col?.monthly ?? null,
+    col_source: col?.source ?? null,
     level: row.level,
     domain: row.domain,
     subject_area: subject || row.domain,
@@ -140,7 +192,8 @@ function normaliseCuratedRow(row, pathwayIndex) {
     fee_home: row.fee_home == null ? null : Number(row.fee_home),
     fee_intl: row.fee_intl == null ? null : Number(row.fee_intl),
     fee_scotland: row.fee_scotland == null ? null : Number(row.fee_scotland),
-    fees_for_filter: affordabilityForFilter(row),
+    fees_for_filter: affordabilityForFilter(row, col?.monthly),
+    fees_source: 'curated',
     ranking_band: row.ranking || 999,
     is_free: !!row.is_free,
     is_online: !!row.is_online,
@@ -150,7 +203,7 @@ function normaliseCuratedRow(row, pathwayIndex) {
     avg_salary_subject_gbp: avgSalaryFor(subject || row.domain, pathwayIndex),
     top_career_title: topPathway?.careerTitle ?? null,
     top_career_salary_gbp: topPathway?.medianSalaryGbp ?? null,
-    roi_score: roiFor(row, pathwayIndex) ?? 0,
+    roi_score: roiFor(row, pathwayIndex, col?.monthly) ?? 0,
     source: 'curated',
     provenance: 'curated',
     url: null,
@@ -158,7 +211,7 @@ function normaliseCuratedRow(row, pathwayIndex) {
   };
 }
 
-function normaliseLakeRow(row, pathwayIndex) {
+function normaliseLakeRow(row, pathwayIndex, colIndex) {
   const subject = row.subjectArea || null;
   const topPathway = topPathwayFor(subject, pathwayIndex);
   const provenance = SOURCE_PROVENANCE[row.source] || row.source || 'lake';
@@ -168,6 +221,14 @@ function normaliseLakeRow(row, pathwayIndex) {
   // still get a city/country instead of just "UK".
   const ukFallback = inst ? null : lookupUkUniversity(row.provider);
   const mappedDomain = mapSubjectToDomain(subject);
+
+  // Heuristic fee backfill so we stop showing the default £1,100 COL only.
+  const enriched = enrichFees(row, mappedDomain);
+  const isFreeRow = enriched.feesUkGbp === 0 && enriched.feesIntlGbp === 0;
+
+  const city = inst?.city || ukFallback?.city || row.locationCity || null;
+  const col = lookupMonthlyCol(colIndex, city);
+
   return {
     id: `lake-${row.id}`,
     canonical_id: null,
@@ -175,7 +236,9 @@ function normaliseLakeRow(row, pathwayIndex) {
     provider: row.provider,
     // Use institution lookup, then UK fallback, then honest UK default.
     country: inst?.country || ukFallback?.country || 'UK',
-    city: inst?.city || ukFallback?.city || row.locationCity || null,
+    city,
+    city_monthly_col_gbp: col?.monthly ?? null,
+    col_source: col?.source ?? null,
     institution_key: inst?.key || null,
     institution_full_name: inst?.full || null,
     institution_match: inst?._matchType || (ukFallback ? 'uk-dict' : 'unmatched'),
@@ -189,15 +252,16 @@ function normaliseLakeRow(row, pathwayIndex) {
     duration: null,
     mode: [],
     subjects: subject ? [subject] : [],
-    fee_home: row.feesUkGbp == null ? null : Number(row.feesUkGbp),
-    fee_intl: row.feesIntlGbp == null ? null : Number(row.feesIntlGbp),
+    fee_home: enriched.feesUkGbp == null ? null : Number(enriched.feesUkGbp),
+    fee_intl: enriched.feesIntlGbp == null ? null : Number(enriched.feesIntlGbp),
     fee_scotland: null,
-    fees_for_filter: affordabilityForFilter({
-      fee_home: row.feesUkGbp,
-      fee_intl: row.feesIntlGbp,
-    }),
+    fees_for_filter: affordabilityForFilter(
+      { fee_home: enriched.feesUkGbp, fee_intl: enriched.feesIntlGbp },
+      col?.monthly,
+    ),
+    fees_source: enriched.feeSource,
     ranking_band: 999,
-    is_free: false,
+    is_free: isFreeRow,
     is_online: false,
     employability: null,
     career_paths: topPathway ? [topPathway.careerTitle] : [],
@@ -207,8 +271,14 @@ function normaliseLakeRow(row, pathwayIndex) {
     top_career_salary_gbp: topPathway?.medianSalaryGbp ?? null,
     roi_score:
       roiFor(
-        { subject_area: subject, fee_home: row.feesUkGbp, fee_intl: row.feesIntlGbp, level: 'undergraduate' },
+        {
+          subject_area: subject,
+          fee_home: enriched.feesUkGbp,
+          fee_intl: enriched.feesIntlGbp,
+          level: 'undergraduate',
+        },
         pathwayIndex,
+        col?.monthly,
       ) ?? 0,
     source: row.source,
     provenance,
@@ -230,7 +300,8 @@ async function main() {
 
   console.log('[index] reading curated courses from Postgres');
   const { rows: curatedRows } = await pool.query('SELECT * FROM courses ORDER BY id');
-  console.log(`[index] curated rows: ${curatedRows.length}`);
+  const { rows: curatedColRows } = await pool.query('SELECT * FROM cost_of_living');
+  console.log(`[index] curated rows: ${curatedRows.length}, curated COL rows: ${curatedColRows.length}`);
   await pool.end();
 
   console.log('[index] reading lake courses from', LAKE_COURSES_PATH);
@@ -239,11 +310,41 @@ async function main() {
     : [];
   console.log(`[index] lake rows: ${lakeRows.length}`);
 
-  const docs = [
-    ...curatedRows.map((r) => normaliseCuratedRow(r, pathwayIndex)),
-    ...lakeRows.map((r) => normaliseLakeRow(r, pathwayIndex)),
-  ];
+  console.log('[index] reading global COL from', GLOBAL_COL_PATH);
+  const globalColRows = existsSync(GLOBAL_COL_PATH)
+    ? JSON.parse(readFileSync(GLOBAL_COL_PATH, 'utf8'))
+    : [];
+  console.log(`[index] global COL rows: ${globalColRows.length}`);
+
+  const colIndex = buildColIndex(globalColRows, curatedColRows);
+  console.log(`[index] COL index built: ${colIndex.size} cities`);
+
+  // Curated rows go in first and seed the dedup map; lake rows whose
+  // (provider × subject × level) fingerprint collides with a curated row
+  // get dropped (curated is always better data).
+  const curatedDocs = curatedRows.map((r) => normaliseCuratedRow(r, pathwayIndex, colIndex));
+  const curatedFingerprints = new Set(
+    curatedDocs.map((d) => fingerprintFor(d.provider, d.subject_area, d.level)),
+  );
+
+  let droppedDupes = 0;
+  const lakeDocs = [];
+  for (const r of lakeRows) {
+    const fp = fingerprintFor(r.provider, r.subjectArea, 'undergraduate');
+    if (curatedFingerprints.has(fp)) {
+      droppedDupes += 1;
+      continue;
+    }
+    lakeDocs.push(normaliseLakeRow(r, pathwayIndex, colIndex));
+  }
+  if (droppedDupes > 0) console.log(`[index] dedup: dropped ${droppedDupes} lake rows that matched a curated course`);
+
+  const docs = [...curatedDocs, ...lakeDocs];
   console.log(`[index] total docs to index: ${docs.length}`);
+  const heuristic = lakeDocs.filter((d) => d.fees_source?.startsWith('heuristic')).length;
+  console.log(`[index] fees_source=heuristic: ${heuristic}; curated: ${curatedDocs.length}`);
+  const withCity = docs.filter((d) => d.city_monthly_col_gbp != null).length;
+  console.log(`[index] city COL matched: ${withCity}/${docs.length}`);
 
   const meili = new MeiliSearch({ host: MEILI_HOST, apiKey: MEILI_KEY });
   const index = meili.index(INDEX_NAME);
@@ -277,6 +378,8 @@ async function main() {
       'fee_intl',
       'avg_salary_subject_gbp',
       'institution_match',
+      'fees_source',
+      'col_source',
     ],
     sortableAttributes: [
       'fees_for_filter',
