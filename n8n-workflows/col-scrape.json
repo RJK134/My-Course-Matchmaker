@@ -1,0 +1,70 @@
+{
+  "name": "MCM Cost-of-Living Backfill",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": { "interval": [{ "triggerAtHour": 6, "triggerAtDay": 0 }] }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/cities/missing-col",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "Find Cities Without COL",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [460, 300]
+    },
+    {
+      "parameters": { "batchSize": 1, "options": {} },
+      "name": "Loop Cities",
+      "type": "n8n-nodes-base.splitInBatches",
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "url": "=https://www.numbeo.com/cost-of-living/in/{{$json.city}}",
+        "method": "GET",
+        "options": { "response": { "response": { "responseFormat": "text" } } }
+      },
+      "name": "Fetch Numbeo Page",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Naive cheerio-free parser — extract the headline COL values\n// that Numbeo emits in <td class=\"priceValue\"> spans.\nconst $input = $json;\nconst html = $input.data || $input.body || '';\nconst rgx = /([£€$])\\s*([\\d,]+(?:\\.\\d+)?)\\s*\\n?\\s*<\\/td>/g;\nconst nums = [];\nlet m;\nwhile ((m = rgx.exec(html)) !== null) nums.push(parseFloat(m[2].replace(/,/g, '')));\n// Numbeo's first ~6 rows are restaurant/transport/utilities/rent estimates.\nreturn [{\n  json: {\n    city: $('Loop Cities').item.json.city,\n    country: $('Loop Cities').item.json.country,\n    rent: nums[5] || null,\n    food: nums[0] || null,\n    transport: nums[3] || null,\n    utilities: nums[2] || null,\n    misc: nums[1] || null,\n    currency: 'GBP',\n    note: 'Scraped from Numbeo via n8n weekly backfill',\n    source: 'numbeo'\n  }\n}];"
+      },
+      "name": "Parse Numbeo HTML",
+      "type": "n8n-nodes-base.code",
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "url": "={{$env.MCM_API_URL}}/api/admin/col",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "body": "={{ $json }}",
+        "options": { "bodyContentType": "json" }
+      },
+      "name": "Upsert COL Row",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [1340, 300]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": { "main": [[{ "node": "Find Cities Without COL", "type": "main", "index": 0 }]] },
+    "Find Cities Without COL": { "main": [[{ "node": "Loop Cities", "type": "main", "index": 0 }]] },
+    "Loop Cities": { "main": [[{ "node": "Fetch Numbeo Page", "type": "main", "index": 0 }]] },
+    "Fetch Numbeo Page": { "main": [[{ "node": "Parse Numbeo HTML", "type": "main", "index": 0 }]] },
+    "Parse Numbeo HTML": { "main": [[{ "node": "Upsert COL Row", "type": "main", "index": 0 }]] },
+    "Upsert COL Row": { "main": [[{ "node": "Loop Cities", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}

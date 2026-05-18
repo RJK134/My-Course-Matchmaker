@@ -9,16 +9,25 @@ Import these workflow JSON files into your n8n instance at `rjk134.app.n8n.cloud
 **Purpose**: Master orchestrator that triggers each scraper source via the MCM API, waits for completion, uploads raw data to OneDrive, and imports results into the staging table.
 
 ### 2. `col-scrape.json`
-**Schedule**: Runs after course scrape completes
-**Purpose**: Finds cities in the course database without cost-of-living data and scrapes Numbeo for their living costs.
+**Schedule**: Every Sunday at 06:00 UTC
+**Purpose**: Asks the MCM API for cities referenced by courses but missing
+COL data (`GET /api/admin/cities/missing-col`), scrapes each city's Numbeo
+page, parses the headline rent/food/transport numbers, and upserts via
+`POST /api/admin/col`.
 
 ### 3. `data-quality-report.json`
 **Schedule**: Every Sunday at 06:00 UTC
-**Purpose**: Generates a summary report of recent scrape activity and emails it.
+**Purpose**: Fans out to `/api/admin/stats`, `/api/admin/scrape/report/latest`
+and `/api/search/health`, composes a Markdown digest (corpus counts, source
+freshness, Meilisearch document count), and emails it to
+`MCM_REPORT_RECIPIENT`.
 
 ### 4. `onedrive-backup.json`
 **Schedule**: Every Sunday at 08:00 UTC
-**Purpose**: Exports the full course and institution databases to OneDrive as JSON backups. Cleans up exports older than 90 days.
+**Purpose**: Exports the full courses + institutions tables via
+`/api/admin/export/*`, writes dated + `-latest` JSON copies to
+`MyCourseMatchmaker/exports/` on OneDrive, and reaps anything older than
+90 days on a second 09:00 trigger.
 
 ## Setup
 

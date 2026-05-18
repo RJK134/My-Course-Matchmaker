@@ -175,6 +175,121 @@ export function validateCourseRow(obj) {
 }
 
 /**
+ * Validate one `coursepulse_insights.csv` row from the lake.
+ * Required: insight_type + title. summary can be long markdown.
+ */
+export function validateCoursePulseRow(obj) {
+  for (const k of Object.keys(obj)) {
+    if (FORBIDDEN_COLUMNS.has(k.trim().toLowerCase())) {
+      return { ok: false, reason: `forbidden column: ${k}` };
+    }
+  }
+  const insightType = pick(obj, 'insight_type', 'insightType');
+  const title = pick(obj, 'title');
+  if (!insightType || !title) {
+    return { ok: false, reason: 'missing insight_type or title' };
+  }
+  const subjectArea = pick(obj, 'subject_area', 'subjectArea');
+  const summary = pick(obj, 'summary');
+  const source = pick(obj, 'source');
+  const region = pick(obj, 'region');
+  const createdAt = pick(obj, 'created_at', 'createdAt');
+  return {
+    ok: true,
+    row: {
+      id: slugify(`${insightType}-${title}-${region ?? ''}-${createdAt ?? ''}`),
+      insightType,
+      subjectArea: subjectArea ?? null,
+      title,
+      summary: summary ?? null,
+      source: source ?? 'workhorse-datalake',
+      region: region ?? null,
+      createdAt: createdAt ?? null,
+      provenance: 'workhorse-datalake',
+    },
+  };
+}
+
+/**
+ * Validate one `funding_opportunities.csv` row from the lake.
+ * Required: title + funder + url.
+ */
+export function validateFundingRow(obj) {
+  for (const k of Object.keys(obj)) {
+    if (FORBIDDEN_COLUMNS.has(k.trim().toLowerCase())) {
+      return { ok: false, reason: `forbidden column: ${k}` };
+    }
+  }
+  const title = pick(obj, 'title');
+  const funder = pick(obj, 'funder');
+  const url = pick(obj, 'url');
+  if (!title || !funder) return { ok: false, reason: 'missing title or funder' };
+  if (url && !/^https?:\/\//i.test(url)) {
+    return { ok: false, reason: 'url must start with http(s)' };
+  }
+  const programme = pick(obj, 'programme');
+  const region = pick(obj, 'region');
+  const country = pick(obj, 'country');
+  const amountMin = safeNumber(pick(obj, 'amount_min', 'amountMin'));
+  const amountMax = safeNumber(pick(obj, 'amount_max', 'amountMax'));
+  const currency = pick(obj, 'currency');
+  const deadline = pick(obj, 'deadline');
+  const status = pick(obj, 'status');
+  const category = pick(obj, 'category');
+  const discoveredAt = pick(obj, 'discovered_at', 'discoveredAt');
+  return {
+    ok: true,
+    row: {
+      id: slugify(`${funder}-${title}-${region ?? ''}`),
+      title,
+      funder,
+      programme: programme ?? null,
+      region: region ?? null,
+      country: country ?? null,
+      amountMin,
+      amountMax,
+      currency: currency ?? null,
+      deadline: deadline ?? null,
+      status: status ?? null,
+      url: url ?? null,
+      category: category ?? null,
+      discoveredAt: discoveredAt ?? null,
+      provenance: 'workhorse-datalake',
+    },
+  };
+}
+
+/**
+ * Validate one `exchange_rates.csv` row from the lake.
+ * Required: base_currency + quote_currency + rate + rate_date.
+ */
+export function validateFxRow(obj) {
+  for (const k of Object.keys(obj)) {
+    if (FORBIDDEN_COLUMNS.has(k.trim().toLowerCase())) {
+      return { ok: false, reason: `forbidden column: ${k}` };
+    }
+  }
+  const base = pick(obj, 'base_currency', 'baseCurrency');
+  const quote = pick(obj, 'quote_currency', 'quoteCurrency');
+  const rate = safeNumber(pick(obj, 'rate'));
+  const date = pick(obj, 'rate_date', 'rateDate');
+  if (!base || !quote || rate == null || !date) {
+    return { ok: false, reason: 'missing base/quote/rate/date' };
+  }
+  return {
+    ok: true,
+    row: {
+      base,
+      quote,
+      rate,
+      date,
+      source: pick(obj, 'source') ?? 'workhorse-datalake',
+      provenance: 'workhorse-datalake',
+    },
+  };
+}
+
+/**
  * Validate one `course_career_pathways.csv` row from the lake.
  * Required: subject_area + career_title. Both are useless individually
  * for rendering a "what this leads to" tile.

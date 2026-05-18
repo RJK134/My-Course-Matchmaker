@@ -9,6 +9,7 @@ import { api } from "./lib/api";
 import coursesJson from "./data/courses.json";
 import institutionsJson from "./data/institutions.json";
 import costOfLivingJson from "./data/costOfLiving.json";
+import { lakeCourses } from "./data/datalake-courses.generated.js";
 
 import Landing from "./components/Landing";
 import Questionnaire from "./components/Questionnaire";
@@ -18,6 +19,42 @@ import CourseExplorer from "./components/CourseExplorer";
 
 const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
 const StagingReview = lazy(() => import("./components/admin/StagingReview"));
+const SearchPage = lazy(() => import("./components/SearchPage"));
+
+// Adapt a workhorse-datalake row into the shape the matcher + UI expect.
+// Lake rows are sparse: only title + provider + subject_area + url + source.
+// Every flag is conservative so these never out-rank a verified curated row.
+function lakeRowToCourseShape(row, idx) {
+  const subject = row.subjectArea || "other";
+  return {
+    id: `lake-${row.id || idx}`,
+    title: row.title,
+    institution: row.provider || "Unknown",
+    country: "UK", // current lake is 100% UK; honest default
+    city: row.locationCity || "—",
+    level: "undergraduate", // unverified — best guess for UCAS/CUG rows
+    mode: ["full-time"],
+    domain: subject,
+    subjects: [subject],
+    feeHome: row.feesUkGbp ?? null,
+    feeIntl: row.feesIntlGbp ?? null,
+    feeScotland: null,
+    livingCost: null,
+    duration: "—",
+    ranking: null,
+    entryReqs: "Check institution",
+    careerPaths: [],
+    avgSalary: null,
+    employability: null,
+    online: false,
+    free: false,
+    // Provenance fields — used by Results chip
+    provenance: row.source || "lake",
+    sourceUrl: row.url,
+    lastSeenAt: row.lastSeenAt,
+    isProvisional: true,
+  };
+}
 
 function DataLoader({ children }) {
   const { state, dispatch } = useAppContext();
@@ -26,6 +63,12 @@ function DataLoader({ children }) {
     if (state.dataLoaded || state.dataLoading) return;
 
     dispatch({ type: "LOAD_DATA_START" });
+
+    // Feature flag: ?lake=on appends ~5k provisional lake rows to the catalogue.
+    // Default off so the curated UX stays clean for first-time users.
+    const urlParams = new URLSearchParams(window.location.search);
+    const lakeOn = urlParams.get("lake") === "on";
+    const lakeRows = lakeOn ? lakeCourses.map(lakeRowToCourseShape) : [];
 
     // Try API first, fall back to JSON imports
     Promise.all([
@@ -40,24 +83,36 @@ function DataLoader({ children }) {
       })),
     ])
       .then(([courses, institutions, costOfLiving, stats]) => {
+        const merged = lakeOn ? [...courses, ...lakeRows] : courses;
+        if (lakeOn) {
+          // eslint-disable-next-line no-console
+          console.log(`[mcm] lake flag on — appended ${lakeRows.length} provisional rows`);
+        }
         dispatch({
           type: "LOAD_DATA_SUCCESS",
-          payload: { courses, institutions, costOfLiving, stats },
+          payload: {
+            courses: merged,
+            institutions,
+            costOfLiving,
+            stats: lakeOn ? { ...stats, totalCourses: merged.length, lakeRows: lakeRows.length } : stats,
+          },
         });
       })
       .catch((err) => {
         // Final fallback: use JSON imports directly
+        const fbCourses = lakeOn ? [...coursesJson, ...lakeRows] : coursesJson;
         dispatch({
           type: "LOAD_DATA_SUCCESS",
           payload: {
-            courses: coursesJson,
+            courses: fbCourses,
             institutions: institutionsJson,
             costOfLiving: costOfLivingJson,
             stats: {
-              totalCourses: coursesJson.length,
+              totalCourses: fbCourses.length,
               totalInstitutions: institutionsJson.length,
               totalCities: costOfLivingJson.length,
               pendingReview: 0,
+              ...(lakeOn ? { lakeRows: lakeRows.length } : {}),
             },
           },
         });
@@ -236,6 +291,14 @@ function AppRoutes() {
               getShareUrl={getShareUrl}
             />
           )
+        }
+      />
+      <Route
+        path="/search"
+        element={
+          <Suspense fallback={<LoadingScreen name="Search" />}>
+            <SearchPage />
+          </Suspense>
         }
       />
       <Route

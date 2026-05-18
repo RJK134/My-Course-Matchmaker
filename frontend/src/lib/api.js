@@ -28,6 +28,51 @@ export const api = {
     getByCity: (city) => fetchJson(`/col/${city}`),
   },
 
+  careers: {
+    subjects: () => fetchJson("/careers/subjects"),
+    forSubject: (subject) => fetchJson(`/careers/subject/${encodeURIComponent(subject)}`),
+  },
+
+  insights: {
+    list: (filters = {}) => {
+      const qs = new URLSearchParams();
+      for (const [k, v] of Object.entries(filters)) {
+        if (v != null && v !== "") qs.set(k, v);
+      }
+      const s = qs.toString();
+      return fetchJson(`/insights${s ? `?${s}` : ""}`);
+    },
+    types: () => fetchJson("/insights/types"),
+  },
+
+  funding: {
+    list: (filters = {}) => {
+      const qs = new URLSearchParams();
+      for (const [k, v] of Object.entries(filters)) {
+        if (v != null && v !== "") qs.set(k, v);
+      }
+      const s = qs.toString();
+      return fetchJson(`/funding${s ? `?${s}` : ""}`);
+    },
+    facets: () => fetchJson("/funding/facets"),
+  },
+
+  fx: {
+    rate: (base, quote) => fetchJson(`/fx/rate?base=${base}&quote=${quote}`),
+    convert: (amount, from, to) => fetchJson(`/fx/convert?amount=${amount}&from=${from}&to=${to}`),
+  },
+
+  search: {
+    query: (params = {}) => {
+      const qs = new URLSearchParams();
+      for (const [k, v] of Object.entries(params)) {
+        if (v != null && v !== "") qs.set(k, v);
+      }
+      return fetchJson(`/search?${qs.toString()}`);
+    },
+    health: () => fetchJson("/search/health"),
+  },
+
   // Admin endpoints
   admin: {
     stats: () => fetchJson("/admin/stats"),

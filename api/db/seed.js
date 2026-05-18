@@ -30,6 +30,25 @@ async function seed() {
     const courses = JSON.parse(
       fs.readFileSync(path.join(DATA_DIR, "courses.json"), "utf8")
     );
+
+    // Auto-create stub institutions for any course-referenced key that's missing.
+    // Most are MOOC providers ("Coursera / Berklee") and a handful of UK/EU
+    // institutions added in courses.json without a matching INST_DATA entry.
+    const declaredKeys = new Set(institutions.map((i) => i.key));
+    const courseKeys = new Set(courses.map((c) => c.institution));
+    const stubKeys = [...courseKeys].filter((k) => k && !declaredKeys.has(k));
+    for (const key of stubKeys) {
+      await client.query(
+        `INSERT INTO institutions (key, full_name, type)
+         VALUES ($1, $1, 'unknown')
+         ON CONFLICT (key) DO NOTHING`,
+        [key]
+      );
+    }
+    if (stubKeys.length) {
+      console.log(`Created ${stubKeys.length} stub institutions for course-referenced keys not in institutions.json.`);
+    }
+
     for (const c of courses) {
       await client.query(
         `INSERT INTO courses (id, title, institution_key, country, city, level, mode, domain, subjects, fee_home, fee_intl, fee_scotland, living_cost, duration, ranking, entry_reqs, career_paths, avg_salary, employability, is_online, is_free)

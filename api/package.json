@@ -13,6 +13,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
+    "meilisearch": "^0.45.0",
     "pg": "^8.13.3"
   },
   "devDependencies": {
