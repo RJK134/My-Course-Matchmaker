@@ -96,17 +96,62 @@ if (process.env.DATABASE_URL && !process.env.DB_HOST) {
 
 ## 4. Seed Postgres + Meilisearch (one time)
 
-```bash
-# Run seed against the hosted DB
-fly ssh console -a mcm-api -C "node /app/db/seed.js"
+Both scripts live at the repo root / under `api/` and read JSON data from
+`frontend/src/data/` and `api/data/`. None of that is baked into the API
+Docker image — so run them from your laptop against the hosted services
+through Fly's local proxy.
 
-# Build the Meilisearch index from the hosted Postgres
-fly ssh console -a mcm-api -C "node /app/../scripts/index-courses.mjs"
+Open two terminals (or use `&` to background the proxies):
+
+```bash
+# Terminal A — tunnel hosted Postgres to localhost:5432
+fly proxy 5432 -a mcm-db
+
+# Terminal B — tunnel hosted Meilisearch to localhost:7700
+fly proxy 7700 -a mcm-meili
 ```
 
-(The indexer script lives at the repo root, not inside `api/`, so the SSH
-command path may need adjusting — or copy the indexer into the API image
-during build by editing `api/Dockerfile`.)
+Then, in a third terminal at the repo root:
+
+```bash
+# Get the Postgres credentials Fly attached to the API
+fly ssh console -a mcm-api -C "printenv DATABASE_URL"
+# Parse host/user/password/db from that URL — they're what we'll feed seed.js
+# (host becomes 'localhost' because of the proxy).
+
+# Seed (idempotent — uses ON CONFLICT DO NOTHING)
+cd api && DB_HOST=localhost DB_PORT=5432 \
+  DB_NAME=<db> DB_USER=<user> DB_PASSWORD=<password> \
+  PGSSL=true \
+  node db/seed.js
+cd ..
+
+# Build the Meilisearch index
+DB_HOST=localhost DB_PORT=5432 \
+  DB_NAME=<db> DB_USER=<user> DB_PASSWORD=<password> \
+  PGSSL=true \
+  MEILI_HOST=http://localhost:7700 \
+  MEILI_KEY="<master key from step 2>" \
+  node scripts/index-courses.mjs
+```
+
+Expected output on a clean run: seed reports ~159 courses, 109 institutions,
+55 cities, 19 domain families; indexer reports ~5,484 documents (curated +
+deduped lake), with `task status: succeeded`.
+
+Close the two `fly proxy` terminals when finished.
+
+When the workhorse pushes a new lake snapshot, re-run only the indexer (the
+DB doesn't need re-seeding):
+
+```bash
+fly proxy 7700 -a mcm-meili &
+fly proxy 5432 -a mcm-db &
+npm run sync-datalake   # refresh api/data/lake-courses.json
+DB_HOST=localhost DB_PORT=5432 DB_NAME=<db> DB_USER=<user> DB_PASSWORD=<pwd> \
+  PGSSL=true MEILI_HOST=http://localhost:7700 MEILI_KEY=<key> \
+  node scripts/index-courses.mjs
+```
 
 ## 5. Deploy the frontend on Vercel
 
@@ -146,11 +191,16 @@ cd frontend && vercel --prod
 cd api && fly deploy
 ```
 
-When the workhorse pushes a new lake snapshot to gdrive, refresh the index:
+When the workhorse pushes a new lake snapshot to gdrive, refresh the index
+from your laptop (the indexer isn't baked into the API image — see step 4):
 
 ```bash
-npm run sync-datalake
-fly ssh console -a mcm-api -C "node /app/../scripts/index-courses.mjs"
+fly proxy 7700 -a mcm-meili &
+fly proxy 5432 -a mcm-db &
+npm run sync-datalake          # refresh api/data/lake-courses.json
+DB_HOST=localhost DB_PORT=5432 DB_NAME=<db> DB_USER=<user> DB_PASSWORD=<pwd> \
+  PGSSL=true MEILI_HOST=http://localhost:7700 MEILI_KEY=<key> \
+  node scripts/index-courses.mjs
 ```
 
 ## Custom domain
